@@ -1,0 +1,703 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title><![CDATA[第二章-列表和元组]]></title>
+    <url>%2F2017%2F08%2F11%2F%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E5%88%97%E8%A1%A8%E5%92%8C%E5%85%83%E7%BB%84%2F</url>
+    <content type="text"><![CDATA[列表和元组 序列概览 序列： 列表：元素可变； 元组：元素不可变 映射： 字典 集合 序列操作： 索引indexing:左起0开始；右起-1开始； 分片：slicing； 加：adding； 乘：multiplying； 成员资格； 迭代：iteration。]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Hello World]]></title>
+    <url>%2F2017%2F08%2F10%2Fhello-world%2F</url>
+    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>%2F2017%2F08%2F10%2FH5%E4%B8%93%E9%A1%B9%E6%B5%8B%E8%AF%95%E7%AE%80%E8%A6%81%E6%80%BB%E7%BB%93%E4%BA%8C%E8%B5%84%E6%BA%90%E5%8A%A0%E8%BD%BD%E5%92%8C%E7%BC%93%E5%AD%98%2F</url>
+    <content type="text"><![CDATA[H5ר�����Լ�Ҫ�ܽᣨ������Դ���غͻ�����Դ����JS�첽�������ϵ�ַ&gt;&gt; �����������ϵ�ַ&gt;&gt;Ԥ���� �������ƣ�H5�������������ƣ� ���������� ���߼����ٶȣ� ���ٷ��������أ� H5�������ƣ� �������������ƣ� Dom Storgage��Web Storgage���洢���ƣ� Web SQL Database �洢���ƣ� Application Cache��AppCache�����ƣ� Indexed Database��IndexedDB�� FileSystem APIԭ�ĵ�ַ&gt;&gt;]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[H5专项测试简要总结（一）基本点]]></title>
+    <url>%2F2017%2F03%2F02%2F%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%20-%20%E5%89%AF%E6%9C%AC%20(3)%2F</url>
+    <content type="text"><![CDATA[H5专项测试简要总结（一）基本点 随着Html5的流行，现在很多业务场景使用H5页面来承载，使活动类、运营类的业务功能更便捷在微信、Native端部署，所以H5方面的测试也变得越来越重要。 需要关注的点：1. 登陆： 客户端已登录状态时，H5页面操作无需再次登陆； 客户端未登录状态时，H5页面操作需要登陆，注意二次登录的操作； 需要在获取微信openid的H5页面的提示； 微信登录态和Native登录态之间的转化； 2. 翻页： 首屏loading过程中的上拉获取数据； 更多页面加载的翻页数据无异常； 返回上一层页面的处理，检查重复操作等； 注意检查翻页后的数据是否有数据重复和缺失，以及排序方面的问题； 3. 屏幕适配： 需要了解用户使用的重点机型以及边缘机型； 重点机型真机测试，可以考虑在线测试平台测试兼容性； 请求接口获取用户设备的型号信息，根据不同设备下发不同的适配页面； 部分页面能够通过Chrome浏览器开发者选项模拟屏幕尺寸信息； 4. 安全相关： H5页面的投放渠道限制； 支付类敏感操作的实名制验证等； 集团网络相关的安全限制等； URL能否直接打开等。 5. 资源加载： 使用小图，适配屏幕尺寸下发图片； 使用CDN加速； 使用gzip压缩请求； 建立合理的缓存机制； 大量数据的分页显示； 6. 页面提示： 页面资源加载过程或者操作过程中的loading标示； 各种借口返回的状态信息提示； 刷新页面或者进行页面操作的体验：无闪、屏抖动等情况； 7. 非常规操作： 涉及音视频资源的系统静音等的冲突等； 音视频的切片处理； 锁屏操作； 切到后台返回的处理； 弱网测试 8. 数据埋点： 用于BI的数据埋点]]></content>
+      <categories>
+        <category>TEST</category>
+      </categories>
+      <tags>
+        <tag>H5测试</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[亚马逊服务器搭建Shadowsocks]]></title>
+    <url>%2F2016%2F12%2F20%2F%E4%BA%9A%E9%A9%AC%E9%80%8A%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%90%AD%E5%BB%BAShadowsocks%2F</url>
+    <content type="text"><![CDATA[写在前面 在大陆由于墙（GFW）的存在，很多境外网站的访问会受限，此时搭建属于自己的梯子是最为合适的方法，前提是你是一个喜欢折腾的。本文主要是贴链接，因为网上有很多很完备的教程，然后我踩的坑会单独说一下。 科学上网之EC2搭建shadowsocks原文地址&gt;&gt;,搜集资源时发现竟然是同事写的！很详细的一篇教程，我就是按照教程来的！只不过他是Mac平台，我是windows平台！ 部分过程图片罗列：下面这两步注意，需要选择带有符合条件的免费套餐下面这一张是创建预算邮箱通知： 实例启动之后的安装操作12345sudo -s //获取超级管理员权限apt-get update //更新apt-get包管理工具apt-get install python-pip //安装Python包管理工具pip intall shadowsocks //安装shadowsocks，这里可能会提示python pip不是最新版本，可忽略ssserver -c /etc/shadowsocks.json -d start //启动shadowsocks 注意：多端口配置信息：1234567891011121314&#123; &quot;server&quot;:&quot;0.0.0.0&quot;， &quot;local_address&quot;: &quot;127.0.0.1&quot;, &quot;local_port&quot;:1080, &quot;port_password&quot;: &#123; &quot;8381&quot;: &quot;foobar1&quot;, &quot;8382&quot;: &quot;foobar2&quot;, &quot;8383&quot;: &quot;foobar3&quot;, &quot;8384&quot;: &quot;foobar4&quot; &#125;, &quot;timeout&quot;:300, &quot;method&quot;:&quot;aes-256-cfb&quot;, &quot;fast_open&quot;: false &#125; 这里有教程说server改成你的实例外部IP，但是我这边没成功，配置成上面的成功了。 配置完记得重启一下服务：1234ssserver -c /etc/shadowsocks.json -d startssserver -c /etc/shadowsocks.json -d stopssserver -c /etc/shadowsocks.json -d restartssserver -c /etc/shadowsocks.json -d status 注意看一下关闭服务时的info是stoped为正常，如果是not running说明有问题，查看配置！ 添加开机启动：我这里配置了CPU过载自动重启，所以需要将ss服务设置成自动启动：运行vi /etc/rc.local编辑re.local文件，在exit 0前面添加：ssserver -c /etc/shadowsocks.json -d start 其他的流程，上面教程中都很详细！请认真按照教程走！ 如果你是windows用户：你可能需要看一下下面的内容： 下载SSH链接工具1.我使用的是Putty;2.不过Putty不能直接使用AWS生成的密钥，需要使用puttygen将.pem密钥转换成.ppk类型；a.打开puttygen，点击Load加载.pem密钥（亚马逊服务器生成），选择密钥文件（需要选择所有文件类型）之后点确定；b.点击Save private key,其他的默认（密钥类型SSH-2 RSA，位数2048和1024均可），生成.ppk密钥；c.配置putty：首先将上一步生成的密钥配置在putty客户端SSH–&gt;Auth–&gt;Private key file for authentication;d.然后在Session–&gt;Host Name中配置你实例的外部IP即可，端口默认22！e.登录：3.登录名为： 实例类型 用户名 Amazon Linux AMI ec2-user RHEL5 AMI ec2-user或root Ubuntu AMI ubuntu Fedora AMI ec2-user或fedora SUSE Linux ec2-user或root 资源和教程：putty和puttygen官方下载&gt;&gt;下载最新的即可！putty备用下载&gt;&gt;puttygen备用下载&gt;&gt;Putty连接实例官方帮助文档&gt;&gt;Putty连接实例官方帮助文档备用地址&gt;&gt;上面的官方帮助文档十分全面和细致，建议仔细查看！密钥转换和登陆配置&gt;&gt;SS&gt;&gt;SS-3.4.2备用下载&gt; 最后说一下，FinalSpeed现在升级之后收费了！不过旧版的还是可以用的，请参照以下链接，点我&gt;&gt;KCP资源占用少，稳定性还不错]]></content>
+      <categories>
+        <category>DEV</category>
+      </categories>
+      <tags>
+        <tag>SS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Hexo站点主动推送百度-基于Flow.ci]]></title>
+    <url>%2F2016%2F12%2F19%2FHexo%E7%AB%99%E7%82%B9%E4%B8%BB%E5%8A%A8%E6%8E%A8%E9%80%81%E7%99%BE%E5%BA%A6%2F</url>
+    <content type="text"><![CDATA[写在前面：下面是链接提交方式的对比： 如何选择链接提交方式1、主动推送：最为快速的提交方式，推荐您将站点当天新产出链接立即通过此方式推送给百度，以保证新链接可以及时被百度收录。2、自动推送：最为便捷的提交方式，请将自动推送的JS代码部署在站点的每一个页面源代码中，部署代码的页面在每次被浏览时，链接会被自动推送给百度。可以与主动推送配合使用。3、sitemap：您可以定期将网站链接放到sitemap中，然后将sitemap提交给百度。百度会周期性的抓取检查您提交的sitemap，对其中的链接进行处理，但收录速度慢于主动推送。4、手动提交：一次性提交链接给百度，可以使用此种方式。来自百度站长&gt;&gt; 原创文章，转发请注明！ 访问接口实现主动提交使用Post请求，通过配置site和token将包含你需要提交的链接的数组提交到百度提供的接口！示例代码（这里实现了php的和python的）： php：说明：此方法适合能够自动构建sitemap的情况，未设置的请移步&gt;&gt;自动构建&gt;&gt;只要保证你的博客根目录的sitemap.xml和baidusitemap.xml能够访问就好！如未实现自动构建sitemap，需要本地手动生成之后添加到source文件夹下！不过每次添加新文章都需要从新上传！将下面脚本保存成baidusitemapPush.php(名字随便起，注意跟后面对应就好！)1234567891011121314151617181920212223242526272829&lt;?php//从博客根目录加载百度站点地图$xmlfile = './baidusitemap.xml';//解析站点地图，并将所有站点链接存入数组$locs$xml = simplexml_load_file($xmlfile);$locs = [];foreach ($xml-&gt;url as $child) &#123; array_push($locs,$child-&gt;loc-&gt;__toString());&#125;//调用百度主动推送接口，将baidusitemap.xml中所有的站点链接提交//site和token请换成你自己的$api = 'http://data.zz.baidu.com/urls?site=www.yoursite.com&amp;token=yourtoken';$ch = curl_init();$options = array( CURLOPT_URL =&gt; $api, CURLOPT_POST =&gt; true, CURLOPT_RETURNTRANSFER =&gt; true, CURLOPT_POSTFIELDS =&gt; implode("\n", $locs), CURLOPT_HTTPHEADER =&gt; array('Content-Type: text/plain'),);curl_setopt_array($ch, $options);$result = curl_exec($ch);//echo $result;print_r($result);?&gt; python：python请轻喷啊，写得很low！如果使用python的请严格复制下面代码，否则你就需要一把游标卡尺~~~保存成baidusitemapPush.py文件 12345678910111213141516171819202122232425262728293031# !/usr/bin/python# -*- coding: UTF-8 -*-import requestsfrom xml.dom.minidom import parseimport xml.dom.minidom# 加载xml文件DOMTree = xml.dom.minidom.parse("./baidusitemap.xml")data0 = DOMTree.getElementsByTagName("loc")list_len = len(data0)payload = []data2 = []# 遍历xml文件，得到所有站点链接for i in range(0, list_len, 1): data1 = data0[i].firstChild.data data2.append(data1)payload = str(data2)url = "http://data.zz.baidu.com/urls"querystring = &#123;"site":"www.oneonecity.xyz","token":"yourtoken"&#125;headers = &#123; 'content-type': "text/plain", 'cache-control': "no-cache", &#125;# 请求百度主动推送接口response = requests.request("POST", url, data=payload, headers=headers, params=querystring)print(response.text) 上传脚本：将上面的php或者python脚本上传一个就好，放在hexo–&gt;source文件夹下面；然后上传！12345git add .git commit -am &quot;添加百度主动推送脚本&quot;git push origin master 配置flow.ci说明：flow的地址&gt;&gt;可以参考这里&gt;&gt;这里配置自动构建的flow项目需要绑定你的博客对应的仓库，而非源码仓库；配置环境选择php或者python，这取决于你之前上传的那个脚本！自定义脚本：1234flow_cmd &quot;php baidusitemapPush.php&quot; --echo --assertflow_cmd &quot;php sitemapPush.php&quot; --echo --assertflow_cmd &quot;php baiduPush_index.php&quot; --echo --assertflow_result $? ###检测构建：push一下博客或者手动更新博客仓库的文件，触发自动构建，理想情况下是这样子：这样子以后每次更新文章都会触发一次主动推送！ 任何问题，欢迎交流！]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Hexo博客收录百度和谷歌-基于Next主题]]></title>
+    <url>%2F2016%2F12%2F16%2FHexo%E5%8D%9A%E5%AE%A2%E6%94%B6%E5%BD%95%E7%99%BE%E5%BA%A6%E5%92%8C%E8%B0%B7%E6%AD%8C-%E5%9F%BA%E4%BA%8ENext%E4%B8%BB%E9%A2%98%2F</url>
+    <content type="text"><![CDATA[Hexo博客收录百度和谷歌-基于Next主题（应该是比较全面的一篇教程）我们的博客做出来当然是希望别人来访问，但是Github和Coding都做了防爬虫处理，这样子我们博客可能就无法被搜索引擎收录，需要我们手动提交！ 本教程基于Hexo博客框架，使用Next主题（其他主题举一反三），博主本人已绑定自己的域名（在下文会点明区别，没有太大影响）；很多过程使用了Flow.ci进行自动构建！ 原创文章，转载请注明出处 你需要准备的1.百度站长账号；没有的申请，很简单，跟百度分析一起使用挺好，不过分析的话还是推荐CNZZ，不过都挂上没有坏处！ 2.谷歌账号：谷歌账号能够享受所有的谷歌服务，当然也包括网站搜索分析服务！不过需要提前准备梯子！ 3.Flow.ci用于自动构建网站地图（推荐，非必须）：可参考这篇文章&gt;&gt;配置自动构建，本文会在这基础之上进行提高！ 4.最重要的是你有自己的博客！验证你的站点是否被收录：一般情况下你的站点是不能被搜到的！你可以用site验证： 验证百度：site:www.oneonecity.xyz域名换成你自己的，百度还支持site搜索么？如果没有找到你的博客说明没有被收录！ 验证谷歌：site:www.oneonecity.xyz域名换成你自己的，谷歌是一定支持的，不过你需要梯子！如果没有找到你的博客说明没有被收录！ 收录百度措辞是不是有问题？就是你的网站被百度搜索收录！ 1.手动提交：你可以手动提交你的站点到百度搜索，点这里&gt;&gt;，当然这种方法很麻烦，因为如果想让每一篇文章都能被搜索到就需要把所有的页面链接进行提交！ 2.验证网站所有权：通过验证之后百度会认为你是网站所有者，然后能做诸如自动推送、手动推送的高级功能！点这里&gt;&gt;，输入你的博客首页地址（可以是自己的域名也可以是Coding或者Github的Pages页面地址！），然后点击下一步！ 3.进行验证：这里有三种方法：文件验证、HTML标签验证和CNAME验证。下面分别说一下方法和适用范围！ （1）文件验证：a.你需要做的是下载验证文件：是一个html文件，里面存放着你的token信息！b.然后将这个文件放在你的主题的根目录下，之所以不放在source是因为Next主题在构建过程中会在验证文件中加入很多东西影响验证！c.接下来就是编译部署你的博客hexo g -d，如果你已经实现自动化部署的话只需要push你的原文件： 12345git add .git commit -am &quot;添加验证文件&quot;git push origin master 关于自动部署，请移步这里&gt;&gt;d.点击点击这里进行验证，其实是你的博客首页加了验证文件路径；e.最后点击完成验证如果顺利的话，是能够完成！这种方法比较麻烦，不是很推荐！ (2)HTML标签验证：这种方法需要根据不同的主题进行配置，博主使用的Next主题，其他主题可以自己摸索，原理一样：都是将HTML验证标签加入到博客每个页面的head里面！注意是红框中完整的标签，而不是一部分！第一步：将该标签（红框中完整的，并非只是后面的token）；第二步：在Next主题配置文件（不是博客配置文件）开启提交百度的选项：1234# 此处设置成true之后，将themes/next/layout/_partials/head.swig # 下把默认的百度和 google 验证值替换为搜索引擎为你提供的完整HTML标签即可google_site_verification: truebaidu_site_verification: true 这里的名字google_site_verification:可以随便起，不过需要与后面的themes/next/layout/_partials/head.swig中相对应，默认都是下划线！第三步：修改themes/next/layout/_partials/head.swig，添加从百度获取的完整的HTML验证标签，注意名字的对应！123&#123;% if theme.baidu_site_verification %&#125; &lt;meta name=&quot;baidu-site-verification&quot; content=&quot;yourtoken&quot; /&gt;&#123;% endif %&#125; 第四步：同文件验证的c.步骤：编译部署你的博客！进入你的博客首页或者任意文章，按F12，如果再head标签中看到了验证标签，就可以了！第五步：点击验证按钮！，如果过程没问题则会验证成功！ （3）CNAME验证，如果你绑定了自己的域名，这种方式是最简单的！第一步：你要有自己的域名并使用CNAME解析，如果没有请移步这里&gt;&gt;第二步：如图添加一条新的CNAME解析：记录类型是CNAME，主机记录是你的token，，记录值是zz.baidu.com，其他默认：第三步：点击验证！这一种方法最简单，推荐！ 收录谷歌：HTML 标签验证，参考百度验证！123&#123;% if theme.google_site_verification %&#125; &lt;meta name=&quot;google-site-verification&quot; content=&quot;yourtoken&quot; /&gt;&#123;% endif %&#125; 生成站点地图：这一步很重要，通过构建网站地图能够让搜索引擎更好的抓取你的网站内容！ 1.安装sitmap插件：12npm install hexo-generator-sitemap --savenpm install hexo-generator-baidu-sitemap --save 如果你搭建了基于Flow.ci的自动构建，请修改Flow.ci的自定义脚本： 1234567891011121314151617# 安装Hexo命令行工具flow_cmd &quot;npm install hexo-cli -g&quot; --echoflow_cmd &quot;npm install hexo-generator-sitemap --save&quot; --echoflow_cmd &quot;npm install hexo-generator-baidu-sitemap --save&quot; --echo# 准备并安装私钥flow_cmd &quot;cp .ssh/id_rsa .&quot; --echoflow_cmd &quot;chmod 600 ./id_rsa&quot; --echoflow_cmd &quot;eval $(ssh-agent)&quot; --echoflow_cmd &quot;ssh-add ./id_rsa&quot; --echo# 执行Hexo生成和发布flow_cmd &quot;hexo clean&quot; --echoflow_cmd &quot;hexo g&quot; --echoflow_cmd &quot;hexo d&quot; --echoflow_result $? 2.修改博客配置文件：a.修改URL为你博客首页，这样是为了保证生成的sitemap.xml文件中地址正确：b.指定生成文件名及路径，在配置文件最后添加一下代码：12345# 自动生成sitemapsitemap: path: sitemap.xmlbaidusitemap: path: baidusitemap.xml c.执行构建hexo g，正常情况下会在source文件夹下看到多出两个文件：sitemap.xml和baidusitemap.xml，这就是sitemap文件。此后等待搜索引擎抓取或者配置自动推送或者主动推送！ 自动推送sitemap到百度：基于Next主题，其他主题原理一样： 修改主题配置文件将baidu_push状态改成true：12# Enable baidu push so that the blog will push the url to baidu automatically which is very helpful for SEObaidu_push: true 修改baidu_push.swig:位置是themes\next\layout\_scripts\baidu_push.swig，添加以下代码（代码来自百度自动推送）：12345678910111213141516&#123;% if theme.baidu_push %&#125;&lt;script&gt;(function()&#123; var bp = document.createElement(&apos;script&apos;); var curProtocol = window.location.protocol.split(&apos;:&apos;)[0]; if (curProtocol === &apos;https&apos;) &#123; bp.src = &apos;https://zz.bdstatic.com/linksubmit/push.js&apos;; &#125; else &#123; bp.src = &apos;http://push.zhanzhang.baidu.com/push.js&apos;; &#125; var s = document.getElementsByTagName(&quot;script&quot;)[0]; s.parentNode.insertBefore(bp, s);&#125;)();&lt;/script&gt;&#123;% endif %&#125; 这样子的话每次访问博客中的页面会自动向百度提交。 提交Google站点地图：添加/测试站点地图点此&gt;&gt;进入Google Search Console控制台，需要翻墙。点击你的站点，如果没有请先添加站点；然后点击控制台–&gt;抓取–&gt;站点地图，点击右上角添加/测试站点地图按钮，将你的sitemap.xml提交测试，测试成功之后重复该步骤进行添加！帮助文档&gt;&gt; 主动推送到百度：该过程配合Flow.ci实现起来很方便，单独开篇，点此跳转&gt;&gt;任何问题，欢迎讨论！]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Hexo自动构建-基于Flow.ci和Coding]]></title>
+    <url>%2F2016%2F12%2F16%2FHexo%E8%87%AA%E5%8A%A8%E6%9E%84%E5%BB%BA-%E5%9F%BA%E4%BA%8EFlow.ci%E5%92%8CCoding%2F</url>
+    <content type="text"><![CDATA[写在前面昨天完成了基于Github和TravisCI的自动构建,但是国内访问这两个站速度还是会差一些的，现在国内有跟Github同功能的Coding以及跟TravisCI同功能的Flow.ci，相比较而言配置过程更简单，构建和访问速度更快捷。 概述1.创建Coding私有仓库（新建非Pages仓库或者在Pages仓库下建一个新的分支；因为是源码，包含git私钥，所以建议用私有仓库）2.使用Coding账号授权登陆Flow.ci3.配置Flow.ci4.手动构建进行测试5.本地push代码到Coding博客源码仓库，查看自动构建情况 创建Coding私有仓库1.登录Coding；2.点击左上角头像，出现所有项目之后，点击“+”创建新的项目； Flow.ci授权和配置1.进入Flow.ci，点击免费注册，然后登录；2.登入后会有两个Demo项目，右上角找到创建任务按钮；3.选择代码仓库选择Coding； 目前支持Github、Bitbucket、Coding、Gitlab，但是为什么选择Coding而非Github？是因为Coding的私有仓库是免费创建的，而Github私有库需要$50，23333~~ 4.选择Coding账号授权，并选择源代码仓库；5.成功的话，下一个页面应该是这样子的：6.选择Node.js默认模板：7.之后进入版本选择页面，我选的是最新的v6.6.0版本，点击创建：这里push如果是独立的源码仓库可以选择所有分支或者正则匹配指定master分支；如果是Pages仓库的master之外的源码分支，请选择正则匹配然后选择相应的源码分支。这里也能配置定时任务，很方便，根据自己博客更新频率设置定是构建任务！8.创建自定义脚本：在安装工作流后面添加自定义工作流模块，可将测试模块删除，因为没什么用，当然你也可以不删除。9.配置自定义脚本，添加如下脚本： 123456789101112131415161718# 安装Hexo命令行工具flow_cmd &quot;npm install hexo-cli -g&quot; --echo# 安装自动生成sitemap插件flow_cmd &quot;npm install hexo-generator-sitemap --save&quot; --echoflow_cmd &quot;npm install hexo-generator-baidu-sitemap --save&quot; --echo# 准备并安装私钥flow_cmd &quot;cp .ssh/id_rsa .&quot; --echoflow_cmd &quot;chmod 600 ./id_rsa&quot; --echoflow_cmd &quot;eval $(ssh-agent)&quot; --echoflow_cmd &quot;ssh-add ./id_rsa&quot; --echo# 执行Hexo生成和发布flow_cmd &quot;hexo clean&quot; --echoflow_cmd &quot;hexo g&quot; --echoflow_cmd &quot;hexo d&quot; --echoflow_result $? 10.至此Flow.ci配置完成，此时如果点击手动构建是不行的，因为的的Coding源码仓还没有代码！ 关联本地仓库（博客源码文件夹）和Coding源码仓库； 本地进入博客源码文件夹，打开Git Bash，执行： 1234567891011git init # 初始化git remote add origin https://git.coding.net/yourname/blog.git # 关联远程仓库git pull origin master # 如果这里你是单独仓库直接Pull master分支，如果不是请指定分支git add .git commit -am &quot;First Commit!&quot;git push origin master 如果顺利的话你的博客已经开始在Flow.ci上自动构建了！失败了回邮件到你的注册邮箱的！ 原文地址&gt;&gt;]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Hexo自动构建-基于Github和TravisCI]]></title>
+    <url>%2F2016%2F12%2F15%2FHexo%E8%87%AA%E5%8A%A8%E6%9E%84%E5%BB%BA-%E5%9F%BA%E4%BA%8EGithub%E5%92%8CTravisCI%2F</url>
+    <content type="text"><![CDATA[基于Github和TravisCI都是墙外工具，可能速度偏慢；在部署过程会有不同的方法：使用hexo d进行部署和在public文件夹下直接push到GithubPage仓库；Coding的请参考这篇&gt;&gt; Github建立个人博客下面步骤也是最简单的在Github上面搭建博客的流程：1.注册Github账号，创建与用户名同名的仓库名；2.生成Git密钥对，并保证能够连通git@github.com；参考链接3.PC端打开命令行工具（定位到博客根目录）分别运行以下命令： 123456789101112131415161718192021npm install -g hexo --save #hexo基于node.js，需提前安装，此步骤是安装hexo；npm install -g hexo-cli --save #可选择安装，非必须；hexo init #初始化；hexo new #创建一篇新文章，改文章会存放在`source--&gt;_posts`文件夹之下；hexo generate #构建博客，同hexo gnpm install -g hexo-depoyer #安装hexo部署器# 修改hexo配置文件`_config.yml`，添加如下代码：deploy: type: git repo: coding: git@github.com:username/username.githexo deploy #部署博客,同hexo dhexo server #开启本地服务 进入username.github.io查看博客情况； 参考资料&gt;&gt; 配置TravisCI1.使用Github账号授权登录；2.找到并开启username的仓库3.授权：a.Github设置中创建Personal access tokens：b.将token添加到TravisCI的对应项目中：4.配置TravisCI配置文件.travis.yml，添加如下代码：1234567891011121314151617181920212223242526272829303132333435language: node_jsnode_js: stable# S: Build Lifecycleinstall:# - npm install -g hexo# - npm install -g hexo-deploy-git - npm installbefore_script: # - npm install -g gulp# - npm install -g hexo - hexo -vscript: - hexo gafter_script: - cd ./public - git init - git config user.name &quot;yincheng0807&quot; - git config user.email &quot;yincheng0807@163.com&quot; - git add . - git commit -m &quot;Update blog!&quot; - git push --force --quiet &quot;https://$&#123;GITHUB_TOKEN&#125;@$&#123;GH_REF&#125;&quot; master:master #GITHUB_TOKEN为在TravisCI中添加的来自Github的授权Token，见上一步branches: only: - hexo# 创建全局变量，与GithubPage仓库ssh地址一致env: global: - GH_REF: git@github.com:yincheng0807/yincheng0807.github.io.git 关联githubPage仓库：1.删除博客源文件根目录下的.git文件夹，这个文件夹是hexo的.git；2.打开Git Bash，执行：123git init;git remote add origin git@github.com:username/username.git 此时位于master分支 在pages仓库创建博客源文件分支hexo：1.创建hexo分支：123456789git checkout -b hexo;git pull origin hexo;git add .;git commit -am &quot;test&quot;;git push origin hexo; 至此push到远成仓库之后就能自动触发TravisCI； 参考资料1&gt;&gt;参考资料2&gt;&gt;参考资料3&gt;&gt; p.s.另一种方式的构建，替换配置TravisCI第四步中代码： 123456789101112131415161718language: node_jsbranches: only: - hexo #源码分支名称before_install:- npm install -g hexo- npm install -g hexo-clibefore_script:- git config --global user.name &apos;yourname&apos;- git config --global user.email &apos;youremail&apos;- sed -i&apos;&apos; &quot;s~git@github.com:&lt;yourname&gt;/&lt;projectname&gt;.git~https://$&#123;REPO_TOKEN&#125;:x-oauth-basic@github.com/&lt;yourname&gt;/&lt;projectname&gt;.git~&quot; _config.ymlinstall:- npm installscript:- hexo clean- hexo generateafter_success:- hexo deploy 原文地址&gt;&gt;]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Hexo绑定域名]]></title>
+    <url>%2F2016%2F12%2F14%2FHexo%E5%8D%9A%E5%AE%A2%E7%BB%91%E5%AE%9A%E5%9F%9F%E5%90%8D%2F</url>
+    <content type="text"><![CDATA[Hexo博客绑定域名Hexo搭建个人博客方便简约，几乎零门槛，受到很多程序员、极客的追捧，主流一般使用双线：国内使用Coding，海外使用Github来提高访问速度；但是他们的pages页面地址却不能自定义，绑定域名需求出现！ 注册域名：1.万网：阿里旗下的，比较方便,下面以万网为例。2.Godaddy(狗带)：据说比较便宜，怎么选择看自己喜好。 配置域名解析：1.个人域名（未备案或者备案）可以使用CNAME进行域名解析：2.进入万网域名控制台–&gt;域名解析–&gt;添加解析;3.记录类型为CNAME；4.主机记录：建两条分别为www和*;5.记录值为你的coding pages页面地址；6.其他默认，如下图： Coding Pages服务：1.在博客项目下开启Pages 服务；2.自定义域名中将访问地址设置成你申请的域名，如图： 稍等片刻，即可访问！！]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Postman Schema验证]]></title>
+    <url>%2F2016%2F12%2F09%2FSchema%E9%AA%8C%E8%AF%81%2F</url>
+    <content type="text"><![CDATA[Postman Schema验证Postman支持的验证方式，除了基础的验证接口返回的responseBody中的字段值，以及Http状态码的信息外还支持tv4（tiny validate v4）验证；通过自定义的Scheme验证，能够校验接口返回数据（JSON）中个字段的类型以及基本的极值非空等的验证。Schema官方帮助文档&gt;&gt;帮助文档备用地址&gt;&gt;栗子：接口返回JSON：123456789101112[ &#123; "id": 2, "name": "An ice sculpture", "price": 12.50, &#125;, &#123; "id": 3, "name": "A blue mouse", "price": 25.50, &#125;] 验证Schema(objectl)：12345678910111213141516171819202122&#123; "$schema": "http://json-schema.org/draft-04/schema#", "title": "Product", "description": "A product from Acme's catalog", "type": "object", "properties": &#123; "id": &#123; "description": "The unique identifier for a product", "type": "integer" &#125;, "name": &#123; "description": "Name of the product", "type": "string" &#125;, "price": &#123; "type": "number", "minimum": 0, "exclusiveMinimum": true &#125; &#125;, "required": ["id", "name", "price"]&#125; 验证Schema（Array类型）：1234567891011121314&#123; "title":"The type is array!", "type":"array", "items":&#123; "type":"object", "properties":&#123; "id":&#123; "description":"The unique identifier for a product", "type":"intager" &#125; "required":[id] &#125; &#125;,&#125; 关键字 描述 $chema $schema 关键字状态，表示这个模式与 v4 规范草案书写一致。 title 描述该验证的标题，可不填 description 该验证模式的描述 type 指定待验证数据必须是JSON对象,可选值object、array properties 定义键值对 required 存放必要属性列表 minimum 给值设置的约束条件，表示可以接受的最小值。 exclusiveMinimum 如果存在 “exclusiveMinimum” 并且具有布尔值 true，如果它严格意义上大于 “minimum” 的值则实例有效。 maximum 给值设置的约束条件，表示可以接受的最大值。 exclusiveMaximum 如果存在 “exclusiveMinimum” 并且具有布尔值 true，如果它严格意义上小于 “maximum” 的值则实例有效。 multipleOf 如果通过这个关键字的值分割实例的结果是一个数字则表示紧靠 “multipleOf” 的数字实例是有效的。 maxLength 字符串实例字符的最大长度数值。 minLength 字符串实例字符的最小长度数值。 pattern 如果正则表达式匹配实例成功则字符串实例被认为是有效的。]]></content>
+      <categories>
+        <category>软件测试</category>
+      </categories>
+      <tags>
+        <tag>TEST</tag>
+        <tag>Schema</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Python-01快速入门]]></title>
+    <url>%2F2016%2F12%2F01%2FPython-01%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8%2F</url>
+    <content type="text"><![CDATA[Python-01快速入门Python有两种主要的方式来完成你的要求：语句和表达式（函数、算数表达式等） 输入输出基本输入输出第一个程序：Hello World!12345678910111213# 直接输出print (Hello World!)## 先赋值给变量，后输出myString = Hello World!print myString # 该语句会输出Hello World!myString # 该语句会输出'Hello World!',注意这样的输出带有的单引号# 使用字符串格式操作符 %print ("%s is number %d!" %("Python", 1)) # %s 字符串； %d 整形； %f 浮点型print ("His height is %.2f m"%(1.83)) # 指定位数print ("Name:%10s Age:%8d Height:%8.2f"%("Aviad",25,1.83)) # 指定占位符宽度print ("Name:%-10s Age:%-8d Height:%-8.2f"%("Aviad",25,1.83)) # 指定占位符宽度（左对齐） 输出重定向将输出内容重定向输出到文件。1234567891011121314151617# 最简单的方法all_the_text = 'hello python'open('d:/text.txt', 'w').write(all_the_text)all_the_data = b'abcd1234'open('d:/data.txt', 'wb').write(all_the_data)# 更好的办法file_object = open('d:/text.txt', 'w') file_object.write(all_the_text)file_object.close()# 分段写入list_of_text_strings = ['hello', 'python', 'hello', 'world']file_object = open('d:/text.txt', 'w')for string in list_of_text_strings: file_object.writelines(string)list_of_text_strings = ['hello', 'python', 'hello', 'world']file_object = open('d:/text.txt', 'w')file_object.writelines(list_of_text_strings) input()内建函数获取用户输入12num = int(input("Please input your number!"))print("Your input is %d" %num) 注释1.使用井号注释：12# one commentprint("Hello World!") 2.使用文档字符串：123def foo(): "This is a doc string!" return True 操作符1.标准算术操作符： 操作符 说明 + 加 - 减 * 乘 / 除 // 浮点除法 % 取余 ** 乘方 2.标准比较操作符： 操作符 说明 &lt; 小于 &lt;= 小于等于 &gt; 大于 &gt;= 大于等于 == 左右相等 != 不等于 &lt;&gt; 不等于（废弃） 3.逻辑操作符： 操作符 说明 and 与 or 或 not 非 数字 有符号整形 长整形 布尔型 浮点型 复数 增量赋值支持n *= 10 # n = n * 10不支持自加和自减 ####字符串；1234567pystr = 'python'iscool = 'iscool'pystr[0] # pystr[2:5] # iscool[:2] #iscool[3:] #]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Hexo博客next主题11月3日问题修复]]></title>
+    <url>%2F2016%2F11%2F16%2FHexo%E5%8D%9A%E5%AE%A2next%E4%B8%BB%E9%A2%9811%E6%9C%883%E6%97%A5%E9%97%AE%E9%A2%98%E4%BF%AE%E5%A4%8D%2F</url>
+    <content type="text"><![CDATA[万年不更新，一更都傻眼~~问题：next主题的hexo博客近日无法展示内容，只有一个框框，查看加载情况很多内容加载失败，404错误： 问题原因： GitHub Pages禁止了 source/vendors目录的访问。其原因是Github在11月3日更新了版本。其中包括升级了 Jekyll 到 3.3。Jekyll 为了加快构建速度，忽略 vendor 和 node_modules 文件夹。引用原文 解决方法：方法一，更新主题：git pullnext主题的最新代码； 方法二，变更vendors文件夹命名：1.定位到\themes\next\source将该文件夹下的vendors文件夹重命名为其他，例如：lib，ven等；2.更新主题配置：编辑\themes\next下_config.yml文件中_internal: lib字段为上一步重命名之后的文件夹名；3.从新执行清除编译部署：12hexo cleanhexo g -d]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+        <tag>next</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[测试用例设计方法之组合测试法]]></title>
+    <url>%2F2016%2F10%2F27%2F%E6%B5%8B%E8%AF%95%E6%96%B9%E6%B3%95%E4%B9%8B%E7%BB%84%E5%90%88%E6%B5%8B%E8%AF%95%2F</url>
+    <content type="text"><![CDATA[简介组合测试（Combinatorial Test）是众多测试方法中的一种，适用于有限取值的多因素系统：两因素（Pairwise）组合测试生成的测试用例集能够覆盖任意两因素所引发的缺陷；多因素（N-Way，N&gt;2）组合测试生成的测试用例集理论上能够覆盖所有多因素所引发的缺陷，但是测试集会随着N的增加呈指数增长，测试成本很高；因此两因素组合测试能够达到测试成本和缺陷检测能力之间的平衡。 组合测试可用方法：1.正交表（或者笛卡尔乘积）生成测试用例：此方法能够保证每个因素在样本空间均匀分布，能够达到等概率，主要用于进行正交试验中各因素影响检测。用于软件测试会导致测试成本高且缺陷检测能力较一般。 2.PICT（The Pairwise Independent Combinatorial Testing tool）微软内部使用的测试集生成工具，能够在保证缺陷覆盖率的情况下减少测试成本，现已开放能够下载： PICT的使用：1.下载和安装：a.下载地址：官方下载地址&gt;&gt;备用下载地址&gt;&gt;b.双击pict33.msi进行安装，注意安装路径。 2.Demo：a.Windows命令行定位到安装文件夹；b.在该文件夹下建立Modle.txt文件，格式如下：c.命令行执行pict model.txt;d.或者这样输出到文件：pict model.txt &gt; testcase.txtpict model.txt &gt; testcase.xls 3.约束条件：对于存在对立关系的两个因素中需要通过在model文件中添加约束条件来防止测试集中产生无效用例：IF Compound THEN Compound ELSE Compound; 4.非法值过滤-哨兵（Guard）语句覆盖考虑代码健壮性，会存在很多哨兵语句来过滤非法输入，此时若不在model中添加限制，则可能生成的测试集会有很大一部分直接被过滤掉： 5.指定因素组合数-子模型：针对关键业务流程，往往是缺陷多发地需要强化该处的测试，此时有两种方法才实现：a. 在命令行中使用/o:N (N为组合数)来指定自组合数，例如/o:就是生成三因素的测试集： b.针对需要着重测试的部分或者某几个因素可以建立子模型（Sub-Models）来加强：{&lt;ParamName1&gt;, &lt;ParamName2&gt;, &lt;ParamName3&gt;, ... } @ &lt;Order&gt;子模型会针对花括号中所列的元素进行N元素组合（N=Order）。 6.随机种子：若将组合测试用例集加入回归测试，在软件生命周期中复地执行，不妨每次生成新的组合测试用例集，一方面满足两因素或多因素覆盖的测试标准，另一方面扩大测试对程序状态空间的覆盖。在PICT中，参数”/r[:N]”可以为测试用例生成引入随机种子（N是作为随机种子的整数），以生成不同的测试用例。例如，执行如下命令，就可以当前日期为种子，生成测试用例集。第一条语句从当前日期中获得年、月、日信息（%date的格式随Windows系统设置而变化，该语句只适用于特定Windows系统），放入变量seed中。第二条语句以变量seed为种子，生成测试用例。于是，测试用例集的具体内容随日期变化，在保证两因素覆盖的前提下，扩大了对被测试应用的状态覆盖。12set seed=%date:~4,2%%date:~7,2%%date:~10,4%pict model.txt /r:%seed% 7.覆盖最重要的的取值组合：为了避免漏测，测试人员应该利用领域知识和测试技能，发掘出一批他认为必须测试的取值组合。然后，基于这些取值组合生成组合测试用例集。a.将默认设置对应的因素取值组合加入核心用例集。b.对于默认设置，每次修改其中一个单选框，获得一批取值组合。将它们加入核心用例集。c.考虑到大多数用户不修改默认设置或只修改1个设置，核心用例集已经“足够好”，可以将其用于测试执行。d.如果还有测试资源，可以将核心用例集作为“种子”，利用PICT生成组合测试用例集。例如，命令pict.exe model.txt /e:seedrows.txt生成的组合测试用例集就包含种子文件（seedrows.txt）所指定的取值组合。关于组合测试可能错过最重要的的组合的文章：Pairwise Testing: A Best Practice That Isn’t 7.组合测试只是测试工具箱中的一员组合测试最适用的场景是配置测试，包括硬件兼容性测试、浏览器兼容性测试等。在配置测试中，待组合的配置项天然就是可枚举的离散值，不存在划分等价类、从等价类中选择可用值等手工操作，避免了测试者引入的错误。在配置测试中，大部分缺陷是由两个配置项不兼容所导致的，所以组合测试的错误检测能力较强。 对于功能测试，将组合测试作为探索式测试的补充是不错的做法。在一轮测试中，建议按照如下步骤应用组合测试:a.实施探索式测试，迭代地展开测试活动：阅读规格说明，运行被测试程序，应用不同的测试策略反复尝试，标记已经探索过的区域，记录已发现的缺陷。在这一过程中，可以获得一批高质量的测试用例，形成回归测试用例集。通常这批回归用例包括两类测试用例。第一类是正面（Positive）用例，它们检查了程序在主流场景（Scenario）下的行为。只要它们通过，我就有自信认为程序可以满足正常使用的需要。第二类是负面（Negative）用例，它们往往来自暴露了程序缺陷的探索式测试。这些用例检查了程序在极限或罕见场景中的行为，是程序在现实世界中正常工作的保证。b.实施组合测试。基于探索式测试，我已经知晓某些因素的取值组合是很重要的。我可以将其传递给PICT，让它基于已有的测试用例生成组合测试用例集。例如，在命令行上执行pict.exe model.txte:rows.txt，就可以基于文件rows.txt，生成测试用例集，以完成两因素组合覆盖。c.通过阅读代码或运行测试覆盖率工具，以发现测试遗漏。寻找未被发现的卫哨语句，修改测试策略，再次测试。寻找未被测试覆盖的语句或分支，增加新的测试用例，以提高代码覆盖率。 PICT语法声明：12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152Constraints :: = Constraint| Constraint Constraints Constraint :: = IF Compound THEN Compound ELSE Compound;| Compound; Compound :: = Clause| Clause LogicalOperator Compound Clause :: = Term| ( Compound )| NOT Compound Term :: = ParameterName Relation Value| ParameterName LIKE PatternString| ParameterName IN &#123; ValueSet &#125;| ParameterName Relation ParameterName ValueSet :: = Value| Value, ValueSet LogicalOperator : := AND| OR Relation :: = =| &lt;&gt;| &gt;| &gt;=| &lt;| &lt;= ParameterName : := [String] Value :: = &quot;String&quot;| Number String :: = whatever is typically regarded as a string of characters Number :: = whatever is typically regarded as a number PatternString : := string with embedded special characters (wildcards): * a series of characters of any length (can be zero) ? any one character 参考：实施组合测试&gt;&gt;]]></content>
+      <categories>
+        <category>软件测试</category>
+      </categories>
+      <tags>
+        <tag>TEST</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[测试类文章汇集]]></title>
+    <url>%2F2016%2F10%2F27%2F%E6%B5%8B%E8%AF%95%E7%B1%BB%E6%96%87%E7%AB%A0%E6%B1%87%E9%9B%86%2F</url>
+    <content type="text"><![CDATA[测试类文章收藏夹这里收集一些觉得不错的文章： 1.软件测试图书列表2.测试建模Google ACC3.Jenkins实现Android和iOS的自动打包4.深入浅出Git权限校验5.关于Fuzz工具的那些事儿6.模糊测试7.接口测试工具之httpapi (类似 gor，抓流量，回放，diff，fuzz)8.与Mock有关： a.Python语言Mock库 b. 9.开源协议相关 10.与Docker有关： a.测试开发之路 (工具篇)–Docker b.用 Docker 做自动化持续集成 - Macaca 部署完整版 11.Python相关： a.Python Request库 12.基于postman的API自动化测试]]></content>
+      <categories>
+        <category>软件测试</category>
+      </categories>
+      <tags>
+        <tag>TEST</tag>
+        <tag>测试</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[JS代码片段]]></title>
+    <url>%2F2016%2F10%2F20%2FJS%E5%B0%8F%E7%A8%8B%E5%BA%8F%2F</url>
+    <content type="text"><![CDATA[常用的、经典的JS带那片段 生成随机字符串12345function RandomString(length) &#123; var str = ''; for ( ; str.length &lt; length; str += Math.random().toString(36).substr(2) ); return str.substr(0, length); &#125; 获取时间戳 第一种，毫秒为000。（栗子：1476946500000）var timestamp = Date.parse(new Date()); 第二种，会显示准确毫秒 （栗子：1476946517951）var timestamp = (new Date()).valueOf(); 第三种，同第二种var timestamp=new Date().getTime(); 实际使用过程中一般会精确到秒：var timestamp = Date.parse(new Date())/1000;]]></content>
+      <categories>
+        <category>DEV</category>
+      </categories>
+      <tags>
+        <tag>JS</tag>
+        <tag>代码</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Postman札记]]></title>
+    <url>%2F2016%2F10%2F20%2FPostman%E6%9C%AD%E8%AE%B0%2F</url>
+    <content type="text"><![CDATA[Postman简介使用炫酷的Postman HTTP请求构建器创建和发送任何HTTP请求。编写你自己的测试用例来验证响应数据、响应时间以及其他更多的。 Create and send any HTTP request using the awesome Postman request builder. Write your own test cases to validate response data, response times, and more!–Postman官方介绍 安装： Postman是基于Chrome浏览器开发的App，可以从Chrome应用商店获取,或者地址栏输入chrome://apps/旧版本的Postman是作为一个标签页出现，新版本的会新开窗口在线安装需要翻墙，最新的离线安装包可邮件Postman开发团队索取，以下是笔者2016-07-01得到的邮件回复： The Chrome app is not available offline. We have native Mac and Windows apps, however.The Mac app can be downloaded from https://www.getpostman.com/apps.The Windows app is still in beta -https://dl.pstmn.io/download/latest/win?arch=64 (64 bit)https://dl.pstmn.io/download/latest/win?arch=32 (32 bit)Hope this helps,Cheers,Abhijit,Founder, Postman 界面功能-请求： 1.左侧边栏主要是导入、收藏请求，可以整理成目录：a. Import：导入，格式一般为Json； b. Runner：能够自动化执行一个或多个收藏文件夹下面的请求； c. 收藏收藏的请求（保存之后）有编辑、复制、删除等操作； 2.右侧请求编辑区a.请求方法：常用的有POST和GET，一般API文档中给出，或者Fiddler、花瓶等抓包工具中获取； b.URL：请求地址，可以从接口文档或者抓包工具获取； c.Params按钮：对于从抓包工具获取的接口，使用该按钮能自动生成form-data样式的请求主体； d.Send按钮：发送请求； e.Save按钮：能够将当前状态下的接口保存至收藏夹的某一个文件夹下面。 3.Header：若服务器对接口header有要求，就需要在这里进行配置，比如数据类型等，Postman能够支持绝大多数的header类型，受限于Chrome，一小部分不支持。 4.Body:请求主体接口中提交的各种数据均在这里配置，支持文本和文件，能够支持从环境变量获取，能够生成不同语言的请求代码： a.form-data:键值对样式，左侧是字段名，右侧是字段值，跟x-www-form-urlencoded没有太大区别： 在每一个字段右侧能够选择数据类型（文本或者文件）；可以点击右侧Bulk Edit较为方便的进行复制和粘贴。 b.raw：未解析的请求主体，支持多种语言： 5.Pre-request Script：前置执行脚本，会在请求发出之前执行，一般用于获取时间戳或者随机值，支持JS： 6.Tests：请求发出之后对返回值进行验证，在此处编写测试代码，给环境变量赋值： 7.code按钮：Postman神器之一，编写完成之后的接口数据可以生成任意语言，直接能够执行代码，且支持绝大多数语言： 界面功能-Response：1.Body：接口返回主体，根据不同的返回数据可以手动选择解析格式： 2.Tests:返回测试脚本验证情况： 进阶：Pre-request Scipt、Tests以及环境变量的使用：1.Pre-request Script:Tips：代码编辑区右侧有红色的提示方法，包含了所有Postman内中的方法，使用很方便。栗子1：如果接口需要使用请求发送时的时间戳，就需要在请求发出之前生成时间戳：12// 获取时间戳 var time_stamp = Date.parse(new Date())/1000; 获取时间戳之后接口中是拿不到数据的，此时应该将生成的时间戳存进环境变量：postman.setEnvironmentVariable(&quot;time_stamp&quot;, time_stamp);之后在请求Body中的相应字段的value中使用环境变量 2.Tests：（Response Body）中的数据作为后续数据使用：很多基于登录数据的接口，需要在登录接口之后获取当前用户的用户信息（user_name、user_id、token等），此时需要在Tests中添加相应的语句存储到环境变量。Tips：代码编辑区右侧有红色的提示方法，包含了所有Postman内中的方法，使用很方便。栗子2：首先解析ResponseBody:12345var responseJSON;try &#123; responseJSON = JSON.parse(responseBody); tests[&quot;code equals 0&quot;] = parseInt(responseJSON.code) === 0;catch (e) &#123; &#125; 之后将所需的数据存储到环境变量：1234 postman.setEnvironmentVariable(&quot;__access_token&quot;, responseJSON.access_token); postman.setEnvironmentVariable(&quot;__refresh_token&quot;, responseJSON.refresh_token); postman.setEnvironmentVariable(&quot;__token_type&quot;, responseJSON.token_type);&#125; 之后就能在需要鉴权参数的接口中使用调用环境变量中的数据。 3.环境变量：作为临时存储数据的仓库，能够将前置脚本以及接口返回的数据暂存，以供调用。 4.简单的测试脚本：12345678try&#123; var jsonData = JSON.parse(responseBody); tests[&quot;The code is: &quot; +jsonData.code] = jsonData.code === 0; tests[&quot;The msg is: &quot; + jsonData.msg] = jsonData.msg === &quot;ok&quot;; tests[&quot;Status code is: &quot; + responseCode.code] = responseCode.code === 200;&#125;catch (e) &#123; &#125; Tips：将解析返回数据主体的语句放在try中防止解析失败造成异常；右侧提示方法中的示例，可以直接在此基础上修改称自己的测试脚本：12var jsonData = JSON.parse(responseBody);tests[&quot;Your test name&quot;] = jsonData.value === 100;]]></content>
+      <categories>
+        <category>软件测试</category>
+      </categories>
+      <tags>
+        <tag>postman</tag>
+        <tag>API测试</tag>
+        <tag>网络抓包</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[编程命名规则]]></title>
+    <url>%2F2016%2F10%2F13%2F%E7%BC%96%E7%A8%8B%E5%91%BD%E5%90%8D%E8%A7%84%E5%88%99%2F</url>
+    <content type="text"><![CDATA[三种常用的编程命名规则1.匈牙利命名法：基本原则：变量名=属性+类型+对象描述开头字母用变量类型的缩写，其余部分用变量的英文或英文的缩写，要求单词第一个字母大写。long lsum = 0;“l”是类型的缩写； 2.小驼峰式基本原则：除第一个单词之外，其他单词首字母大写栗子 int myStudentCount;常用语变量命名； 3.大驼峰法（即帕斯卡命名法）基本原则:所有的单词的首字母均大写栗子 public class DataBaseUser;常用于类名、函数名、属性、命名空间]]></content>
+      <categories>
+        <category>DEV</category>
+      </categories>
+      <tags>
+        <tag>DEV</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Reabble让Kindle RSS更简单]]></title>
+    <url>%2F2016%2F10%2F12%2FReabble%E8%AE%A9Kindle-RSS%E6%9B%B4%E7%AE%80%E5%8D%95%2F</url>
+    <content type="text"><![CDATA[Reabble你的Kindle 笔者有早晚浏览各种新闻、段子等乱七八糟的东西的习惯，用的最多的还是手机，Kindle就只用来看书，偶尔推一些微信公众号的东西。每天对着电脑，对眼睛的上海还是蛮大的，于是开始用Kindle阅读资讯。 Kindle自定义内容：1.公众号Kindle电子书库和Kindle杂志社是最常用的两个资源获取平台，适合我这种懒癌后期；2.公众号中的优秀文章通过Send to Kindle推送到Kindle，也是方便快捷。3.RSS订阅：很多人是不建议的，因为Kindle就是安安静静看书的，很赞成这种说法，但是不同的场景也可以更加多样化。 RSS订阅：1.任何搜索引擎搜索Kindle RSS 估计找到最多的是狗耳朵，这是一个很优秀的RSS订阅平台，支持自定义RSS源，定时推送到设备，但是我还是喜欢轻一点的方式，直接网页看。2.Calibre：神器一枚，不多解释。见过知乎上一用的不错的是将Calibre+Dropbox+IFTTT+批处理实现自动化推送，平常那几个公众号已经完全满足我的需求，所以不想折腾。3.今天来介绍Reabble，很适合我，很轻，交互友好的RSS； Reabble的第一感：就是一个网页；交互很不错的网页；轻便简洁； Reabble 怎么用？1.你需要的： *Inoreader账号； *Kindle； *你喜欢的RSS源； 2.怎么做： *注册一个Inoreader账号，在里面添加一些自己喜欢的RSS源，官方推荐的都是英语的，还是自己加实用（除非你想学英语）； *PC浏览器打开Reabble.com，用上一步注册的账号登录； *PC浏览器打开Reabble.com/code获取登陆码； 在Kindle中右上角菜单体验班网页浏览器打开reabble.com，输入上一步的登陆码，*bingo！ 3.Tips： *退出的时候直接点主页按钮（就是Kindle左上角的小房子），这样子下一次进来的时候会方便很多； *交互方式：进入一篇文章之后，文章区域上四分之一区域有三个功能，上左是阅读全文，上中是返回列表，上右是下一篇；文章下四分之三区域中左侧五分之一是上一页，右侧五分之四是下一页；交互方式和Kindle原生几乎一致！ *左下角是菜单项； *每天可以免费阅读15篇，要想看得更多就需要付费服务&gt;&gt;，一年18人民币，能接受，很良心。 *国内主流媒体的RSS订阅资源，官网资源奥~，这里面有很详细的教程，完全无障碍配置。 *Enjoy your Kindle！]]></content>
+      <categories>
+        <category>Kindle</category>
+      </categories>
+      <tags>
+        <tag>Kindle</tag>
+        <tag>RSS</tag>
+        <tag>Reabble</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[【转】HTTP错误代码详解]]></title>
+    <url>%2F2016%2F10%2F10%2FHTTP%E9%94%99%E8%AF%AF%E4%BB%A3%E7%A0%81%E8%AF%A6%E8%A7%A3%2F</url>
+    <content type="text"><![CDATA[【转】HTTP错误代码详解1xx消息这一类型的状态码，代表请求已被接受，需要继续处理。这类响应是临时响应，只包含状态行和某些可选的响应头信息，并以空行结束。由于HTTP/1.0协议中没有定义任何1xx状态码，所以除非在某些试验条件下，服务器禁止向此类客户端发送1xx响应。 这些状态码代表的响应都是信息性的，标示客户应该采取的其他行动。 100 Continue客户端应当继续发送请求。这个临时响应是用来通知客户端它的部分请求已经被服务器接收，且仍未被拒绝。客户端应当继续发送请求的剩余部分，或者如果请求已经完成，忽略这个响应。服务器必须在请求完成后向客户端发送一个最终响应。 101 Switching Protocols服务器已经理解了客户端的请求，并将通过Upgrade消息头通知客户端采用不同的协议来完成这个请求。在发送完这个响应最后的空行后，服务器将会切换到在Upgrade消息头中定义的那些协议。只有在切换新的协议更有好处的时候才应该采取类似措施。例如，切换到新的HTTP版本（如HTTP/2）比旧版本更有优势，或者切换到一个实时且同步的协议以传送利用此类特性的资源。 102 Processing由WebDAV扩展的状态码，代表处理将被继续执行。 2xx成功这一类型的状态码，代表请求已成功被服务器接收、理解、并接受。 200 OK请求已成功，请求所希望的响应头或数据体将随此响应返回。 201 Created请求已经被实现，而且有一个新的资源已经依据请求的需要而创建，且其URI已经随Location头信息返回。假如需要的资源无法及时创建的话，应当返回’202 Accepted’。 202 Accepted服务器已接受请求，但尚未处理。正如它可能被拒绝一样，最终该请求可能会也可能不会被执行。在异步操作的场合下，没有比发送这个状态码更方便的做法了。返回202状态码的响应的目的是允许服务器接受其他过程的请求（例如某个每天只执行一次的基于批处理的操作），而不必让客户端一直保持与服务器的连接直到批处理操作全部完成。在接受请求处理并返回202状态码的响应应当在返回的实体中包含一些指示处理当前状态的信息，以及指向处理状态监视器或状态预测的指针，以便用户能够估计操作是否已经完成。 203 Non-Authoritative Information服务器已成功处理了请求，但返回的实体头部元信息不是在原始服务器上有效的确定集合，而是来自本地或者第三方的拷贝。当前的信息可能是原始版本的子集或者超集。例如，包含资源的元数据可能导致原始服务器知道元信息的超集。使用此状态码不是必须的，而且只有在响应不使用此状态码便会返回200 OK的情况下才是合适的。 204 No Content服务器成功处理了请求，但不需要返回任何实体内容，并且希望返回更新了的元信息。响应可能通过实体头部的形式，返回新的或更新后的元信息。如果存在这些头部信息，则应当与所请求的变量相呼应。如果客户端是浏览器的话，那么用户浏览器应保留发送了该请求的页面，而不产生任何文档视图上的变化，即使按照规范新的或更新后的元信息应当被应用到用户浏览器活动视图中的文档。由于204响应被禁止包含任何消息体，因此它始终以消息头后的第一个空行结尾。 205 Reset Content服务器成功处理了请求，且没有返回任何内容。但是与204响应不同，返回此状态码的响应要求请求者重置文档视图。该响应主要是被用于接受用户输入后，立即重置表单，以便用户能够轻松地开始另一次输入。与204响应一样，该响应也被禁止包含任何消息体，且以消息头后的第一个空行结束。 206 Partial Content服务器已经成功处理了部分GET请求。类似于FlashGet或者迅雷这类的HTTP 下载工具,都是使用此类响应实现断点续传或者将一个大文档分解为多个下载段同时下载。该请求必须包含Range头信息来指示客户端希望得到的内容范围，并且可能包含If-Range来作为请求条件。响应必须包含如下的头部域：Content-Range用以指示本次响应中返回的内容的范围；如果是Content-Type为multipart/byteranges的多段下载，则每一multipart段中都应包含Content-Range域用以指示本段的内容范围。假如响应中包含Content-Length，那么它的数值必须匹配它返回的内容范围的真实字节数。DateETag和／或Content-Location，假如同样的请求本应该返回200响应。Expires, Cache-Control，和／或Vary，假如其值可能与之前相同变量的其他响应对应的值不同的话。假如本响应请求使用了If-Range强缓存验证，那么本次响应不应该包含其他实体头；假如本响应的请求使用了If-Range弱缓存验证，那么本次响应禁止包含其他实体头；这避免了缓存的实体内容和更新了的实体头信息之间的不一致。否则，本响应就应当包含所有本应该返回200响应中应当返回的所有实体头部域。假如ETag或Last-Modified头部不能精确匹配的话，则客户端缓存应禁止将206响应返回的内容与之前任何缓存过的内容组合在一起。任何不支持Range以及Content-Range头的缓存都禁止缓存206响应返回的内容。 207 Multi-Status由WebDAV扩展的状态码，代表之后的消息体将是一个XML消息，并且可能依照之前子请求数量的不同，包含一系列独立的响应代码。3xx重定向这类状态码代表需要客户端采取进一步的操作才能完成请求。通常，这些状态码用来重定向，后续的请求地址（重定向目标）在本次响应的Location域中指明。当且仅当后续的请求所使用的方法是GET或者HEAD时，用户浏览器才可以在没有用户介入的情况下自动提交所需要的后续请求。客户端应当自动监测无限循环重定向（例如：A→B→C→……→A或A→A），因为这会导致服务器和客户端大量不必要的资源消耗。按照HTTP/1.0版规范的建议，浏览器不应自动访问超过5次的重定向。 300 Multiple Choices被请求的资源有一系列可供选择的回馈信息，每个都有自己特定的地址和浏览器驱动的商议信息。用户或浏览器能够自行选择一个首选的地址进行重定向。除非这是一个HEAD请求，否则该响应应当包括一个资源特性及地址的列表的实体，以便用户或浏览器从中选择最合适的重定向地址。这个实体的格式由Content-Type定义的格式所决定。浏览器可能根据响应的格式以及浏览器自身能力，自动作出最合适的选择。当然，RFC 2616规范并没有规定这样的自动选择该如何进行。如果服务器本身已经有了首选的回馈选择，那么在Location中应当指明这个回馈的URI；浏览器可能会将这个Location值作为自动重定向的地址。此外，除非额外指定，否则这个响应也是可缓存的。 301 Moved Permanently被请求的资源已永久移动到新位置，并且将来任何对此资源的引用都应该使用本响应返回的若干个URI之一。如果可能，拥有链接编辑功能的客户端应当自动把请求的地址修改为从服务器反馈回来的地址。除非额外指定，否则这个响应也是可缓存的。新的永久性的URI应当在响应的Location域中返回。除非这是一个HEAD请求，否则响应的实体中应当包含指向新的URI的超链接及简短说明。如果这不是一个GET或者HEAD请求，因此浏览器禁止自动进行重定向，除非得到用户的确认，因为请求的条件可能因此发生变化。注意：对于某些使用HTTP/1.0协议的浏览器，当它们发送的POST请求得到了一个301响应的话，接下来的重定向请求将会变成GET方式。 302 Found请求的资源现在临时从不同的URI响应请求。由于这样的重定向是临时的，客户端应当继续向原有地址发送以后的请求。只有在Cache-Control或Expires中进行了指定的情况下，这个响应才是可缓存的。新的临时性的URI应当在响应的Location域中返回。除非这是一个HEAD请求，否则响应的实体中应当包含指向新的URI的超链接及简短说明。如果这不是一个GET或者HEAD请求，那么浏览器禁止自动进行重定向，除非得到用户的确认，因为请求的条件可能因此发生变化。注意：虽然RFC 1945和RFC 2068规范不允许客户端在重定向时改变请求的方法，但是很多现存的浏览器将302响应视作为303响应，并且使用GET方式访问在Location中规定的URI，而无视原先请求的方法。状态码303和307被添加了进来，用以明确服务器期待客户端进行何种反应。 303 See Other对应当前请求的响应可以在另一个URI上被找到，而且客户端应当采用GET的方式访问那个资源。这个方法的存在主要是为了允许由脚本激活的POST请求输出重定向到一个新的资源。这个新的URI不是原始资源的替代引用。同时，303响应禁止被缓存。当然，第二个请求（重定向）可能被缓存。新的URI应当在响应的Location域中返回。除非这是一个HEAD请求，否则响应的实体中应当包含指向新的URI的超链接及简短说明。注意：许多HTTP/1.1版以前的浏览器不能正确理解303状态。如果需要考虑与这些浏览器之间的互动，302状态码应该可以胜任，因为大多数的浏览器处理302响应时的方式恰恰就是上述规范要求客户端处理303响应时应当做的。 304 Not Modified如果客户端发送了一个带条件的GET请求且该请求已被允许，而文档的内容（自上次访问以来或者根据请求的条件）并没有改变，则服务器应当返回这个状态码。304响应禁止包含消息体，因此始终以消息头后的第一个空行结尾。该响应必须包含以下的头信息：Date，除非这个服务器没有时钟。假如没有时钟的服务器也遵守这些规则，那么代理服务器以及客户端可以自行将Date字段添加到接收到的响应头中去（正如RFC 2068中规定的一样），缓存机制将会正常工作。ETag和／或Content-Location，假如同样的请求本应返回200响应。Expires, Cache-Control，和／或Vary，假如其值可能与之前相同变量的其他响应对应的值不同的话。假如本响应请求使用了强缓存验证，那么本次响应不应该包含其他实体头；否则（例如，某个带条件的GET请求使用了弱缓存验证），本次响应禁止包含其他实体头；这避免了缓存了的实体内容和更新了的实体头信息之间的不一致。假如某个304响应指明了当前某个实体没有缓存，那么缓存系统必须忽视这个响应，并且重复发送不包含限制条件的请求。假如接收到一个要求更新某个缓存条目的304响应，那么缓存系统必须更新整个条目以反映所有在响应中被更新的字段的值。 305 Use Proxy被请求的资源必须通过指定的代理才能被访问。Location域中将给出指定的代理所在的URI信息，接收者需要重复发送一个单独的请求，通过这个代理才能访问相应资源。只有原始服务器才能创建305响应。注意：RFC 2068中没有明确305响应是为了重定向一个单独的请求，而且只能被原始服务器建立。忽视这些限制可能导致严重的安全后果。 306 Switch Proxy在最新版的规范中，306状态码已经不再被使用。 307 Temporary Redirect请求的资源现在临时从不同的URI响应请求。由于这样的重定向是临时的，客户端应当继续向原有地址发送以后的请求。只有在Cache-Control或Expires中进行了指定的情况下，这个响应才是可缓存的。新的临时性的URI应当在响应的Location域中返回。除非这是一个HEAD请求，否则响应的实体中应当包含指向新的URI的超链接及简短说明。因为部分浏览器不能识别307响应，因此需要添加上述必要信息以便用户能够理解并向新的URI发出访问请求。如果这不是一个GET或者HEAD请求，那么浏览器禁止自动进行重定向，除非得到用户的确认，因为请求的条件可能因此发生变化。 4xx客户端错误这类的状态码代表了客户端看起来可能发生了错误，妨碍了服务器的处理。除非响应的是一个HEAD请求，否则服务器就应该返回一个解释当前错误状况的实体，以及这是临时的还是永久性的状况。这些状态码适用于任何请求方法。浏览器应当向用户显示任何包含在此类错误响应中的实体内容。如果错误发生时客户端正在传送数据，那么使用TCP的服务器实现应当仔细确保在关闭客户端与服务器之间的连接之前，客户端已经收到了包含错误信息的数据包。如果客户端在收到错误信息后继续向服务器发送数据，服务器的TCP栈将向客户端发送一个重置数据包，以清除该客户端所有还未识别的输入缓冲，以免这些数据被服务器上的应用程序读取并干扰后者。 400 Bad Request由于包含语法错误，当前请求无法被服务器理解。除非进行修改，否则客户端不应该重复提交这个请求。 401 Unauthorized当前请求需要用户验证。该响应必须包含一个适用于被请求资源的WWW-Authenticate信息头用以询问用户信息。客户端可以重复提交一个包含恰当的Authorization头信息的请求。如果当前请求已经包含了Authorization证书，那么401响应代表着服务器验证已经拒绝了那些证书。如果401响应包含了与前一个响应相同的身份验证询问，且浏览器已经至少尝试了一次验证，那么浏览器应当向用户展示响应中包含的实体信息，因为这个实体信息中可能包含了相关诊断信息。参见RFC 2617。 402 Payment Required该状态码是为了将来可能的需求而预留的。 403 Forbidden服务器已经理解请求，但是拒绝执行它。与401响应不同的是，身份验证并不能提供任何帮助，而且这个请求也不应该被重复提交。如果这不是一个HEAD请求，而且服务器希望能够讲清楚为何请求不能被执行，那么就应该在实体内描述拒绝的原因。当然服务器也可以返回一个404响应，假如它不希望让客户端获得任何信息。 404 Not Found请求失败，请求所希望得到的资源未被在服务器上发现。没有信息能够告诉用户这个状况到底是暂时的还是永久的。假如服务器知道情况的话，应当使用410状态码来告知旧资源因为某些内部的配置机制问题，已经永久的不可用，而且没有任何可以跳转的地址。404这个状态码被广泛应用于当服务器不想揭示到底为何请求被拒绝或者没有其他适合的响应可用的情况下。 405 Method Not Allowed请求行中指定的请求方法不能被用于请求相应的资源。该响应必须返回一个Allow头信息用以表示出当前资源能够接受的请求方法的列表。鉴于PUT，DELETE方法会对服务器上的资源进行写操作，因而绝大部分的网页服务器都不支持或者在默认配置下不允许上述请求方法，对于此类请求均会返回405错误。 406 Not Acceptable请求的资源的内容特性无法满足请求头中的条件，因而无法生成响应实体。除非这是一个HEAD请求，否则该响应就应当返回一个包含可以让用户或者浏览器从中选择最合适的实体特性以及地址列表的实体。实体的格式由Content-Type头中定义的媒体类型决定。浏览器可以根据格式及自身能力自行作出最佳选择。但是，规范中并没有定义任何作出此类自动选择的标准。 407 Proxy Authentication Required与401响应类似，只不过客户端必须在代理服务器上进行身份验证。代理服务器必须返回一个Proxy-Authenticate用以进行身份询问。客户端可以返回一个Proxy-Authorization信息头用以验证。参见RFC 2617。 408 Request Timeout请求超时。客户端没有在服务器预备等待的时间内完成一个请求的发送。客户端可以随时再次提交这一请求而无需进行任何更改。 409 Conflict由于和被请求的资源的当前状态之间存在冲突，请求无法完成。这个代码只允许用在这样的情况下才能被使用：用户被认为能够解决冲突，并且会重新提交新的请求。该响应应当包含足够的信息以便用户发现冲突的源头。冲突通常发生于对PUT请求的处理中。例如，在采用版本检查的环境下，某次PUT提交的对特定资源的修改请求所附带的版本信息与之前的某个（第三方）请求向冲突，那么此时服务器就应该返回一个409错误，告知用户请求无法完成。此时，响应实体中很可能会包含两个冲突版本之间的差异比较，以便用户重新提交归并以后的新版本。 410 Gone被请求的资源在服务器上已经不再可用，而且没有任何已知的转发地址。这样的状况应当被认为是永久性的。如果可能，拥有链接编辑功能的客户端应当在获得用户许可后删除所有指向这个地址的引用。如果服务器不知道或者无法确定这个状况是否是永久的，那么就应该使用404状态码。除非额外说明，否则这个响应是可缓存的。410响应的目的主要是帮助网站管理员维护网站，通知用户该资源已经不再可用，并且服务器拥有者希望所有指向这个资源的远端连接也被删除。这类事件在限时、增值服务中很普遍。同样，410响应也被用于通知客户端在当前服务器站点上，原本属于某个个人的资源已经不再可用。当然，是否需要把所有永久不可用的资源标记为’410 Gone’，以及是否需要保持此标记多长时间，完全取决于服务器拥有者。 411 Length Required服务器拒绝在没有定义Content-Length头的情况下接受请求。在添加了表明请求消息体长度的有效Content-Length头之后，客户端可以再次提交该请求。 412 Precondition Failed服务器在验证在请求的头字段中给出先决条件时，没能满足其中的一个或多个。这个状态码允许客户端在获取资源时在请求的元信息（请求头字段数据）中设置先决条件，以此避免该请求方法被应用到其希望的内容以外的资源上。 413 Request Entity Too Large服务器拒绝处理当前请求，因为该请求提交的实体数据大小超过了服务器愿意或者能够处理的范围。此种情况下，服务器可以关闭连接以免客户端继续发送此请求。如果这个状况是临时的，服务器应当返回一个Retry-After的响应头，以告知客户端可以在多少时间以后重新尝试。 414 Request-URI Too Long请求的URI长度超过了服务器能够解释的长度，因此服务器拒绝对该请求提供服务。这比较少见，通常的情况包括：本应使用POST方法的表单提交变成了GET方法，导致查询字符串（英语：Query string）过长。重定向URI“黑洞”，例如每次重定向把旧的URI作为新的URI的一部分，导致在若干次重定向后URI超长。客户端正在尝试利用某些服务器中存在的安全漏洞攻击服务器。这类服务器使用固定长度的缓冲读取或操作请求的URI，当GET后的参数超过某个数值后，可能会产生缓冲区溢出，导致任意代码被执行[1]。没有此类漏洞的服务器，应当返回414状态码。 415 Unsupported Media Type对于当前请求的方法和所请求的资源，请求中提交的实体并不是服务器中所支持的格式，因此请求被拒绝。 ####416 Requested Range Not Satisfiable如果请求中包含了Range请求头，并且Range中指定的任何数据范围都与当前资源的可用范围不重合，同时请求中又没有定义If-Range请求头，那么服务器就应当返回416状态码。假如Range使用的是字节范围，那么这种情况就是指请求指定的所有数据范围的首字节位置都超过了当前资源的长度。服务器也应当在返回416状态码的同时，包含一个Content-Range实体头，用以指明当前资源的长度。这个响应也被禁止使用multipart/byteranges作为其Content-Type。 417 Expectation Failed在请求头Expect中指定的预期内容无法被服务器满足，或者这个服务器是一个代理服务器，它有明显的证据证明在当前路由的下一个节点上，Expect的内容无法被满足。 418 I’m a teapot本操作码是在1998年作为IETF的传统愚人节笑话, 在RFC 2324 超文本咖啡壶控制协议中定义的，并不需要在真实的HTTP服务器中定义。当一个控制茶壶的HTCPCP收到BREW或POST指令要求其煮咖啡时应当回传此错误。 421 There are too many connections from your internet address从当前客户端所在的IP地址到服务器的连接数超过了服务器许可的最大范围。通常，这里的IP地址指的是从服务器上看到的客户端地址（比如用户的网关或者代理服务器地址）。在这种情况下，连接数的计算可能涉及到不止一个终端用户。 422 Unprocessable Entity请求格式正确，但是由于含有语义错误，无法响应。 423 Locked当前资源被锁定。 424 Failed Dependency由于之前的某个请求发生的错误，导致当前请求失败，例如PROPPATCH。 425 Unordered Collection在WebDav Advanced Collections草案中定义，但是未出现在《WebDAV顺序集协议》中。 426 Upgrade Required客户端应当切换到TLS/1.0。 449 Retry With由微软扩展，代表请求应当在执行完适当的操作后进行重试。 451 Unavailable For Legal Reasons由IETF核准，代表该访问因法律的要求而被拒绝。 5xx服务器错误这类状态码代表了服务器在处理请求的过程中有错误或者异常状态发生，也有可能是服务器意识到以当前的软硬件资源无法完成对请求的处理。除非这是一个HEAD请求，否则服务器应当包含一个解释当前错误状态以及这个状况是临时的还是永久的解释信息实体。浏览器应当向用户展示任何在当前响应中被包含的实体。这些状态码适用于任何响应方法。 500 Internal Server Error服务器遇到了一个未曾预料的状况，导致了它无法完成对请求的处理。一般来说，这个问题都会在服务器的程序码出错时出现。 501 Not Implemented服务器不支持当前请求所需要的某个功能。当服务器无法识别请求的方法，并且无法支持其对任何资源的请求。 502 Bad Gateway作为网关或者代理工作的服务器尝试执行请求时，从上游服务器接收到无效的响应。 503 Service Unavailable由于临时的服务器维护或者过载，服务器当前无法处理请求。这个状况是临时的，并且将在一段时间以后恢复。如果能够预计延迟时间，那么响应中可以包含一个Retry-After头用以标明这个延迟时间。如果没有给出这个Retry-After信息，那么客户端应当以处理500响应的方式处理它。 504 Gateway Timeout作为网关或者代理工作的服务器尝试执行请求时，未能及时从上游服务器（URI标识出的服务器，例如HTTP、FTP、LDAP）或者辅助服务器（例如DNS）收到响应。注意：某些代理服务器在DNS查询超时时会返回400或者500错误。 505 HTTP Version Not Supported服务器不支持，或者拒绝支持在请求中使用的HTTP版本。这暗示着服务器不能或不愿使用与客户端相同的版本。响应中应当包含一个描述了为何版本不被支持以及服务器支持哪些协议的实体。 506 Variant Also Negotiates由《透明内容协商协议》扩展，代表服务器存在内部配置错误：被请求的协商变元资源被配置为在透明内容协商中使用自己，因此在一个协商处理中不是一个合适的重点。 507 Insufficient Storage服务器无法存储完成请求所必须的内容。这个状况被认为是临时的。 509 Bandwidth Limit Exceeded服务器达到带宽限制。这不是一个官方的状态码，但是仍被广泛使用。 510 Not Extended获取资源所需要的策略并没有被满足。 版权声明：本文为转载文章，如若使用请联系原作者。原文地址&gt;&gt;]]></content>
+      <categories>
+        <category>DEV</category>
+      </categories>
+      <tags>
+        <tag>HTTP错误码</tag>
+        <tag>HTTP</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Hexo踩坑记]]></title>
+    <url>%2F2016%2F10%2F09%2Fhexo%E8%B8%A9%E5%9D%91%E8%AE%B0%2F</url>
+    <content type="text"><![CDATA[记录一些hexo博客使用过程中的坑一.将hexo文件夹作为仓库同步到git，实现多终端编辑博客，有两个需要注意的点： 将hexo文件夹作为本地仓，push代码之后可能会有部分主题文件夹未同步，如果用git clone下载的主题包会出项该问题，因为主题文件夹本身就是一个仓库，解决办法是将themes文件夹下相应的主体文件夹中的.git文件夹删除。以后需要升级主题的时候需再次进行该操作。 将所有文件push到远程仓库之后，其他终端pull下来之后hexo命令无法使用：首先确定该终端已安装node.js，其次需要命令行（windows平台）定位到博客文件夹，执行npm install Next主题官方帮助文档 二.将博客托管到Coding，加速国内访问速度：申请ssh密钥对可以与之前Github生成的公用一对，一般位于./user/.ssh文件夹之下 生成方法：1.安装git的前提下，打开Git bash；2.ssh-keygen -t rsa -C &quot;username@coding.net&quot;,之后需要输入密码，然后生成一对密钥（id_rsa和id_rsa.pub）3.将id_rsa.pub公钥复制到Coding的ssh添加密钥处即可；4.验证ssh -T git@git.coding.net,如果返回Hello username! You&#39;ve connected to Coding.net via SSH successfully!说明成功啦！5.在hexo文件夹下打开_config.yml文件，添加Coding即可：1234deploy: type: git repo: coding: git@git.coding.net:username/username.git 6.注意：Coding创建跟用户名同名的项目名称时，才能直接访问username.coding.me]]></content>
+      <categories>
+        <category>代码相关</category>
+      </categories>
+      <tags>
+        <tag>DEV</tag>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[国庆从化阿婆六观星作业]]></title>
+    <url>%2F2016%2F10%2F08%2F%E5%9B%BD%E5%BA%86%E4%BB%8E%E5%8C%96%E9%98%BF%E5%A9%86%E5%85%AD%E8%A7%82%E6%98%9F%E4%BD%9C%E4%B8%9A%2F</url>
+    <content type="text"><![CDATA[写在前面1.十月六号晚上七点到十二点大山中徒步四个小时，想来格外酸爽。第二天下午徒步两个小时尚可。2.广东的天气预报从来不能相信，傍晚下雨，一整晚乌云，不是很幸运。3.第二天也是下雨天，但是好在遇到很热心的人。 时间轴： 时间 事项 备注 10-05 14:30 深圳到从化汽车 途径福永汽车站和沙井汽车站，最佳方式是从11号线到沙井 10-05 17:30 三个小时到达从化汽车站 中间出深圳耗时一个小时，增城堵车 10-05 19:00 一个多小时到达森林公园 从化到吕明方向，本打算在良口镇下车，发现很荒凉，遂决定森林公园下车 10-05 19:00 摩的谈价失败，开始徒步进山 白天价格应该在20左右，19km左右（到阿婆六），要价50，免谈 10-05 20:00 第一阶段山路，较为平坦 距离大概6km左右，在正式进入人烟稀少山路路口下雨，遂在一家农家乐吃饭；一个人一道尖椒炒蛋一份花生米一瓶百威吃了一个小时 10-05 21:00 雨停，进入偏僻山区 道路漆黑（手机照明），两侧竹林密布，雾气浓重，能见度5m左右，水流溪涧，细思极恐；偶有虫鸟动物，不寒而栗…… 10-05 22:30 决策 沿途设置四个下撤点（沿途的农家乐），至少能在有灯光且相对安全的地方调整状态，擦汗补水，到达目的地阿婆六8km，到溪头村1km左右，最后还是决定到阿婆六 10-05 12:00 最累最恐怖的一段 从溪头村岔口开始几乎没有路灯，山路多弯切很陡，体能消耗比较大，雾气更加严重，之前的路跟妹子聊天，此时妹子已经睡觉，遂听歌减恐惧感~在临近阿婆六（后来才知道）的时候给挚友打电话情绪明朗，很快就到达阿婆六 10-06 00:00 到达阿婆六情况 天空乌云密布，不见星辰，四处犬吠此起彼伏，村落建筑10座左右，甚小，觅露营地未果，遂在村头阿婆六农庄（免费广告了~）落脚，去的时候已经很晚，所以100RMB。房间还算不错比快捷酒店稍差，但已经很不错了。让我惊喜的是这家店的天台可以上去，大概六层楼的样子，晚上在这里拍星星到四点钟，还订了六点的闹钟打算看日出（结构起来是阴天）。天气好的话是个很不错的看星星的地方，有机会下一次去。 20-06 12:00 吃早餐和午餐然后启程 起床的时候已经是中午的时候，吃过午餐之后在村子里简单徘徊之后就徒步启程~ 10-06 14:30 徒步一个半钟到千泷沟瀑布 门票68（超级超级超级坑，不值得浪费时间），好在里面遇到了一对夫妇 10-06 15:30 启程去森里公园 路上遇到之前说的那一对夫妇，看我可怜把我捡了，骚红的Q5一路往增城进发~三个小时左右到增城新塘镇司机车品不错，开得很慢。到达新塘之后特意开车送我到汽车站，这年头遇到如此好心的真是难得，再次感谢~~ 10-06 17:00 新塘到深圳福田汽车站 票价59，两个小时的车程，下车已然腿脚不适~~好在到深圳了！！！ 见闻 在阿婆六的时候有一个老式的房屋群-刘屋，在里面遇到一位可爱的老阿婆，给阿婆拍了几张照片： 2.遇到了装B的老母鸡or老公鸡？ 3.沿途的小瀑布： 4.坑人的大瀑布： 5.阿婆六农庄天台….]]></content>
+      <categories>
+        <category>攻略</category>
+      </categories>
+      <tags>
+        <tag>旅行</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[从化溪头村徒步观星]]></title>
+    <url>%2F2016%2F10%2F05%2F%E4%BB%8E%E5%8C%96%E6%BA%AA%E5%A4%B4%E6%9D%91%E5%BE%92%E6%AD%A5%E8%A7%82%E6%98%9F%2F</url>
+    <content type="text"><![CDATA[一起去邂逅星星~~从化阿婆六观星功课正是祖国母亲的生日，朋友圈看朋友发的银河，惊叹于大自然的同时不禁吐槽：深圳根本没有星星….于是乎当天夜里就去宝安机场附近的海边去尝试拍星星，才意识到不夜城名副其实。搜索引擎搜索广东观星出来的结果中最多的是两个地方：从化阿婆六和梅州阴那山，于是就有了这篇功课的由来。 阿婆六：部分地图中会试用阿婆绿和亚婆六，意思大致相同，是广州市海拔最高的自然村，海拔650+，位于从化溪河森林公园东南方县（3km左右），由于较少的光污染和较高的海拔（能见度）成为广州的观星圣地。 梅州阴那山：由于天气原因(可能是台风鲇鱼的影响)不在考虑范围之内，暂无介绍。 线路规划： 始发站：深圳市宝安汽车站(1). 去往从化方向发车时间：9:10、12:40、16:40；(2). 票价￥80；(3). 三个小时车程；时间数据来自互联网，以实际时间为准 从化汽车站到良口镇：(1). 时间未知；(2). 车程一个半小时左右；(3). 费用未知。 良口镇到阿婆六：(1). 打车(2). 费用未知。 溪头村到阿婆六徒步：(1). 徒步距离在20km左右；(2). 具体视情况而定。 物品准备： 衣着：(1). 运动鞋、运动裤、速干衣、泳衣、羽绒服 器材：(1). 单反+1镜头+遥控器；(2). 三脚架；(3). 手电。 食物：(1). 矿泉水+功能饮料1.5L左右；(2). 压缩饼干+面包；(3). 榨菜；(4). 消遣零食。(5). 烟+火。 电子产品：(1). 移动电源；(2). 手机+备用机；(3). kindle不想带 MSIC：(1). 现金若干；(2). 各种证件。 天马座流星雨：每年的10月初刚好是天龙座流星雨的活动期，高峰期在8-10号左右，希望能有好运气~~~ 地图信息：]]></content>
+      <categories>
+        <category>在路上</category>
+      </categories>
+      <tags>
+        <tag>旅行</tag>
+        <tag>攻略</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Android自动化测试-Monkey性能测试]]></title>
+    <url>%2F2016%2F10%2F05%2FAndroid%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95-Monkey%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95%2F</url>
+    <content type="text"><![CDATA[一、Monkey简介 Android的SDK 里面，Monkey的tools是一个命令行工具，当连接Android设备时，只要在命令行里输入相应命令就能运行tools，Monkey在Android文件系统中的存放路径为/system/framework/monkey.jar； Monkey.jar程序是由一个名为“monkey”的Shell脚本来启动执行，shell脚本在Android文件系统中 的存放路径是：/system/bin/monkey； Monkey test是一项压力测试，可以在规定的次数范围内做任何随机的操作，随机操作包括点击、滑动、Application切换、横竖屏、应用关闭等等，用户能做的操作统统可以模拟； Monkey test跑出来crash的bug等级永远为1，版本release前，Monkey跑出的结果中crash要为0。业内标准：final release前，Monkey跑完的总次数应为25W次，其结果里不允许有nullPointException出现，并注意检查是否有无响应的情况（ANR）. Monkey架构： 二、Monkey命令标准命令：abd devices 列出所有的已连接的设备（包括真机和虚拟机）adb kill-server 杀掉adb服务adb start-server 开启adb服务adb shell pm list package 列出当前连接设备上所有已安装的Appadb shell 进入shell模式，查看data/data文件夹中的安装包情况[adb shell] monkey [options] &lt;eventcount&gt;栗子：adb shell monkey -v 500 产生500次随机事件，作用与系统中所有的activity（其实也不是所有的activity，而是包含 Intent.CATEGORY_LAUNCHER 或Intent.CATEGORY_MONKEY 的activity）。 三、命令分类 常用选项：--help：打印帮助信息-v：指定打印信息的详细级别，一个 -v增加一个级别 ， 默认级别为 0 ,最高为-v -v -v 事件选项；-s：指定产生随机事件种子值，相同的种子值产生相同的事件序列。如： -s 200--throttle：每个事件结束后的间隔时间——降低系统的压力（如不指定，系统会尽快的发送事件序列）。如：--throttle 100--pct-touch：指定触摸事件的百分比，如：--pct-touch 5%相关的还有以下option：--pct-motion &lt;percent&gt; （滑动事件）--pct-trackball &lt;percent&gt; （轨迹球事件）--pct-nav &lt;percent&gt;（导航事件 up/down/left/right）--pct-majornav &lt;percent&gt; (主要导航事件 back key 、 menu key)--pct-syskeys &lt;percent&gt; (系统按键事件 Home 、Back 、startCall 、 endCall 、 volumeControl)--pct-appswitch &lt;percent&gt; （activity之间的切换）--pct-anyevent &lt;percent&gt;（任意事件） 约束选项：-p：指定有效的package（如不指定，则对系统中所有package有效），一个-p 对应一个有效package， 如：-p com.ckt -p com.ckt.asura；-c：activity必须至少包含一个指定的category，才能被启动，否则启动不了； 调试选项：--dbg-no-events：初始化启动的activity，但是不产生任何事件。为了得到最佳结果，把它与-v、一个或几个包约 束、以及一个保持Monkey运行30秒或更长时间的非零值联合起来，从而提供一个环境，可以监视应用程序所调用的包之间的转换--hprof：指定该项后在事件序列发送前后会立即生成分析报告 —— 一般建议指定该项。--ignore-crashes：忽略崩溃--ignore-timeouts：忽略超时--ignore-security-exceptions：忽略安全异常--kill-process-after-error：发生错误后直接杀掉进程--monitor-native-crashes：跟踪本地方法的崩溃问题--wait-dbg：直到连接了调试器才执行monkey测试。 四、栗子：adb shell monkey -p oct.mama -s 100 --throttle 10 --ignore-crashes --ignore-timeouts --monitor-native-crashes --pct-appswitch 30 --pct-majornav 20 --pct-nav 20 --pct-touch 20 --pct-motion 10 -v -v -v 10000 &gt; D:\monkey_log.txt 参考地址&gt;&gt;]]></content>
+      <categories>
+        <category>软件测试</category>
+      </categories>
+      <tags>
+        <tag>TEST</tag>
+        <tag>monkeyrunner</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Sublime Text安装PackageControl]]></title>
+    <url>%2F2016%2F09%2F24%2FSublime-Text%E5%AE%89%E8%A3%85PackageControl%2F</url>
+    <content type="text"><![CDATA[Markdown 是一种方便记忆、书写的纯文本标记语言,用户可以使用这些标记符号以最小的输入代价生成极富表现力的文档：譬如您正在阅读的这份文档。它使用简单的符号标记不同的标题，分割不同的段落， 粗体或者斜体某些文字; Markdown可以做什么： 整理知识，学习笔记 发布日记，杂文，所见所想 撰写发布技术文稿（代码支持） 撰写发布学术论文（LaTeX 公式支持） 作为Windows/Mac/Linux下强大的文本编辑器，st提供了对Markdown语言的支持。通过设置可实现 markdown 预览和转换功能。而本文介绍的Markdown Preview支持Mathjax语法和目录自动生成。(Windows下) 官方链接&gt;&gt;PackageControl&gt;&gt; 代码安装： `Ctrl + ‘``打开St的控制台，粘贴一下代码： SublimeText31import urllib.request,os,hashlib; h = &apos;df21e130d211cfc94d9b0905775a7c0f&apos; + &apos;1e3d39e33b79698005270310898eea76&apos;; pf = &apos;Package Control.sublime-package&apos;; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( &apos;http://packagecontrol.io/&apos; + pf.replace(&apos; &apos;, &apos;%20&apos;)).read(); dh = hashlib.sha256(by).hexdigest(); print(&apos;Error validating download (got %s instead of %s), please try manual install&apos; % (dh, h)) if dh != h else open(os.path.join( ipp, pf), &apos;wb&apos; ).write(by) SublimeText21import urllib2,os,hashlib; h = &apos;df21e130d211cfc94d9b0905775a7c0f&apos; + &apos;1e3d39e33b79698005270310898eea76&apos;; pf = &apos;Package Control.sublime-package&apos;; ipp = sublime.installed_packages_path(); os.makedirs( ipp ) if not os.path.exists(ipp) else None; urllib2.install_opener( urllib2.build_opener( urllib2.ProxyHandler()) ); by = urllib2.urlopen( &apos;http://packagecontrol.io/&apos; + pf.replace(&apos; &apos;, &apos;%20&apos;)).read(); dh = hashlib.sha256(by).hexdigest(); open( os.path.join( ipp, pf), &apos;wb&apos; ).write(by) if dh == h else None; print(&apos;Error validating download (got %s instead of %s), please try manual install&apos; % (dh, h) if dh != h else &apos;Please restart Sublime Text to finish installation&apos;) 手动安装： 点击Preferences &gt; Browse Packages菜单 返回打开目录的上一层目录，进入Installed Packages/文件夹 下载Control.sublime-package 然后复制进Installed Package 重启Sublime Text 安装markdown preview按下键Ctrl+Shift+p调出命令面板，找到Package Control: install Pakage这一项。搜索markdown preview，点击安装。 关于编辑按Ctrl + N 新建一个文档 按Ctrl + Shift + P 使用Markdown语法编辑文档语法高亮，输入ssm 后回车(Set Syntax: Markdown) 关于使用Markdown Preview较常用的功能是preview in browser和Export HTML in Sublime Text，前者可以在浏览器看到预览效果，后者可将markdown保存为html文件。 preview inbrowser据称是实时的，但是实践上还是需要在st保存，然后浏览器刷新才能看到新的效果， 好在markdown写得多的话也不需要每敲一行看一次效果。 在浏览器预览Markdown文档 按Ctrl + Shift + P 输入mp 后回车(Markdown Preview: current file in browser) 此时就可以在浏览器里看到刚才编辑的文档了; 若设置了快捷键,直接(alt+m/..)即可. 关于快捷键st支持自定义快捷键，markdown preview默认没有快捷键，我们可以自己为preview in browser设置快捷键。 方法是在Preferences -&gt; Key Bindings User打开的文件的中括号中添加以下代码(可在Key Bindings Default找到格式)： { “keys”: [“alt+m”], “command”: “markdown_preview”, “args”: { “target”: “browser”} } “alt+m”可设置为您自己喜欢的按键。 如果你这里没有看到目录而只是看到代码，说明简书不支持目录自动生成… 打印成pdf将markdown转换为pdf应该有很多种方法的。可直接用谷歌浏览器虚拟打印功能生成。利用Markdown Preview的Preview in Browser功能可以在浏览器上看到html效果。在页面右键-&gt;打印-&gt;另存为pdf-&gt;调节页边距即可将pdf文件下载下来]]></content>
+      <categories>
+        <category>DEV</category>
+      </categories>
+      <tags>
+        <tag>Sublime</tag>
+        <tag>软件</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Git踩坑记]]></title>
+    <url>%2F2016%2F09%2F24%2FGit%E7%9A%84%E4%B8%80%E4%BA%9B%E5%91%BD%E4%BB%A4%2F</url>
+    <content type="text"><![CDATA[这里存放一些个人在Git的使用过程中用到的命令。 Git删除远程仓库的文件或文件夹 需要明确的是远程仓库的文件或者文件夹是不能直接删除的，所以需要删除本地仓库的相应文件，然后在push到远程仓库。 1234git rm -r -n --cached */src/* // -n参数是展示要删除的缓存文件的列表，不会执行删除动作；cached删除的是缓存而非物理删除；git rm -r --cached */src/* // 最终执行命令git commit -m &quot;移除src目录下所有文件的版本控制&quot; // 提交git push origin master // 提交到远成仓库 git rm --f &quot;文件路径&quot;，不仅将该文件从缓存中删除，还会将物理文件删除（不会回收到垃圾桶） 若用git status命令查看，则/src/目录下文件出现在结果列表里， 我们不希望这个目录下的文件出现，则在项目根目录下，和.git 同级目录下，新建一个.gitignore文件，把.gitignore提交到远程服务器。 则/src目录就不会被提交了。 windows使用git时出现：warning: LF will be replaced by CRLF 原因分析：CRLF – Carriage-Return Line-Feed 回车换行就是回车(CR, ASCII 13, \r) 换行(LF, ASCII 10, \n)。这两个ACSII字符不会在屏幕有任何输出，但在Windows中广泛使用来标识一行的结束。而在Linux/UNIX系统中只有换行符。也就是说在windows中的换行符为 CRLF， 而在linux下的换行符为：LF使用git来生成一个rails工程后，文件中的换行符为LF， 当执行git add .时，系统提示：LF 将被转换成 CRLF 解决办法：删除.gif文件1234del .git // 或者直接去目录下删除git config --gobal core.autocrlf falsegit initgit add . git冲突解决提交代码到远程仓库：1.若存在新建文件的话不会被跟踪，需用git add file_name来纳入追踪，或者渐变用git add .2.提交代码到本地仓git commit -m &quot;commit_info&quot;，此代码能与上面代码合并git commit -am &quot;commit_info&quot; 3.将本地代码同步到远程仓git push origin master`指定分支 Git创建和合并分支 参考资料&gt;&gt;更多资料&gt;&gt; 一般默认分支为master分支，可以通过命令git checkout -b newBranch来签出当前分支并创建和进入newBranch分支；改命令等效于：12git branch devgit checkout dev]]></content>
+      <categories>
+        <category>git</category>
+      </categories>
+      <tags>
+        <tag>git</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Git关联本地仓库]]></title>
+    <url>%2F2016%2F09%2F23%2FGit%E5%85%B3%E8%81%94%E6%9C%AC%E5%9C%B0%E4%BB%93%E5%BA%93%2F</url>
+    <content type="text"><![CDATA[第一种情况：新建空的远程仓库，关联空的本地仓库；第二种情况：非空的远程仓库，关联空的本地仓库；第三种情况：非空的远程仓库，关联非空的本地仓库； 整体流程： 在github上面新建新的远程仓库； 在本地需要关联的仓库（文件夹）下建立联系； 1234567git init #初始化本地仓库git remote add origin git@github.com:yincheng0807/hexo.git # 关联本地仓库和远程仓库git pull origin master # 拉取远程仓库更新本地仓库，适合远成仓库非空的情况；git pull origin master --allow-unrelated-histories # 当远程仓库非空且本地仓库非空的情况；git add .git commit -m &quot;&quot;git push -u origin master # 第一次带-u]]></content>
+      <categories>
+        <category>DEV</category>
+      </categories>
+      <tags>
+        <tag>git</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[cnpm]]></title>
+    <url>%2F2016%2F09%2F18%2Fcnpm%2F</url>
+    <content type="text"><![CDATA[npm 和 cnpm 关系 由于npm的服务器在国外，所以在不搭梯子的情况下安装很多插件会很慢，所以在国内使用淘宝镜像是最好的。淘宝镜像&gt;&gt; 是一个完整 npmjs.org 镜像，你可以用此代替官方版本(只读)，同步频率目前为10分钟一次以保证尽量与官方服务同步。 ###安装：命令提示符执行npm install cnpm -g --registry=https://registry.npm.taobao.org ###注： 安装完后最好查看其版本号cnpm -v或关闭命令提示符重新打开，安装完直接使用有可能会出现错误;2.cnpm跟npm用法完全一致，只是在执行命令时将npm改为cnpm。]]></content>
+      <categories>
+        <category>DEV</category>
+      </categories>
+      <tags>
+        <tag>cnpm</tag>
+        <tag>npm</tag>
+        <tag>淘宝镜像</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[[Sublime text 3 build 3114注册码]]]></title>
+    <url>%2F2016%2F09%2F16%2FSublime-twxt-3-build-3114%E6%B3%A8%E5%86%8C%E7%A0%81%2F</url>
+    <content type="text"><![CDATA[Sublime 是一款很优秀的文本编辑器，虽然收费，但是可以无限试用。以下激活码来自互联网，请支持正版软件。 12345678910111213—– BEGIN LICENSE —–Michael BarnesSingle User LicenseEA7E-8213858A353C41 872A0D5C DF9B2950 AFF6F667C458EA6D 8EA3C286 98D1D650 131A97ABAA919AEC EF20E143 B361B1E7 4C8B7F04B085E65E 2F5F5360 8489D422 FB8FC1AA93F6323C FD7F7544 3F39C318 D95E6480FCCC7561 8A4A1741 68FA4223 ADCEDE07200C25BE DBBC4855 C4CFB774 C5EC138C0FEC1CEF D9DCECEC D3A5DAD1 01316C36—— END LICENSE —— 12345678910111213—– BEGIN LICENSE —–Free Communities Consultoria em Informática LtdaSingle User LicenseEA7E-801302C154C122 4EFA4415 F1AAEBCC 315F3A7D2580735A 7955AA57 850ABD88 72A1DDD88D2CE060 CF980C29 890D74F2 53131895281E324E 98EA1FEF 7FF69A12 17CA7784490862AF 833E133D FD22141D D8C89B944C10A4D2 24693D70 AE37C18F 72EF0BE51ED60704 651BC71F 16CA1B77 496A0B19463EDFF9 6BEB1861 CA5BAD96 89D0118E—— END LICENSE —— 12345678910111213—– BEGIN LICENSE —–Nicolas HennionSingle User LicenseEA7E-8660758A01AA83 1D668D24 4484AEBC 3B04512C827B0DE5 69E9B07A A39ACCC0 F95F5410729D5639 4C37CECB B2522FB3 8D37FDC172899363 BBA441AC A5F47F08 6CD3B3FECEFB3783 B2E1BA96 71AAF7B4 AFB61B1D0CC513E7 52FF2333 9F726D2C CDE53B4A810C0D4F E1F419A3 CDA0832B 8440565A35BF00F6 4CA9F869 ED10E245 469C233E—— END LICENSE —— 12345678910111213—– BEGIN LICENSE —–Anthony SansoneSingle User LicenseEA7E-87856328B9A648 42B99D8A F2E3E9E0 16DE076EE218B3DC F3606379 C33C1526 E8B58964B2CB3F63 BDF901BE D31424D2 082891B5F7058694 55FA46D8 EFC11878 0868F093B17CAFE7 63A78881 86B78E38 0F146238BAE22DBB D4EC71A1 0EC2E701 C7F9C6485CF29CA3 1CB14285 19A46991 E9A9867614FD4777 2D8A0AB6 A444EE0D CA009B54—— END LICENSE —— 12345678910111213—– BEGIN LICENSE —–Alexey PlutalovSingle User LicenseEA7E-8607763DC19CC1 134CDF23 504DC871 2DE5CE55585DC8A6 253BB0D9 637C87A2 D8D0BA85AAE574AD BA7D6DA9 2B9773F2 324C5DEF17830A4E FBCF9D1D 182406E9 F883EA87E585BBA1 2538C270 E2E857C2 194283CA7234FF9E D0392F93 1D16E021 F191491763909E12 203C0169 3F08FFC8 86D06EA873DDAEF0 AC559F30 A6A67947 B60104C6—— END LICENSE —— 12345678910111213—– BEGIN LICENSE —–Peter HallidaySingle User LicenseEA7E-8559883997BFF0 2856413A 7A555954 67069B7806D8CE12 63EAF079 AD039757 79E16D13C555AD90 465CBE53 10F6DFC4 D3A3C611411106F8 0CFEB15F 0A7BB891 111F5ED2C6AA8429 77913528 FA6291A9 B88D4550F1D6AB13 BF9153BC 91B4DFFE D296CFE0C1D8EB22 13D5F14E 75A699EC 49EDDC23D89D0F9B D240B10A A3712467 09DE7870—— END LICENSE —— 12345678910111213—– BEGIN LICENSE —–Fred ZirdungSingle User LicenseEA7E-8446726089C0EC 22936E1A 1EADEBE2 B8654BBA5C98FFA6 C0FD1599 0364779B 071C74FBEEFE9EAB 92B3D867 CD1B32FE D190269F6FC08F8F 8D24191D 32828465 942CE58EAECE5307 08B62229 D788560A 6E0AAC4B48A2D9EE 24FD8CAA 07BEBDF2 28EA86D4CCB96084 6C34CAD2 E8A04F39 3B5A3CBC3B668BB7 C94D0B4B 847D6D7F 4BC07375—— END LICENSE —— 12345678910111213—– BEGIN LICENSE —–WixelSingle User LicenseEA7E-848235103D2969 8700C7ED 8173CF61 537000C0EB3C7ECB 5E750F17 6B42B67C A190090B7669164F C6F371A8 5A1D88D5 BDD0DA70C065892B 7CC1BB2B 1C8B8C7C F08E77897C2A5241 35F86328 4C8F70D9 C023D7C211245C36 59A730DB 72BDB9A7 D5B2030490E90E72 9F08CA25 73F49C20 179D938E5BC8BEDA 13457A69 39E6265F 233767F9—— END LICENSE —— 12345678910111213—– BEGIN LICENSE —–Daniel RusselSingle User LicenseEA7E-9174209327EC62 44020C2A 45172A68 12FE13F11D22245B 680892EE F551F8EB C183D0328B4EDB4B 479CB7E4 07E42EDD A780021D56BADF42 AC05238B 023B47B1 EBA1B7DE6DF9A383 159F32AE 04EBE100 1278B1D252E81B60 C68AA2E8 F84A20BE FE7990EB5D44E4B6 16369263 1DDAACBC 280FF19E86CF4319 0B8615A8 4FF0512E B123B8EC—— END LICENSE —— 12345678910111213—– BEGIN LICENSE —–Peter ErikssonSingle User LicenseEA7E-8900688E107C71 3100D6FC 2AC805BF 9E627C7772E710D7 43392469 D06A2F5B F9304FBDF5AB4DB2 7A95F172 FE68E300 42745819E94AB2DF C1893094 ECABADC8 71FEE76420224821 3EABF931 745AF882 87AD0A4B33C6E377 0210D712 CD2B1178 82601542C7FD8098 F45D2824 BC7DFB38 F1EBD38AD7A3AFE0 96F938EA 2D90BD72 9E34CDF0—— END LICENSE —— 12345678910111213—– BEGIN LICENSE —–Ryan ClarkSingle User LicenseEA7E-8124792158A7DE B690A7A3 8EC04710 006A5EEB34E77CA3 9C82C81F 0DB6371B 79704E6F93F36655 B031503A 03257CCC 01B20F60D304FA8D B1B4F0AF 8A76C7BA 0FA94D5556D46BCE 5237A341 CD837F30 4D60772D349B1179 A996F826 90CDB73C 24D41245FD032C30 AD5E7241 4EAA66ED 167D91FB55896B16 EA125C81 F550AF6B A6820916—— END LICENSE —— Pycharm注册码（2016-11-17）12345678910111213141516171819202122232425262728293031323334353643B4A73YYJ-eyJsaWNlbnNlSWQiOiI0M0I0QTczWVlKIiwibGljZW5zZWVOYW1lIjoibGFuIHl1IiwiYXNzaWduZWVOYW1lIjoiIiwiYXNzaWduZWVFbWFpbCI6IiIsImxpY2Vuc2VSZXN0cmljdGlvbiI6IkZvciBlZHVjYXRpb25hbCB1c2Ugb25seSIsImNoZWNrQ29uY3VycmVudFVzZSI6ZmFsc2UsInByb2R1Y3RzIjpbeyJjb2RlIjoiSUkiLCJwYWlkVXBUbyI6IjIwMTctMDItMjUifSx7ImNvZGUiOiJBQyIsInBhaWRVcFRvIjoiMjAxNy0wMi0yNSJ9LHsiY29kZSI6IkRQTiIsInBhaWRVcFRvIjoiMjAxNy0wMi0yNSJ9LHsiY29kZSI6IlBTIiwicGFpZFVwVG8iOiIyMDE3LTAyLTI1In0seyJjb2RlIjoiRE0iLCJwYWlkVXBUbyI6IjIwMTctMDItMjUifSx7ImNvZGUiOiJDTCIsInBhaWRVcFRvIjoiMjAxNy0wMi0yNSJ9LHsiY29kZSI6IlJTMCIsInBhaWRVcFRvIjoiMjAxNy0wMi0yNSJ9LHsiY29kZSI6IlJDIiwicGFpZFVwVG8iOiIyMDE3LTAyLTI1In0seyJjb2RlIjoiUEMiLCJwYWlkVXBUbyI6IjIwMTctMDItMjUifSx7ImNvZGUiOiJSTSIsInBhaWRVcFRvIjoiMjAxNy0wMi0yNSJ9LHsiY29kZSI6IldTIiwicGFpZFVwVG8iOiIyMDE3LTAyLTI1In0seyJjb2RlIjoiREIiLCJwYWlkVXBUbyI6IjIwMTctMDItMjUifSx7ImNvZGUiOiJEQyIsInBhaWRVcFRvIjoiMjAxNy0wMi0yNSJ9XSwiaGFzaCI6IjMzOTgyOTkvMCIsImdyYWNlUGVyaW9kRGF5cyI6MCwiYXV0b1Byb2xvbmdhdGVkIjpmYWxzZSwiaXNBdXRvUHJvbG9uZ2F0ZWQiOmZhbHNlfQ==-keaxIkRgXPKE4BR/ZTs7s7UkP92LBxRe57HvWamu1EHVXTcV1B4f/KNQIrpOpN6dgpjig5eMVMPmo7yMPl+bmwQ8pTZaCGFuLqCHD1ngo6ywHKIQy0nR249sAUVaCl2wGJwaO4JeOh1opUx8chzSBVRZBMz0/MGyygi7duYAff9JQqfH3p/BhDTNM8eKl6z5tnneZ8ZG5bG1XvqFTqWk4FhGsEWdK7B+He44hPjBxKQl2gmZAodb6g9YxfTHhVRKQY5hQ7KPXNvh3ikerHkoaL5apgsVBZJOTDE2KdYTnGLmqxghFx6L0ofqKI6hMr48ergMyflDk6wLNGWJvYHLWw==-MIIEPjCCAiagAwIBAgIBBTANBgkqhkiG9w0BAQsFADAYMRYwFAYDVQQDDA1KZXRQcm9maWxlIENBMB4XDTE1MTEwMjA4MjE0OFoXDTE4MTEwMTA4MjE0OFowETEPMA0GA1UEAwwGcHJvZDN5MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAxcQkq+zdxlR2mmRYBPzGbUNdMN6OaXiXzxIWtMEkrJMO/5oUfQJbLLuMSMK0QHFmaI37WShyxZcfRCidwXjot4zmNBKnlyHodDij/78TmVqFl8nOeD5+07B8VEaIu7c3E1N+e1doC6wht4I4+IEmtsPAdoaj5WCQVQbrI8KeT8M9VcBIWX7fD0fhexfg3ZRt0xqwMcXGNp3DdJHiO0rCdU+Itv7EmtnSVq9jBG1usMSFvMowR25mju2JcPFp1+I4ZI+FqgR8gyG8oiNDyNEoAbsR3lOpI7grUYSvkB/xVy/VoklPCK2h0f0GJxFjnye8NT1PAywoyl7RmiAVRE/EKwIDAQABo4GZMIGWMAkGA1UdEwQCMAAwHQYDVR0OBBYEFGEpG9oZGcfLMGNBkY7SgHiMGgTcMEgGA1UdIwRBMD+AFKOetkhnQhI2Qb1t4Lm0oFKLl/GzoRykGjAYMRYwFAYDVQQDDA1KZXRQcm9maWxlIENBggkA0myxg7KDeeEwEwYDVR0lBAwwCgYIKwYBBQUHAwEwCwYDVR0PBAQDAgWgMA0GCSqGSIb3DQEBCwUAA4ICAQC9WZuYgQedSuOc5TOUSrRigMw4/+wuC5EtZBfvdl4HT/8vzMW/oUlIP4YCvA0XKyBaCJ2iX+ZCDKoPfiYXiaSiH+HxAPV6J79vvouxKrWg2XV6ShFtPLP+0gPdGq3x9R3+kJbmAm8w+FOdlWqAfJrLvpzMGNeDU14YGXiZ9bVzmIQbwrBA+c/F4tlK/DV07dsNExihqFoibnqDiVNTGombaU2dDup2gwKdL81ua8EIcGNExHe82kjF4zwfadHk3bQVvbfdAwxcDy4xBjs3L4raPLU3yenSzr/OEur1+jfOxnQSmEcMXKXgrAQ9U55gwjcOFKrgOxEdek/Sk1VfOjvS+nuM4eyEruFMfaZHzoQiuw4IqgGc45ohFH0UUyjYcuFxxDSU9lMCv8qdHKm+wnPRb0l9l5vXsCBDuhAGYD6ss+Ga+aDY6f/qXZuUCEUOH3QUNbbCUlviSz6+GiRnt1kA9N2Qachl+2yBfaqUqr8h7Z2gsx5LcIf5kYNsqJ0GavXTVyWh7PYiKX4bs354ZQLUwwa/cG++2+wNWP+HtBhVxMRNTdVhSm38AknZlD+PTAsWGu9GyLmhti2EnVwGybSD2Dxmhxk3IPCkhKAK+pl0eWYGZWG3tJ9mZ7SowcXLWDFAk0lRJnKGFMTggrWjV8GYpw5bq23VmIqqDLgkNzuoog==]]></content>
+      <categories>
+        <category>DEV</category>
+      </categories>
+      <tags>
+        <tag>DEV</tag>
+        <tag>软件</tag>
+        <tag>注册码</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Python字符串、列表、元组之间的转换]]></title>
+    <url>%2F2016%2F09%2F05%2FPython%E5%AD%97%E7%AC%A6%E4%B8%B2%E3%80%81%E5%88%97%E8%A1%A8%E3%80%81%E5%85%83%E7%BB%84%E4%B9%8B%E9%97%B4%E7%9A%84%E8%BD%AC%E6%8D%A2%2F</url>
+    <content type="text"><![CDATA[Python字符串、列表、元组之间的转换Python中能够方便的通过内建函数str()、list()、tuple()进行字符串、列表和元组之间的转换： 12345678910111213141516171819202122232425262728293031# -*- coding:utf-8 -*-m = 'Ethan's = "*"print "The type is str:", m# 字符串转列表m1 = list(m)print "str--&gt;list:",m1# 字符串转元组m2 = tuple(m)print "str--&gt;tuple:",m2m6 = list(m2)print "tuple--&gt;list:",m6m7 = tuple(m1)print "list--&gt;tuple:",m7# 列表和元组转换成字符串，需要使用join函数m3 = "".join(m1)print "list--&gt;str:",m3m4 = "".join(m2)print "euple--&gt;str:",m4m5 = s.join(m1)print "Sth. about function join:",m5 # 返回结果The type is str: Ethanstr--&gt;list: ['E', 't', 'h', 'a', 'n']str--&gt;tuple: ('E', 't', 'h', 'a', 'n')tuple--&gt;list: ['E', 't', 'h', 'a', 'n']list--&gt;tuple: ('E', 't', 'h', 'a', 'n')list--&gt;str: Ethaneuple--&gt;str: EthanSth. about function join: E*t*h*a*n Python join()方法描述Python join() 方法用于将序列中的元素以指定的字符连接生成一个新的字符串。 语法join()方法语法：str.join(sequence) 参数sequence – 要连接的元素序列。 返回值返回通过指定字符连接序列中元素后生成的新字符串。 实例以下实例展示了join()的使用方法：123#!/usr/bin/pythonstr = "-";seq = ("a", "b", "c"); # 字符串序列print str.join( seq ); 以上实例输出结果如下：a-b-c 参考文章1&gt;&gt;参考文章2&gt;&gt;]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
+      <tags>
+        <tag>DEV</tag>
+        <tag>Python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[科学上网的姿势]]></title>
+    <url>%2F2016%2F09%2F05%2F%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91-%E7%BF%BB%E5%A2%99%2F</url>
+    <content type="text"><![CDATA[科学上网的姿势搭建VPS Amazon EC2 免费一年，每个实例每个月15GB流量。教程1&gt;教程2&gt; Vultr：优惠50刀，相当于免费两个月（每个月1000GB） Google云服务器两个月免费]]></content>
+      <categories>
+        <category>代码相关</category>
+      </categories>
+      <tags>
+        <tag>DEV</tag>
+        <tag>科学上网</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[用七牛做图床]]></title>
+    <url>%2F2016%2F09%2F05%2F%E7%94%A8%E4%B8%83%E7%89%9B%E5%81%9A%E5%9B%BE%E5%BA%8A%2F</url>
+    <content type="text"><![CDATA[写在前面 笔者近期在使用简书、Leanote等写字工具的时候添加图片时有一些小小的想法，首先这些写字工具能够支持把图片上传到它们自己的服务器，但是图片没法集中管理，因此使用图床是一个不错的选择。 图床当然是稳定最好，要不然哪一天服务器炸了你的宝贵的图片都丢失啦，那该多心疼啊；之前百度云可以通过生成的外链修改之后用做图床，但是不稳定，相比较其他免费的图床空间，七牛会是不错的选择。 简要步骤 点我注册^_^ 创建空间：所有的内容都需要上传到空间中 上传一张图片 生成图片外链 写在后面 到这里就已经能够快乐玩耍啦，欢迎评论测试 O(∩_∩)O哈哈~ 七牛还提供了很多工具，支持众多主流语言。]]></content>
+      <categories>
+        <category>代码相关</category>
+      </categories>
+      <tags>
+        <tag>DEV</tag>
+        <tag>图床</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Windows下配置Python和pip]]></title>
+    <url>%2F2016%2F09%2F05%2FWindows%E4%B8%8B%E9%85%8D%E7%BD%AEPython%E5%92%8Cpip%2F</url>
+    <content type="text"><![CDATA[Windows下配置Python和pipPython官方下载地址&gt;&gt;pip官方下载地址&gt;&gt;]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
+      <tags>
+        <tag>DEV</tag>
+        <tag>Python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Python列表]]></title>
+    <url>%2F2016%2F09%2F05%2F%E8%BD%AC-Python%E5%88%97%E8%A1%A8%2F</url>
+    <content type="text"><![CDATA[声明：本文非原创，若涉及版权问题请联系原作者. 基本操作： 创建列表sample_list = [&#39;a&#39;,1,(&#39;a&#39;,&#39;b&#39;),[a,1]]列表中元素支持任何类型的数据 得到列表中的某一个值value_start = sample_list[0] 获取列表中的第一个元素end_value = sample_list[-1] 获取列表中的最后一个元素 删除列表的第一个值del sample_list[0] 在列表中插入一个值sample_list[0:0] = [&#39;sample value&#39;]将sample value插入到第一个位置sample_list[0:2] = [&#39;sample value&#39;]将sample value插入到第一个到第二的位置（第一和第二的位置替换成sample value）；[n:m]其中n代表插入的元素开始的索引位置，m&gt;n的时候，指从第n+1到m位由改元素代替 得到列表的长度list_length = len(sample_list)列表遍历12for element in sample_list: print(element) 本人测试时，element为任意字符串均可打印整个列表中的元素 Python 列表高级操作/技巧 产生一个数值递增列表 12num_inc_list = range(30)#will return a list [0,1,2,...,29] 用某个固定值初始化列表 12345initial_value = 0list_length = 5sample_list = [ initial_value for i in range(10)]sample_list = [initial_value]*list_length# sample_list ==[0,0,0,0,0] 附：python内置类型1、list：列表（即动态数组，C++标准库的vector，但可含不同类型的元素于一个list中）a = [&quot;I&quot;,&quot;you&quot;,&quot;he&quot;,&quot;she&quot;] ＃元素可为任何类型。 下标：按下标读写，就当作数组处理以0开始，有负下标的使用0第一个元素，-1最后一个元素，-len第一个元 素，len-1最后一个元素取list的元素数量len(list) #list的长度。实际该方法是调用了此对象的__len__(self)方法。 创建连续的listL = range(1,5) #即 L=[1,2,3,4],不含最后一个元素L = range(1, 10, 2) #即 L=[1, 3, 5, 7, 9] list的方法 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071L.append(var) #追加元素L.insert(index,var)L.pop(var) #返回最后一个元素，并从list中删除之L.remove(var) #删除第一次出现的该元素L.count(var) #该元素在列表中出现的个数L.index(var) #该元素的位置,无则抛异常 L.extend(list) #追加list，即合并list到L上L.sort() #排序newlist = sorted(L) #不对原列表进行排序，而是产生排序后的一个新的列表L.reverse() #倒序list 操作符:,+,*，关键字dela[1:] #片段操作符，用于子list的提取[1,2]+[3,4] #为[1,2,3,4]。同extend()[2]*4 #为[2,2,2,2]del L[1] #删除指定下标的元素del L[1:3] #删除指定下标范围的元素list的复制L1 = L #L1为L的别名，用C来说就是指针地址相同，对L1操作即对L操作。函数参数就是这样传递的L1 = L[:] #L1为L的克隆，即另一个拷贝。 list comprehension [ &lt;expr1&gt; for k in L if &lt;expr2&gt; ]``` ###2、dictionary： 字典（即C++标准库的map）`dict = &#123;'ob1':'computer', 'ob2':'mouse', 'ob3':'printer'&#125;`每一个元素是pair，包含key、value两部分。key是Integer或string类型，value 是任意类型。键是唯一的，字典只认最后一个赋的键值。* dictionary的方法```pythonD.get(key, 0) #同dict[key]，多了个没有则返回缺省值，0。[]没有则抛异常D.has_key(key) #有该键返回TRUE，否则FALSED.keys() #返回字典键的列表D.values()D.items()D.update(dict2) #增加合并字典D.popitem() #得到一个pair，并从字典中删除它。已空则抛异常D.clear() #清空字典，同del dictD.copy() #拷贝字典D.cmp(dict1,dict2) #比较字典，(优先级为元素个数、键大小、键值大小) #第一个大返回1，小返回-1，一样返回0 ``` * dictionary的复制`dict1 = dict #别名``dict2=dict.copy() #克隆，即另一个拷贝。`### 3、tuple：元组（即常量数组）`tuple = ('a', 'b', 'c', 'd', 'e')`可以用list的 [],:操作符提取元素。就是不能直接修改元素。### 4、string： 字符串（即不能修改的字符list）`str = "Hello My friend"`字符串是一个整体。如果你想直接修改字符串的某一部分，是不可能的。但我们能够读出字符串的某一部分。子字符串的提取`str[:6]`字符串包含 判断操作符：in，not in`"He" in str``"she" not in str`* string模块，还提供了很多方法，如```pythonS.find(substring, [start [,end]]) #可指范围查找子串，返回索引值，否则返回-1S.rfind(substring,[start [,end]]) #反向查找S.index(substring,[start [,end]]) #同find，只是找不到产生ValueError异常S.rindex(substring,[start [,end]])#同上反向查找S.count(substring,[start [,end]]) #返回找到子串的个数S.lowercase()S.capitalize() #首字母大写S.lower() #转小写S.upper() #转大写S.swapcase() #大小写互换S.split(str, ' ') #将string转list，以空格切分S.join(list, ' ') #将list转string，以空格连接 处理字符串的内置函数 1234len(str) #串长度cmp("my friend", str) #字符串比较。第一个大，返回1max('abcxyz') #寻找字符串中最大的字符min('abcxyz') #寻找字符串中最小的字符 string的转换 12345float(str) #变成浮点数，float("1e-1") 结果为0.1int(str) #变成整型， int("12") 结果为12int(str,base) #变成base进制整型数，int("11",2) 结果为2long(str) #变成长整型，long(str,base) #变成base进制长整型， 字符串的格式化（注意其转义字符，大多如C语言的，略） 123str_format % (参数列表) #参数列表是以tuple的形式定义的，即不可运行中改变&gt;&gt;&gt;print ""%s's height is %dcm" % ("My brother", 180) #结果显示为 My brother's height is 180cm list 和 tuple 的相互转化tuple(ls)list(ls)]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
+      <tags>
+        <tag>DEV</tag>
+        <tag>Python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[iPhone5s-A1528]]></title>
+    <url>%2F2016%2F08%2F09%2FiPhone5s-A1528%E6%94%AF%E6%8C%81%E8%81%94%E9%80%9A4G%2F</url>
+    <content type="text"><![CDATA[注意：a) 此次提供的ipcc和上次推荐的最大区别是对iOS 9.3.1版本的支持！b) 此次刷入ipcc后需要重启后才可生效！c) 小编亲测支持 iOS9.0/iOS 9.2.1/iOS 9.3.1!!! 具体操作步骤：1. 下载运营商配置文件iPhone上的运营商配置文件为ipcc后缀，通过iTunes直接可以刷入（免越狱）；需要下载的ipcc配置文件有两个（点击下方“阅读原文”下载）：[图片上传中。。。（1）]2. 准备iTunes环境第一步： 安装iTunes，最好是最新版。苹果官网的链接： http://www.apple.com/cn/itunes/download/如果你32位win系统，就装32位iTunes；64位win系统装64位iTunes；Mac系统自己带了iTunes。第二步：需要允许你的iTunes可以加载ipcc文件。本操作在当前电脑只需执行一次就够了，之后一直有效。重新安装或升级iTunes可能需要再来一遍。下面的命令执行完毕后，不会有任何提示。反而出错的话会有提示，一般是iTunes路径不对。windows32位的用户：首先请打开命令提示符。然后完整复制下方代码（含引号），回车执行。如果之前iTunes安装到非C盘的话，自己改盘符。“C:\Program Files\iTunes\iTunes.exe” /setPrefInt carrier-testing 1*windows 64位的用户：首先请打开命令提示符。然后完整复制下方代码（含引号），回车执行。如果之前iTunes安装到非C盘的话，自己改盘符 “C:\Program Files\iTunes\iTunes.exe” /setPrefInt carrier-testing 1 MacOS用户：*请打开Terminal终端。然后完整复制下方代码，回车执行。defaults write com.apple.itunes carrier-testing -bool true如果不行，请换下面一种代码执行。defaults write com.apple.iTunes carrier-testing -bool YES 3：刷入IPCC**先打开itunes，连上你的iPhone或者iPad。选择好当前已经连接的设备。Windows用户按住shift键的同时，用鼠标选择“更新”。Mac用户需要按住Option键的同时，用鼠标选择“更新”小编用的是Mac，按住Option点更新，打开Finder如下：[图片上传中。。。（3）]先打开1.ipcc，上传第一个运营商设置文件；然后再次按住Option点更新，打开1526_1528.ipcc，上传第二个运营商设置文件。更新完运营商设置文件后，一定要重启手机~4. 验证结果重启后，状态栏显示英文的“CHN-UNICOM”和“LTE”图标 补充说明一下：如果你手机还连接着电脑，或以后插入电脑启动iTunes的时候，你可能会在电脑和手机上同时看到下面的提示，请不要选择更新！！！否则以上步骤请重来一遍~~ 下载地址&gt;&gt;]]></content>
+      <categories>
+        <category>代码相关</category>
+      </categories>
+      <tags>
+        <tag>DEV</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Http协议札记]]></title>
+    <url>%2F2016%2F08%2F09%2FHttp%E5%8D%8F%E8%AE%AE%E6%9C%AD%E8%AE%B0%2F</url>
+    <content type="text"><![CDATA[Http协议札记Http协议简介： 属于应用层面面向对象的协议；]]></content>
+      <categories>
+        <category>代码相关</category>
+      </categories>
+      <tags>
+        <tag>DEV</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Android自动化测试-MonkeyRunner功能自动化]]></title>
+    <url>%2F2016%2F08%2F05%2FAndroid%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95-MonkeyRunner%E5%8A%9F%E8%83%BD%E8%87%AA%E5%8A%A8%E5%8C%96%2F</url>
+    <content type="text"><![CDATA[占坑：引用原文前言：最近开始研究Android自动化测试方法，对其中的一些工具、方法和框架做了一些简单的整理，其中包括android测试框架、CTS、Monkey、Monkeyrunner、benchmark、其它test tool等等。因接触时间很短，很多地方有不足之处，希望能和大家多多交流。 一、什么是monkeyrunnermonkeyrunner工具提供了一个API，使用此API写出的程序可以在Android代码之外控制Android设备和模拟器。通过monkeyrunner，您可以写出一个Python程序去安装一个Android应用程序或测试包，运行它，向它发送模拟击键，截取它的用户界面图片，并将截图存储于工作站上。monkeyrunner工具的主要设计目的是用于测试功能/框架水平上的应用程序和设备，或用于运行单元测试套件，但您当然也可以将其用于其它目的。 二、monkeyrunner工具同Monkey工具的差别Monkey：Monkey工具直接运行在设备或模拟器的adb shell中，生成用户或系统的伪随机事件流。monkeyrunner：monkeyrunner工具则是在工作站上通过API定义的特定命令和事件控制设备或模拟器。三、monkeyrunner的测试类型1、多设备控制：monkeyrunner API可以跨多个设备或模拟器实施测试套件。您可以在同一时间接上所有的设备或一次启动全部模拟器（或统统一起），依据程序依次连接到每一个，然后运行一个或多个测试。您也可以用程序启动一个配置好的模拟器，运行一个或多个测试，然后关闭模拟器。2、 功能测试： monkeyrunner可以为一个应用自动贯彻一次功能测试。您提供按键或触摸事件的输入数值，然后观察输出结果的截屏。3、 回归测试：monkeyrunner可以运行某个应用，并将其结果截屏与既定已知正确的结果截屏相比较，以此测试应用的稳定性。4、 可扩展的自动化：由于monkeyrunner是一个API工具包，您可以基于Python模块和程序开发一整套系统，以此来控制Android设备。除了使用monkeyrunner API之外，您还可以使用标准的Python os和subprocess模块来调用Android Debug Bridge这样的Android工具。四、运行monkeyrunner您可以直接使用一个代码文件运行monkeyrunner，抑或在交互式对话中输入monkeyrunner语句。不论使用哪种方式，您都需要调用SDK目录的tools子目录下的monkeyrunner命令。如果您提供一个文件名作为运行参数，则monkeyrunner将视文件内容为Python程序，并加以运行；否则，它将提供一个交互对话环境。monkeyrunner的命令语法为：monkeyrunner -plugin]]></content>
+      <categories>
+        <category>软件测试</category>
+      </categories>
+      <tags>
+        <tag>TEST</tag>
+        <tag>monkeyrunner</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[npm设置镜像站]]></title>
+    <url>%2F2016%2F08%2F05%2Fnpm%E8%AE%BE%E7%BD%AE%E9%95%9C%E5%83%8F%E7%AB%99%2F</url>
+    <content type="text"><![CDATA[淘宝镜像：http://npm.taobao.org/ 通过config命令 config set registrynpm info underscore```123（如果上面配置正确这个命令会有字符串response）* 命令行指定```npm --registry https://registry.npm.taobao.org info underscore 编辑 ~/.npmrc,加入下面内容：registry = https://registry.npm.taobao.org(推荐使用，一次配置，一劳永逸。)]]></content>
+      <categories>
+        <category>代码相关</category>
+      </categories>
+      <tags>
+        <tag>DEV</tag>
+        <tag>npm</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Jmeter性能测试-并发量计算]]></title>
+    <url>%2F2016%2F08%2F05%2FJmeter%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95-%E5%B9%B6%E5%8F%91%E9%87%8F%E8%AE%A1%E7%AE%97%2F</url>
+    <content type="text"></content>
+      <categories>
+        <category>软件测试</category>
+      </categories>
+      <tags>
+        <tag>TEST</tag>
+        <tag>Jmeter</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Jmeter资源汇总]]></title>
+    <url>%2F2016%2F08%2F05%2FJmeter%E8%B5%84%E6%BA%90%E6%B1%87%E6%80%BB%2F</url>
+    <content type="text"><![CDATA[下面是一些链接地址，都与Jmeter相关 Jmeter下载&gt;&gt;Jmeter插件下载&gt;&gt; 函数助手对话框的使用： 响应断言 断言教程1&gt;&gt; 断言教程2&gt;&gt; 监视器配置 检测tomcat性能 监视器配置&gt;&gt; 多并发多并发&gt;&gt; 很多教程&gt;&gt;很多教程&gt;&gt;很多教程&gt;&gt;很多教程&gt;&gt;]]></content>
+      <categories>
+        <category>软件测试</category>
+      </categories>
+      <tags>
+        <tag>TEST</tag>
+        <tag>Jmeter</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Fiddler札记]]></title>
+    <url>%2F2016%2F07%2F09%2FFiddler%E6%9C%AD%E8%AE%B0%2F</url>
+    <content type="text"><![CDATA[Fiddler札记 关于Fiddler： Fiddler的简单配置Fiddler的界面简介Fiddler的状态图标Fiddler进阶： 使用fiddler拦截特定host和请求类型的请求：点击菜单栏的Rules -&gt; Customize rules, 进入fiddler scriptEditor脚本文件（没有安装的会进入安装界面），安装完后再次进入, 在OnBeforeRequest这个方法里面加上一句话：123if (oSession.HostnameIs(&quot;admin.upsurge.huigoumai.com&quot;) &amp;&amp; oSession.HTTPMethodIs(&quot;POST&quot;)) &#123; oSession[&quot;x-breakrequest&quot;] = &quot;true&quot;; &#125; 官方文档&gt;&gt;]]></content>
+      <categories>
+        <category>软件测试</category>
+      </categories>
+      <tags>
+        <tag>DEV</tag>
+        <tag>Fiddler</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Fiddler弱网模拟]]></title>
+    <url>%2F2016%2F07%2F08%2F%E4%BD%BF%E7%94%A8Fiddler%E8%BF%9B%E8%A1%8C%E5%BC%B1%E7%BD%91%E6%A8%A1%E6%8B%9F%2F</url>
+    <content type="text"><![CDATA[使用Fiddler进行弱网模拟 在开发和测试中或多或少会考虑产品在弱网情况下的表现；针对不同的平台，有不同的弱网模拟方案。 弱网模拟： H5：直接使用Chrome的弱网模拟功能； iOS：使用花瓶； Android等：Fiddler；今天主要说Fiddler 使用Fiddler进行弱网模拟： 打开Fiddler，点击Rules–&gt;点击Customize Rules;(或者Ctrl+R) Ctrl+F组合键调出搜索对话框，键入simulate进行搜索，找到如下代码框：if (m_SimulateModem) { // Delay sends by 300ms per KB uploaded. oSession[&quot;request-trickle-delay&quot;] = &quot;100&quot;; // Delay receives by 150ms per KB downloaded. oSession[&quot;response-trickle-delay&quot;] = &quot;100&quot;; 修改其中的数字，已达到限定不同网速的效果。数字的含义为每KB数据所需要的时间（ms） 打开弱网模拟功能：点击Rules（或者Alt+R）；点击Performance–&gt;点击Simulate Modem Speeds，完成弱网模拟功能的打开。 前置条件：能够使用Fiddler代理。]]></content>
+      <categories>
+        <category>代码相关</category>
+      </categories>
+      <tags>
+        <tag>DEV</tag>
+        <tag>Fiddler</tag>
+        <tag>弱网模拟</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Android分辨率知识]]></title>
+    <url>%2F2016%2F07%2F07%2FAndroid%E6%89%8B%E6%9C%BA%E5%88%86%E8%BE%A8%E7%8E%87%EF%BC%88xhdpi%E3%80%81xxhdpi%EF%BC%89%2F</url>
+    <content type="text"><![CDATA[Android手机分辨率： 4:3 代号 分辨率 VGA 640*480(Video Graphics Array) QVGA 320*240 (Quarter VGA) HVGA 480*320 (Half-size VGA) SVGA 800*600 (Super VGA) 5:3 代号 分辨率 WVGA 800*480 (Wide VGA) 16:9 代号 分辨率 FWVGA 854*480 (Full Wide VGA) HD 1920*1080 High Definition QHD 960*540 720p 1280*720 标清 1080p 1920*1080 高清 手机: 手机型号 分辨率 iphone 4/4s 960*640 (3:2) iphone5 1136*640 小米1 854*480(FWVGA) 小米2 1280*720 分辨率对应DPI 代号 Android代码 HVGA mdpi WVGA hdpi FWVGA hdpi QHD hdpi 720P xhdpi 1080P xxhdpi 原文地址&gt;&gt;]]></content>
+      <categories>
+        <category>代码相关</category>
+      </categories>
+      <tags>
+        <tag>DEV - Android</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Android分辨率小知识]]></title>
+    <url>%2F2016%2F07%2F06%2FAndroid%E5%88%86%E8%BE%A8%E7%8E%87%E5%B0%8F%E7%9F%A5%E8%AF%86%2F</url>
+    <content type="text"><![CDATA[以下内容为转载，涉及版权问题请联系原文作者。原文地址&gt;&gt; 不少设计师和工程师都被安卓设备纷繁的屏幕搞得晕头转向，我既做UI设计，也做过一点安卓界面布局，刚好对这块内容比较熟悉，也曾在公司内部做过相关的讲座，在此，我将此部分知识重新梳理出来分享给大家！ 1、了解几个概念（1）分辨率。分辨率就是手机屏幕的像素点数，一般描述成屏幕的“宽×高”，安卓手机屏幕常见的分辨率有480×800、720×1280、1080×1920等。720×1280表示此屏幕在宽度方向有720个像素，在高度方向有1280个像素。（2）屏幕大小。屏幕大小是手机对角线的物理尺寸，以英寸（inch）为单位。比如某某手机为“5寸大屏手机”，就是指对角线的尺寸，5寸×2.54厘米/寸=12.7厘米。（3）密度（dpi，dots per inch；或PPI，pixels per inch）。从英文顾名思义，就是每英寸的像素点数，数值越高当然显示越细腻。假如我们知道一部手机的分辨率是1080×1920，屏幕大小是5英寸，你能否算出此屏幕的密度呢？哈哈，中学的勾股定理派上用场啦！通过宽1080和高1920，根据勾股定理，我们得出对角线的像素数大约是2203，那么用2203除以5就是此屏幕的密度了，计算结果是440。440dpi的屏幕已经相当细腻了。 2、实际密度与系统密度尚未发现他处使用“实际密度”和“系统密度”这两个词汇，暂时由我如此定义吧。“实际密度”就是我们自己算出来的密度，这个密度代表了屏幕真实的细腻程度，如上述例子中的440dpi就是实际密度，说明这块屏幕每寸有440个像素。5英寸1080×1920的屏幕密度是440，而相同分辨率的4.5英寸屏幕密度是490。如此看来，屏幕密度将会出现很多数值，呈现严重的碎片化。而密度又是安卓屏幕将界面进行缩放显示的依据，那么安卓是如何适配这么多屏幕的呢？其实，每部安卓手机屏幕都有一个初始的固定密度，这些数值是120、160、240、320、480，我们权且称为“系统密度”。大家发现规律没有？相隔数值之间是2倍的关系。一般情况下，240×320的屏幕是低密度120dpi，即ldpi；320×480的屏幕是中密度160dpi，即mdpi；480×800的屏幕是高密度240dpi，即hdpi；720×1280的屏幕是超高密度320dpi，即xhdpi；1080×1920的屏幕是超超高密度480dpi，即xxhdpi。安卓对界面元素进行缩放的比例依据正是系统密度，而不是实际密度。 3、一个重要的单位dpdp也可写为dip，即density-independent pixel。你可以想象dp更类似一个物理尺寸，比如一张宽和高均为100dp的图片在320×480和480×800的手机上“看起来”一样大。而实际上，它们的像素值并不一样。dp正是这样一个尺寸，不管这个屏幕的密度是多少，屏幕上相同dp大小的元素看起来始终差不多大。另外，文字尺寸使用sp，即scale-independentpixel的缩写，这样，当你在系统设置里调节字号大小时，应用中的文字也会随之变大变小。 4、dp与px的转换在安卓中，系统密度为160dpi的中密度手机屏幕为基准屏幕，即320×480的手机屏幕。在这个屏幕中，1dp=1px。100dp在320×480（mdpi，160dpi）中是100px。那么100dp在480×800（hdpi，240dpi）的手机上是多少px呢？我们知道100dp在两个手机上看起来差不多大，根据160与240的比例关系，我们可以知道，在480×800中，100dp实际覆盖了150px。因此，如果你为mdpi手机提供了一张100px的图片，这张图片在hdpi手机上就会拉伸至150px，但是他们都是100dp。中密度和高密度的缩放比例似乎可以不通过160dpi和240dpi计算，而通过320px和480px也可以算出。但是按照宽度计算缩放比例不适用于超高密度xhdpi和超超高密度xxhdpi了。即720×1280中1dp是多少px呢？如果用720/320，你会得出1dp=2.25px，实际这样算出来是不对的。dp与px的换算要以系统密度为准，720×1280的系统密度为320，320×480的系统密度为160，320/160=2，那么在720×1280中，1dp=2px。同理，在1080×1920中，1dp=3px。大家可以记住下面这个比例，dp与px的换算就十分easy啦！ldpi:mdpi:hdpi:xhdpi:xxhdpi=3:4:6:8:12，我们发现，相隔数字之间还是2倍的关系。计算的时候，以mdpi为基准。比如在720×1280（xhdpi）中，1dp等于多少px呢？mdpi是4，xhdpi是8，2倍的关系，即1dp=2px。反着计算更重要，比如你用PhotoShop在720×1280的画布中制作了界面效果图，两个元素的间距是20px，那要标注多少dp呢？2倍的关系，那就是10dp！ 当安卓系统字号设为“普通”时，sp与px的尺寸换算和dp与px是一样的。比如某个文字大小在720×1280的PS画布中是24px，那么告诉工程师，这个文字大小是12sp。 5、建议在xdhpi中作图（此处相关修正见后面补充，此处暂保留初始版本）安卓手机有这么多屏幕，我到底依据哪种屏幕作图呢？没有必要为不同密度的手机都提供一套素材，大部分情况下，一套就够了。现在手机比较高的分辨率是1080×1920，你可以选择这个尺寸作图，但是图片素材将会增大应用安装包的大小。并且尺寸越大的图片占用的内存也就越高。如果你不是设计ROM，而是做一款应用，我建议大家用PS在720×1280的画布中作图。这个尺寸兼顾了美观性、经济性和计算的简单。美观性是指，以这个尺寸做出来的应用，在720×1280中显示完美，在1080×1920中看起来也比较清晰；经济性是指，这个分辨率下导出的图片尺寸适中，内存消耗不会过高，并且图片文件大小适中，安装包也不会过大；计算的简单，就是1dp=2px啊，多好计算啊！做出来的图片，记着让界面工程师放进drawable-xhdpi的资源文件夹中。 6、屏幕的宽高差异在720×1280中作图，要考虑向下兼容不同的屏幕。通过计算我们可以知道，320×480和480×800的屏幕宽度都是320dp，而720×1280和1080×1920的屏幕宽度都是360dp。它们之间有40dp的差距，这40dp在设计中影响还是很大的。如下图蝴蝶图片距离屏幕的左右边距在320dp宽的屏幕和360dp宽的屏幕中就不一样。 不仅宽度上有差异，高度上的差异更加明显。对于天气等工具类应用，由于界面一般是独占式的，更要考虑屏幕之间的比例差异。 如果想消除这些比例差异，可以通过添加布局文件来实现。一般情况下，布局文件放在layout文件夹中，如果要单独对360dp的屏幕进行调整，你可以单做做一个布局文件放在layout-w360dp中；不过，最好是默认针对360dp的屏幕布局（较为主流），然后对320dp的屏幕单独布局，将布局文件放到layout-w320dp中；如果你想对某个特殊的分辨率进行调整，那么你可以将布局文件放在标有分辨率的文件夹中，如layout-854×480。 7、几个资源的文件夹在720×1280中做了图片，要让开发人员放到drawable-xhdpi的资源文件夹中，这样才可以显示正确。个人认为仅提供一套素材就可以了，可以测试一下应用在低端手机上运行是否流畅，如果比较卡顿，可以根据需要提供部分mdpi的图片素材，因为xhdpi中的图片运行在mdpi的手机上会比较占内存。以应用图标为例，xhdpi中的图标大小是96px，如果要单独给mdpi提供图标，那么这个图标大小是48px，放到drawable-mdpi的资源文件夹中。各个资源文件夹中的图片尺寸同样符合ldpi:mdpi:hdpi:xhdpi:xxhdpi=3:4:6:8:12的规律。 如果你把一个高2px的分割线素材做成了9.png图片，你想让细线在不同密度中都是2px，而不被安卓根据密度进行缩放，怎么办？你可以把这个分割线素材放到drawable-nodpi中，这个资源文件夹中的图片，将按照实际像素大小进行显示，而不会被安卓根据密度进行缩放。即在mdpi中细线是2px（2dp），在xhdpi中细线是2px（1dp）。 以上是对安卓屏幕的初步总结，不知道你看完后是豁然开朗，还是一头雾水？这篇文章主要为了实用起见，避开了过多深入的分析，如果你还有什么疑问，可以留言。 最后补充一下，不少朋友问我安卓平板的设计，提到最多的是1280×800的分辨率，这个分辨率的平板一般是10.1寸的中密度屏幕，直接在PS中建立1280×800的画布，提取之后的素材让开发放到drawable-mdpi中即可。并且中密度的平板中，1dp=1px，比较好换算单位。 【2016年2月19日补充】感谢大家对这篇文章的肯定，时间飞逝，这篇文章的理论成型于三年前，发表于两年前，这几年手机硬件的发展十分迅速，屏幕分辨率1080×1920已是标配，2560x1440的2K屏也是屡见不鲜。伴随着硬件的发展，上述相关理论也应当做一些修正，在720×1080的画布中作图貌似已经不合时宜了。 大家完全可以在1080×1920（xxhdpi）分辨率的画布中作图，主要的图片素材从1080×1920的画布中提取并让程序员放置在drawable-xxhdpi中；对于小图标等线条较为精细的图片，可以制作和提取两套不同尺寸的图标，一套按照xxhdpi来做，一套按照xhdpi来做。 在1080×1920（xxhdpi）这个分辨率中，dp和px的关系为：1dp=3px，这个也比较好计算。大家作图的时候，元素尺寸以及各种间隙最好选择3的倍数，以便于转换为dp。]]></content>
+      <categories>
+        <category>代码相关</category>
+      </categories>
+      <tags>
+        <tag>DEV</tag>
+        <tag>Android</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Jmeter脚本录制]]></title>
+    <url>%2F2016%2F07%2F05%2FJmeter%E8%84%9A%E6%9C%AC%E5%BD%95%E5%88%B6%2F</url>
+    <content type="text"><![CDATA[使用Badboy；使用Jmeter代理参考链接&gt;&gt; 使用BlazeMeter]]></content>
+      <categories>
+        <category>软件测试</category>
+      </categories>
+      <tags>
+        <tag>TEST</tag>
+        <tag>Jmeter</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Jmeter设置代理服务器]]></title>
+    <url>%2F2016%2F07%2F05%2FJmeter%E8%AE%BE%E7%BD%AE%E4%BB%A3%E7%90%86%E6%9C%8D%E5%8A%A1%E5%99%A8%2F</url>
+    <content type="text"><![CDATA[Jmeter能够通过自带的代理服务器抓取http（s）协议的请求：主要包含web和移动端两部分]]></content>
+      <categories>
+        <category>软件测试</category>
+      </categories>
+      <tags>
+        <tag>TEST</tag>
+        <tag>Jmeter</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[LBT-环境最小冲击法则]]></title>
+    <url>%2F2016%2F07%2F05%2FLNT-%E7%8E%AF%E5%A2%83%E6%9C%80%E5%B0%8F%E5%86%B2%E5%87%BB%E6%B3%95%E5%88%99%2F</url>
+    <content type="text"><![CDATA[LNT背景&amp;简介 LNT背景&amp;简介：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;从1965到1994年户外活动的人口成长了六倍之多，外展学校所做的调查显示，在1965年有990万的美国人从事健行活动，到了1977年这个数目字已经增加到2800万。 高山湖泊被人类的排遗所污染；有些步道被侵蚀到膝盖深；营地变的寸草不生，而且常常可以发现大大小小的垃圾，这样的现象让土地管理者陷入两难，因为既要满足游客的需求，又要设法保护自然环境。 在1980年代初期，森林部门的LNT初期课程开始被引介到其他户外活动课程。 当关闭某些过度使用的区域；承载量管制；和限定特定营地成为土地管理者重要的管理工具时，其实对游客的环境教育是更为有效的解决之道。 在1980年代初期有无数的低冲击环境教育课程，在土地管理单位内教授，像”背上山的东西就得背下山””轻踏土地””只带走照片也只留下脚印”这样的标语许多健行者都耳熟能详。 在1994年总部设在BoulderColorado的非营利组织，LeaveNoTrace，Inc.负责协调所有LNT单位的协调工作，颁发执照以及募款的工作。 LNT的六大准则： 事先计划并准备 先打电话给你所要前往地点的土地管理单位询问有关的规定、入园许可及有关环保的规定 对可能发生的状况要有所准备，携带适当的装备并且要知道如何使用 小心的计划你的粮食，这样才不会有厨余产生。重新将你的食物打包在可重复使用的容器内，以减少垃圾的产生 花时间寻找有利环保的露营装备。用一个轻巧的炉子取代生火；买一个有不透水底部的帐篷，买一个小铲子方便你挖猫洞 在登山旺季时，例如连续假日或周休二日，试着不要去热门的路线，特别是有四个人以上的时候。 在能耐受人类踩踏的地表行走及扎营 为了帮助缓和步道的踩踏及侵蚀问题，只在现存的步道上行走，而且尽量走在步道的中间，走成一直线 当没有路径的时候，试着走在最耐踩踏的地方，例如岩石、乾的草、砾石，或是雪上面 在热门路线时，只在现存土壤坚硬寸草不生的营地上扎营，将你的营地活动集中在已经受冲击的区域 如果你很幸运在一个很少人类活动的地区，将营地扎在一个从未使用的地点，而不要扎在受轻微冲击的地方 背上山的东西通通都要背下山 不要成为一个笨蛋，不要将任何食物留在营地，这样会干扰野生动物的自然行为 将你的装备有次序的摆放，这样才不会留下你装备在营地 掩埋垃圾是不好的，因为野生动物会把他挖出来，焚烧垃圾对环境也是不利的 适当的处理所有你不能背下山的东西 如果你愿意，你可以把排遗背下山。但在大多数的地方，把排遗埋在一个10-20公分深，离水源、营地或步道至少60公尺远的猫洞里是被接受的 仔细的思考卫生纸的问题，大自然提供了许多对环境比较友善的方式，如果你一定要用卫生纸，就得将它背下山 营地一定要离湖泊及溪谷至少60公尺，以排除污染物 要洗手或洗锅子的时候，将水拿到距离溪谷或湖泊至少60公尺以上的地方，用少量可生物分解的肥皂。用筛网过滤洗锅水，将水分散洒在地上 留下你所发现的任何东西 历史遗只是全民的资产，不要破坏这些地方，扎营时也要远离这些地点 在远处观察野生动物即可，而且不要试着喂食这些动物 避免破坏营地，例如在树上钉钉子，或是用树干来做椅子，这些都只是为了一时的舒适 不要将石头或者野花带回家 将火的使用及对环境的冲击减到最低 生火会在土地上留下永久的痕迹，可以用一个炉子来代替 不要去折枯树或倒木上的树枝，捡拾柴火时只能捡比你手腕还要细的树枝 当你离开时，一定要将火完全熄灭，而且要把没有烧完的东西通通带走，并将灰烬分散的洒在远离营地的地方 将声音以及视觉上的干扰减到最低，做任何你可以想到的事来保持大自然以及营地的宁静，因为这是大多数户外活动者亲近大自然的原因。 第一章·寻找营地，清理营火，厨房琐事 具备环境知识并且了解低冲击环境技术的基本原则，一个LNT的露营者依靠判断力甚于规则，决定自己的LNT行为，从是否生火到将食物远离好奇的野生动物。 完美的LNT营地 ○在热门路线上，只扎营在现存的营地以集中使用 ○在一个人烟罕至原始的地方，扎营在从未被使用过的地方将对环境的冲击分散 ○避免使用稍微被使用过的营地，这样可以给土地一个复原的机会 ○不论你在哪里，在营地时穿重量比较轻的鞋子，例如运动凉鞋，以减少踩踏对土地的冲击 在热门地区选择营地 ○近20年来户外环境最大的问题，并不在于热门而历史悠久的营地，而在于新营地的快速增加 ○最适合扎营的地方，是岩石、砾石地、沙地，因为他们非常能耐受人类的踩踏，其他不错的选择是乾草地，比较不能耐受人类冲击的是有丰富植被而地表覆盖树叶的森林地 在原始地区选择营地 团体露营 ○越来越多的土地管理者开始对团体的人数设限，从6人、8人、10人到11人都有，并且限定扎营的营地地点，以管理营地 LNT基本准则：选择营地 ○完美的LNT营地要离开步道及水源至少60公尺远 ○营地最好是能耐受人类的踩踏，例如岩石、砾石地、沙地、乾草地，以及开阔森林中的草地 热门路线 ○扎营在现存有明显痕迹的营地上 ○现存的营地上，有时会有生火的痕迹 ○如果是一个使用很频繁的营地，地表被严重侵蚀而且树根外露，那既应该选择其他地方扎营，让营地有休息的机会 人迹罕至的地方 ○在从未被使用过的地方扎营，而不要在被轻微使用的地方扎营 ○营地最好是能耐受人类的踩踏，例如岩石、砾石地、沙地、乾草地 ○每一个营地都只停留一个晚上，以减少对环境的冲击 生火或不生火 火的负面冲击 ○生火痕迹：生火的痕迹总是变的越来越大，而且永远不会消失 ○破坏土壤：火对土壤造成的永久伤害可以深达10公分 ○消耗燃料： 怎样用LNT的方式生火 ○土地管理者的规定及环境的考量： 在营地的炊事 出发之前就准备好食物 ○为了将在营地炊事的脏乱减到最低，再离家之前就得将食物重新包装。将食物从包装盒、罐头和包装纸中拿出来，再用塑胶袋将一餐份的粮食包装在一起，这样不仅可以降低垃圾量，也不会多煮太多食物 ○精准的算出你的食量就不用担心会有令人厌恶的剩菜剩饭，据此，单锅的烩饭在准备、食用以及清洁上是最简便的 ○尽量不要带油腻以及太多香料的食物，这样可以减少脏乱并且避免吸引野生动物 选择炊事地点 ○炊事地点最好离帐棚和步道有一段距离，并距离水源至少60公尺 ○如果扎营在人烟罕至的地方，炊事地点最好是在像岩石露出这种耐受人类冲击的地方 ○再现存的营地扎营时，在先前被使用过的地方炊事，并且避免使用边缘地带 食物的处理 ○要有一个干净的营地，先要有一个干净的炊事地点 ○当炊事或吃饭的时候，要小心是否有碎屑掉在地上 ○不应该掩埋厨余和剩菜剩饭，因为野生动物会在你离开之后把它们挖出来 ○厨余和剩饭剩菜都要背下山 清洗锅碗 ○LNT所建议的方法是用热水和一个海绵菜瓜布。肥皂并不一定必要，当你的食物很油腻的时候对环境更会有潜在的不利影响 ○过滤：第一个方法是用筛网过滤出食物残渣，这筛网可以是一般筛网、头巾或是你的手指，这可能会是你在洗完锅子后比较吸引你的方法。这些细小的食物残渣应该要背下山，洗锅水要分散洒在距离水源至少在距离水源至少60公尺的灌丛中 ○喝掉：另外一个选择是将洗锅水喝掉。 ○用厨房面纸清洗锅子并将油吸掉 与野生动物和平共存 避免喂食 ○不论野生动物是多么可爱，都不应该喂食，一但失去生存的本能，受害的反而是这些野生动物 跟所有食物和其他的吸引物存放在安全的地方 ○保护装备和食物同时也保护野生动物最好的方法，就是把所有的食物跟装备存放在安全的地方 ○将食物和有气味的卫生用品例如牙膏、防晒油和护唇膏，都装在塑胶袋里面，放进大背包 小心水源 ○不论你是否看到野生动物，都应该知道你的短暂造访都无可避免影响到当地的野生动物 ○当你扎营在离水源不远的地方，尽量只来回水源一次，以减少对野生动物的干扰 ○携带可摺叠的水袋装水，而不要直接用锅子来回水源装水，这样只需来回水源一次，减少对动物的干扰 把垃圾带下山 垃圾很难自然分解 ○在营地或步道上要留心脚下很细小的垃圾，例如很小的纸屑或者包装纸、衣服的毛球或者烟蒂 留下一个干净的营地给下一个造访者 ○要非常小心自己所制造的垃圾，最好都装在同一个袋子里，而且把袋子放很容易拿的地方，这样子就不会把垃圾放在不同的地方例如你的衣服或裤子的口袋里面，这样当你从口袋拿出东西的时候，这些细小的垃圾可能会被你无意的拉出口袋而留在大自然里面，像面包袋大小的塑胶袋是个不错的选择 ○当你把东西都打包好准备离开营地的时候，要仔细的察看营地，看看是否有遗留下藏在草堆里很细小的垃圾 ○在原始地区扎营时，当要离开营地的时候，记得多花一些时间尽量把营地恢复原状，例如把被压扁的草弄得蓬松一些，把营钉所留下的洞填平，用树枝把你留下的脚印尽量抹平 ○当你在热门路线的营地扎营时，要把营地回复到能够吸引其他健行者在此扎营的程度，让这些后来者不至于扎营在其他受冲击较小的营地，将所有的垃圾都带下山 LNT基本原则：一个低冲击的营地 生火 ○不要生火。用炉子来煮饭，穿足够的御寒衣物，使用帐篷，用一个好的睡袋，以保持干燥与温暖 ○如果你要生火，要先确定这在你所待的地方是合法的行为，也没有引发森林大火的顾虑 ○确定你能找到许多的倒木当燃料，理想的低冲击燃料是比手腕细的树枝。绝对不要去折活树的树枝 ○在有生火痕迹的营地，把火生在有生火痕迹的中心区域 ○把木炭都尽量烧成灰烬，一旦火完全熄灭后，这些灰烬分散撒在草丛中 炊事地点 ○在原始区域炊事，地点应选在像岩石出露地或是碎屑地这类能耐受人类踩踏的地方 ○在现存的炊事地点，要在肉眼看得到受冲击区域内炊事，而不要在边缘地带炊事 ○避免掉落食物，并且把所有的厨余和食物碎屑都带下山，这样才能保持一个干净的营地 ○考虑看看用热水洗锅子，并且把洗锅水喝掉，这样不仅对环境比较好，又可以补充水分 ○用海绵菜瓜布加一点热水来洗锅子；避免使用洗碗精，把水滤掉然后将这些水分散撒在远离营地而且距离水源至少60公尺的地方 避免干扰野生动物 ○绝不喂食野生动物 ○把所有的食物垃圾和有气味的东西都存放妥当，以避免让当地的野生动物养成造访营地的习惯 ○将来回水源的次数减到最少 留下一个干净的营地 ○把所有的垃圾都背下山，连同其他人所留下的垃圾也都背走。把你的垃圾都放在单一个垃圾袋里面 ○在营地的时候，穿着重量较轻且鞋底较平并且较软的鞋子，例如运动凉鞋或是慢跑鞋，以减少踩踏对土地的冲击 ○重量轻的帐篷也比旧式的帆布帐蓬对环境的冲击来的小 ○当你离开一个原始地区的营地时，将草弄得蓬松；把营钉所留下的洞填平。 第二章LNT有关卫生的基本原则 挖出野外地区的人类排遗 研究者挖出1-3年前野外活动者所留下来的行军厕所的排遗，想要知道这些排遗的腐化程度，所有这些地点都有令人惊讶的发现：这些埋藏的宝藏和许多寄居其中的寄生虫都还活着，如果要说有腐化，也非常少，即使这是在1、2年后才将排遗挖出。甚至连公共卫生的权威机构，都认为排遗能在1、2个月内腐化，这和一般所相信排遗的腐化速度有相当大的出入 另外一个由MontanaStateUniversity在MontanasBridgerRange所做的研究发现相同的事实，差别只在于这个研究是从猫洞中挖出排遗，研究人员掩埋富含细菌的排遗在猫洞里，猫洞的深度从5-20公分都有，这些排遗被放置在6个不同的土壤环境及海拔高度中，当一年后研究人员把这些挖出来，发现这些排遗富含不同种类的致病细菌。 把排遗埋的比较浅会让排遗在短时间内变得无害是谬误的，掩埋地点的不同，并没有造成研究人员所预期的差异，这样的结果似乎可以应用到所有的海拔高度。 从研究人员的资料当中，期望排遗里面的细菌在猫洞里迅速死亡是不切实际的。病原体会以三种不同的方式传染给后来的露营者：与排遗的直接接触、经由昆虫的传染或是经由水来传染。 上述两个研究都同时显示把排遗埋在猫洞中会比埋在行军厕所中要好，因为排遗越小它与周遭的有机土壤和空气接触的机会比较大，而这些是排遗腐化过程最重要的东西。 相对而言，尿液对环境的冲击就温和许多，有一个研究在21种不同植物上，都倒上200㏄的尿液，发现尿液对植物的冲击并不严重。但这个研究也发现，尿液会伤害树叶而且造成某些植物的褐色化。一个不利的直接冲击，是特定种类的动物会被尿液中的盐分所吸引，他们会很快的把植物都吃光。 公有地上的排遗管理 户外厕所 土地管理者所做的不同调查显示，百分之四十的野外区域设置有户外设施。 了解并且避免潜在的健康威胁 ○埋在行军厕所的排遗需要3年以上的时间腐化。 ○在浅的猫洞中，人类排遗所含的病原体，对人类的健康威胁至少会持续一年以上 ○人体的尿液会把叶子变成褐色而且会吸引野生动物，但基本上对人体健康并不构成威胁 ○为了要避免被排遗里的病原体感染而生病，在野外活动时应该要： 1.过滤饮用水 2.在如厕后以及炊事之前，要把手洗干净 3.把排遗掩埋妥当 处理排遗的几个方法 事前计划 ○怎么做能让其他人和野生动物找不到 ○怎么做能将水源被污染的机会减到最低 ○怎么做能让腐化速度更快 猫洞的艺术 ○如果你不确定如何处理排遗时，猫洞是最广为被接受的处理方式，当挖掘猫洞时，最重要的除了地点还是地点 ○猫洞要距离水源、营地和步道至少60公尺，在有有机土壤(富含微生物)、阳光充足而且有些潮湿的地方挖掘猫洞，可以让腐化的速度最快 ○你需要铲子来挖猫洞，有标准的能够挖掘各种坚硬地面的橘色塑胶铲子；一个园艺用的铲子也可以，或者是你可以买一个不锈钢而且有摺叠把手的铲子（Cadillacoftrowels） ○如厕后在猫洞里洒上一些土壤，然后用小树枝搅一搅以加速腐化，并且把小树枝也丢到猫洞里，用铲子把至少5公分的土壤放进猫洞中，(倒一点水到排遗上，可以减少一些气味) 何时建立一个行军厕所 ○当你和一群小朋友一起露营，而且你知道他们没有办法挖自己的猫洞，或者当一个团体在热门地区露营而且在同一个营地停留两天以上，附近也没有户外厕所，这时挖一个行军厕所或许是适当的 ○它必须在离开水源至少60公尺的地方至少要至少要30公分深，而且宽度要比深度还大，每一个人在如厕后都要洒上一些土壤，而且再排遗距离地表10-15公分的时候，就要将行军厕所关闭埋上土壤 背下山 ○用一个pooptube或是用一个纸袋装排遗，再将排遗放到一个可重复封存的塑胶袋里面，再背下山 ○即使土地管理者，没有要求将排遗背下山，在热门地区或者在极端脆弱的环境下，对土地最友善的方式就是把排遗背下山 卫生纸、尿液和其他的卫生问题 卫生纸的问题 ○不应该把卫生纸烧掉，因为有许多森林火灾是由燃烧卫生纸所引发的，所以不是将卫生纸背下山，就是用大自然所提供的材料来做清洗工作 ○可以用清水、雪来做清洗工作 ○你可以用手套法(mittenmethod)：也就是用一个塑胶袋的反面将排遗拾起，再放入一个可重复封存的拉链袋中 ○可以用厨房面纸垫在地上，如厕后用手套法将排遗放入拉链袋中，装入广口水瓶背下山 女性的卫生问题 ○生理期时可以使用手套法来处理止血棉球和其他物品，湿纸巾在处理这些状况时特别方便，并且可以消除袋子内的气味，其他吸收气味的方法包含：放一个捏碎的阿斯匹灵，或者放一个使用过的茶包 ○把这些东西背下山，是唯一符合LNT的选择 关于尿液 ○当你要小便时要注意到野生动物会被你尿液里的盐分所吸引，如果你尿在植物的叶子上野生动物会将它啃食掉，用一点水把叶子上的尿液稀释可以减少这个问题的发生 ○小便时要远离水源至少60公尺以上 盥洗 ○如果不使用肥皂，在一个大的湖泊、溪谷或河流里盥洗，以LNT的标准来看是可以接受的，而且你穿着衣服游泳，也可以同时不用肥皂就可以盥洗 LNT基本原则：野外的卫生 注意健康 ○在饮水之前要先煮沸或者过滤过 ○在如厕之后和炊事之前要把手洗干净 人类排遗 ○如果有户外厕所就使用户外厕所 ○当没有户外厕所时，把你的排遗埋在一个浅的猫洞是最好的处理方式 ○猫洞必须距离水源、营地及步道至少60公尺 ○猫洞如果在有有机土壤(富含微生物)、阳光充足而且有些潮湿的地方，可以让腐化的速度最快 ○用铲子挖一个10-20公分深10-15公分宽的猫洞 ○在如厕后撒上一点土并且用小树枝搅一搅，然后在放至少5公分的土壤把洞填起来 ○如果是大团体待在同样的营地达数天以上，或者有不能自己挖猫洞的小孩子，就可以挖行军厕所 ○把所有的卫生纸都背下山，或者用其他方法，例如雪、水来做清洗工作 ○卫生棉和止血棉球也都要背下山 ○避免在植物上小便因野生动物会被尿液里的盐分所吸引 盥洗 ○除了洗手之外，其他的盥洗行为在野外都不是必要的，而且都无可避免的冲击环境，任何盥洗行为都要远离水源至少60公尺以上，而且最好能耐受冲击的地方进行 ○如果使用肥皂，要确定不含磷酸盐，而且要是可被生物分解的 ○如果不使用肥皂，在一个大的自然水体里盥洗依LNT的标准，是可以被接受的 ○用盐或发粉取代牙膏，可以减低刷牙对环境的冲击。 第三章健行的LNT准则 减轻步道的侵蚀 ○先向土地管理单位询问步道状况，是否有任何限制进入的步道，如果步道的侵蚀情况严重时，土地管理单位会限制健行者只能行走在现存的步道上，不能离开步道行走。 ○确实走在步道上，不要贪图一时的方便而走捷径，或为了避免泥泞地而走离步道，走之字形步道时，不要直切而上或下。 ○行进时穿着绑腿，行经泥泞地时依然走在步道上，如果为了怕弄脏鞋子而踮脚走或者绕边缘走都会加剧步道的侵蚀。 ○如果步道的状况很好，步道又很平缓，同时背包又不会太重时，可以考虑穿着鞋底比较软的鞋子。 非登山步道的健行活动 ○尽可能选择能耐受人类踩踏的地方行走，而尽量避免踩踏在泥摊地这类不耐踩踏的地表上 ○离开了步道系统，地图定位的能力就益形重要，要有适当的技术、经验及装备才不会迷路，健行者需要作深入的考量。行进途中不能坎树皮、折树枝或者堆石头来弥补定位技术的不足。 ○在没有步道而人迹罕至的地方行走时，反而要尽量分开来走，这样能够将对环境的冲击分散 LNT基本原则：健行 减少步道的侵蚀 ○不论何时何地都尽可能行走在现有的步道上 ○直接走过泥泞地而不要绕过它，如果怕弄脏裤子，可以穿着绑腿走路 ○团体行进时，只走成单一条行进路线 ○如果步道的状况很好，步道又很平缓，同时背包又不会太重时，可以考虑穿着鞋底比较软的鞋子。 非登山步道的健行活动 一般而言非登山步道的健行活动应该尽量避免，如果要从事这样的活动也必须要能做到 ○尽可能选择能耐受人类踩踏的地方行走，例如岩石出露地或是碎屑地，而尽量避免踩踏在泥摊地这类不耐踩踏的地表上 ○万一迷路，不仅对自己不好更对环境造成冲击。所以，在上山之前要把所有的装备准备妥当，更重要的是要具备熟练的定位技术 ○在没有步道的地方行走时，反而要尽量分开来走，这样能够将对环境的冲击分散 LNT基本原则：溯溪 营地 ○扎营在最高水线之下（除非有山洪爆发的可能性） ○出发之前将食物从新包装以减少垃圾量 ○避免生火，如果要生火只能拿漂流木来烧 排遗的处理 ○在人迹罕至的地方，如果找得到离水源60公尺以上的地方掩埋排遗，可以将排遗掩埋在猫洞里 ○如果在峡谷、纯粹岩石的河道或是比较多人溯的溪谷，要把排遗背下山 ○不要尿在河床中，尿在远离溪谷和营地的地方，减低对环境的冲击 ○行进时尽量避免对植物的踩踏，离开溪谷时尽量选择原有的步道系统 第四章高山冻原和历史遗址 森林线以上的行进 ○冻原上的环境是非常脆弱的，即使是轻微的破坏都得要好几百年甚至一千年才能恢复 ○当你在高山冻原地区时，不论什么时候都只能在步道上行走 LNT基本原则：高山冻原 建立营地 ○一般而言，森林线以上的地方并不适合扎营，如果一定要扎营要扎在现存的营地之上，如果没有现存的营地，就得选一个能耐受人类踩踏冲击的地方，例如岩石出露地或是乾草地 ○高山冻原因为缺乏木材，土壤又破碎，植物的生长又慢，生火是绝对不合适的 适当地处理排遗 ○把排遗背下山是最好的选择 ○如果你能走到森林线以下，找到一个适当的地方，挖出一个猫洞掩埋排遗，也是一个可以接受的方式 历史遗址 ○如果有幸能造访历史遗址，要扎营在离遗址至少60公尺的地方 ○如果施压在墙壁上常会导致墙壁的倒塌，所以不要靠在墙上，更不要攀爬围墙或是站在围墙上 ○不要捡拾任何属于遗址的东西，如果不小心移动了什么东西，记得将它摆回原位。 免责声明：本文章系转载，版权归原作者及原出处所有；若有疑问请联系笔者；本声明最终解释权由笔者所有。原文链接&gt;&gt; 拓展阅读低冲击性登山&gt;&gt;]]></content>
+      <categories>
+        <category>户外</category>
+      </categories>
+      <tags>
+        <tag>户外</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[软件资源]]></title>
+    <url>%2F2016%2F07%2F05%2F%E8%BD%AF%E4%BB%B6%E8%B5%84%E6%BA%90%2F</url>
+    <content type="text"><![CDATA[平常使用的一些软件的汇总思维导图： Xmind：经常用的，功能强大，使用简单。 Mindmaps Freemind 流程图软件： MS visio：功能全面，制作流程图比较麻烦一些。 yEd 抓包工具： Fiddler：轻量，好用，简单明了，配置起来很方便；只能抓取http协议，据说是Windows平台最好的抓包软件。 Wireshark： 功能强大，能够抓取各种通信包，查看分析比较繁琐。 Charles：花瓶，据说是mac平台最好的抓包软件。 文本编辑器： vim 和 emacs：程序猿最爱，神用神之编辑器默默的走开。 Sublime：支持绝大多数语言，支持语法高亮，简约不简单。 Python IDE： IDLE：自带的，比命令行强。 Pythonwin：不知道是不是，不知道怎么就装电脑上面啦，没用过。 PythonCharm：查了很多资料，都说是Python平台最好的IDE，没有之一。 性能测试软件： LoadRunner：据说是最好的web端性能测试软件，没有之一，可惜就是大并发lisence很贵，11有破解版，能到10w用户。 Jmeter：Apache下面的开源项目，本来是用来做功能测试的，后来人们都拿来做压力测试和接口测试~~ Monkey：Android平台的性能测试工具，SDK工具包中几个重要工具之一，简单粗暴，能够配合MonkeyRunner使用，参考基本用法 未完，待更新。 功能自动化测试工具： MonkeyRunner：Android平台的功能自动化工具，占坑，后补]]></content>
+      <categories>
+        <category>代码相关</category>
+      </categories>
+      <tags>
+        <tag>DEV</tag>
+        <tag>软件</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[adb命令行相关]]></title>
+    <url>%2F2016%2F07%2F05%2Fadb%E5%91%BD%E4%BB%A4%E8%A1%8C%E7%9B%B8%E5%85%B3%2F</url>
+    <content type="text"><![CDATA[adb命令行快捷启动 安装AndroidSDK 找到adb.exe的位置，大概是下面这个样子：D:\AndroidSDK\platform-tools 将上面的路径（D:\AndroidSDK\platform-tools）添加到环境变量就OK啦。 之后就能用 Win+R 然后 cmd 里面直接运行 abd devices 查看 adb 常用命令查看设备安装状态adb get-serialno 获取设备的ID和序列号serialNumberadb devices 查询当前计算机上连接那些设备（包括模拟器和手机），输出格式: [serialNumber] [state]adb get-state 查看模拟器/设施的当前状态. 说明： 序列号[serialNumber]——由adb创建的一个字符串，这个字符串通过自己的控制端口- 唯一地识别一个模拟器/设备实例。一个序列号的例子： emulator-5554 发送命令到设备adb [-d|-e|-s &lt;serialNumber&gt;] &lt;command&gt; -d 发送命令给usb连接的设备-e 发送命令到模拟器设备-s 发送命令到指定设备adb reboot重启手机 很多问题能够通过重启服务来解决adb kill-server杀掉adb服务进程adb start-server启动adb服务进程 安装卸载 adb install [-l] [-r] - push this package file to the device and install it(‘-l’ means forward-lock the app)(‘-r’ means reinstall the app, keeping its data)adb uninstall [-k] - remove this app package from the device (‘-k’ means keep the data and cache directories) 栗子adb install d:\hello.apk adb unstall com.huawei.hello说明：如果带-r选项重新安装apk时，安装在 /data/local/tmp/目录下，手机重启后还是使用原来的apk 文件操作adb push &lt;local&gt; &lt;remote&gt; - copy file/dir to device 本地文件推到设备adb pull &lt;remote&gt; &lt;local&gt; - copy file/dir from device 从设备拉取文件到本地 Linux shell 命令adb shell 进入Linux shell commandls 列出目录下的文件和文件夹cd 切换目录rm 删除目录和文件cat 查看文件内容ps 可以看那个进程再跑ps -x [PID] 查看单个进程的状态top 可以看那个进程的占用率最高 su 切换到root用户kill [pid] 杀死一个进程chmod 777 &lt;file&gt; 修改该文件为可执行权限 更多详细内容&gt;&gt; 查看更多精彩&gt;&gt;]]></content>
+      <categories>
+        <category>代码相关</category>
+      </categories>
+      <tags>
+        <tag>DEV</tag>
+        <tag>adb</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Jmeter参数化方法]]></title>
+    <url>%2F2016%2F06%2F05%2FJmeter%E5%8F%82%E6%95%B0%E5%8C%96%E6%96%B9%E6%B3%95%2F</url>
+    <content type="text"><![CDATA[用Jmeter测试时包含两种情况的参数：一种是在url中，一种是请求中需要发送的参数。 URL中的参数，如：http://blog.da-fang.com/index.php/2010/06/01/jmeter)参数/,其中2010/06/01/jmeter参数为url参数。请求中的参数，此处只能举例get请求，如：http://blog.da-fang.com/?category=Web，其中category是参数名，Web是它的值。对于post请求，用jmeter录制后，可以在请求的“同请求一起发送参数”和“同请求一起发送文件”中找到。参数化Jmeter脚本时，使用参数的地方书写格式为$对于URLhttp://blog.da-fang.com/index.php/2010/06/01/jmeter参数/，在Jmeter的 http请求中blog.da-fang.com填写在“服务器名称或IP”中;/index.php/$/填写在“路径”中。 对于请求中的参数http://blog.da-fang.com/?category=Web，在Jmeter的http请求中blog.da-fang.com填写在“服务器名称或IP”中;/填写在“路径”中；参数名称category填写在“同请求一起发送参数”的“名称”中，参数值$填写在对应的“值”中。 ##设置参数值的方法有如下几种：1. 用Jmeter中的函数获取参数值:__Random，__threadNum，__CSVRead，__StringFromFile，具体调用方法如下：${__Random(,,)}，$，${__CSVRead(,)}，${__StringFromFile(,,,)}参看Jmeter函数的使用，通过菜单“选项”-&gt;“函数助手对话框”，即可在“函数助手”弹出框上找到Jmeter的函数。 ${__Random(,,)}方法的第一个参数为随机数的下限，第二个参数为随机数的上限，第三个参数为储存随机数的变量名； ${__CSVRead(,)}方法中第一个参数是文件名，第二个参数是文件中的列（列数从0开始） ${__StringFromFile(,,,)}方法中第一个参数是文件名 ${__StringFromFile(,,,)}方法中没有指定读 取文件中的哪一列的参数，所以${__StringFromFile(,,,)}只能读取包含一列的文件。 2. 用户定义的变量： 添加“配置元件”-&gt;“用户定义的变量” “名称”中输入变量名称 此处以登录为例，定义两个变量username和password。“值”中可以直接输入值，也可以通过Jmeter的函数 __CSVRead，__StringFromFile从csv或dat文件中读取，还可以通过前缀加随机数的方法设置参数。当参数值是某个前缀加一个数字时，可以用前缀名加${__Random(,,)}或$的方法设置参数值。如进行登录测试之前，先准备了用户名为perf_0到perf_1000的用户，那么用户名就可以设为perf_{__Random(0,1000,)}。当参数值没有规律的且量不太大时，可以通过${__CSVRead(,)}，${__StringFromFile(,,,)}从文件中读取，如将用户名和密码保存在user.csv文件中，user.csv的内容如下：oriana,123456admin,admindandan,123456因为user.csv文件中有两列数据，所以只能用${__CSVRead(,)}函数，username参数后的值设为${__CSVRead(user.csv,0)}，password参数后的值设为${__CSVRead(user.csv,1)}。 3. 从csv文件中读取当参数的值 没有规律且量不太大时，可以用这种方法。具体做法如下: 创建一个csv文件，内容为参数的值集，每一个参数占一列，第一行就开始写参数值，不要写参数名 在测试计划或线程组中添加一个“配置元件”-&gt;“CSV Data Set Config” Filename中填写步骤2.1中csv文件的完整路径（当csv文件在bin目录下时，只需给出文件名即可) Virable Names中填写变量名，如果csv文件中有多个变量，则用逗号隔开 4. 从数据库中获取当参数的值没有规律且量比较大时，可以选用这种方法。具体做法如下： 下载MySQL JDBC&gt;&gt; 解压下载的zip包后，将其中的mysql-connector-java-5.1.12-bin.jar放到Jmeter的lib目录下 添加“配置元件”-&gt;JDBC Connection Configuration，设置下列参数： Database URL：jdbc:mysql://host:port/db 例如：jdbc:mysql://localhost:3306/testlinkJDBC Driver class：com.mysql.jdbc.Driverusername：连接数据库的用户名（如root）password：连接数据库的密码 添加“Sampler”-&gt;“JDBC Request”，在SQL Query中输入查询语句，如下: 1234SELECT CONCAT("[", GROUP_CONCAT( CONCAT("&#123;username:'",login,"'"), CONCAT("&#123;password:'",password),"'&#125;"),"]") AS json FROM users 在4.4中的JDBC请求中添加“后置处理器”-&gt;“正则表达式提取器”，以提取3.4中的用户名和密码为例设置正则表达式提取器的参数： 引用名称：user正则表达式：username:’(.+?)’{password:’(.+?)’模板：$1$$2$使用时，user_g1即为用户名，user_g2即为对应用户名的密码；更多正则表达式提取方法参见Jmeter正则表达式提取器 5. 用正则表达式从前面请求的响应数据中提取，具体操作见Jmeter正则表达式提取器 原文地址&gt;&gt;，侵删]]></content>
+      <categories>
+        <category>软件测试</category>
+      </categories>
+      <tags>
+        <tag>TEST</tag>
+        <tag>Jmeter</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[App安装卸载测试]]></title>
+    <url>%2F2016%2F06%2F05%2FApp%E5%AE%89%E8%A3%85%E5%8D%B8%E8%BD%BD%E6%B5%8B%E8%AF%95%2F</url>
+    <content type="text"><![CDATA[App版本的迭代速度比较快，在每一次版本更新的时候进行一些安装卸载测试是很有必要的；下面是一些可以考虑的方面。 一、安装 安装手册是否规范，是否简洁，是否通俗易懂 安装手册是否齐全，正确，有改动时，文档是否同步更新 直接复制安装程序到电脑上，能否正常安装 按安装手册给出的步骤进行安装，安装是否正确 查看在安装过程中存在的提示信息是否明确，意思是否明确 在安装过程中，点击取消按钮，能否正常退出安装程序，软件是否可用。 安装时是否识别有SD卡，并默认安装到sd卡中 安装过程中，接听电话或者短信，安装是否成功 安装程序是否自动检查系统的磁盘空间 系统磁盘空间不足时，能否中止安装 安装完毕后信息的显示和文件的安装是否正确，完整 软件安装后是否能将相应的文件复制到系统文件夹下 在软件安装过程中，出现突然断电的异常状态时，程序处理是否正常 在软件安装过程中，出现突然断网的异常状态时，程序处理是否正常 在不同的硬件环境下，能否正确，正常，完整的进行安装 在不同的网络环境下(2G/3G/wifi)，能否正确，正常，完整的进行安装 在低于所要求的硬件配置的情况下进行安装，能否正确，正常，完整的进行安装。 在已经安装的情况下，所有信息与上次保存一致，覆盖安装能否再次安装 在已经安装的情况下，安装路径不一致，覆盖安装能否再次安装 在已经安装的情况下，卸载原软件，安装高版本，能否正确安装 在已经安装的情况下，卸载原软件，安装低版本，能否正确安装 在已经安装的情况下，不卸载原软件，直接安装高版本，能否正确安装 在已经安装的情况下，不卸载原软件，直接安装低版本，能否正确安装 安装完成后，能否正常启动应用程序 安装完成后，重启手机能否正常启动应用程序 安装完成后，是否对其他应用程序造成影响 安装完成后，能否添加快捷方式 安装完成后，杀毒软件是否会对其当做病毒处理。 安装完成后，快捷方式是否指向安装目录 多进程进行安装，是否安装成功 安装过程中，手机内存不足的情况下，能否正常安装 二、卸载 用自带的卸载程序进行正确卸载，能否卸载干净 用第三方工具进行卸载，能否卸载干净 在卸载过程中，关闭进程软件能否继续正常使用 在卸载过程中，点击取消按钮，能否正常退出卸载程序，软件能否继续正常使用 在卸载过程中，突然关闭移动设备电源，再次访问程序，程序能否正常运行 在卸载过程中，突然重启设备，再次访问程序，程序能否正常运行 未在使用程序时，直接删除安装目录下的文件，程序能否正常运行 正在使用程序时，直接删除安装目录下的文件，程序能否正常运行 在不同的系统下，进行卸载，能否正常卸载。 在不同的硬件环境下，进行卸载，能否正常卸载。 在不同的网络环境下，进行卸载，能否正常卸载。 卸载成功后，是否对其他程序造成影响 卸载后再次安装，一切功能是否正常 卸载画面上的名称及版本信息是否正确 原文地址&gt;&gt;]]></content>
+      <categories>
+        <category>软件测试</category>
+      </categories>
+      <tags>
+        <tag>TEST</tag>
+        <tag>安装卸载测试</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[PEP8编码规范]]></title>
+    <url>%2F2016%2F02%2F05%2FPEP8%E7%BC%96%E7%A0%81%E8%A7%84%E8%8C%83%2F</url>
+    <content type="text"><![CDATA[官方原文地址&gt;&gt;中文翻译&gt;&gt;精简版&gt;&gt;]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
+      <tags>
+        <tag>DEV</tag>
+        <tag>Python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[写在毕业一年的时候]]></title>
+    <url>%2F2000%2F07%2F05%2F%E5%86%99%E5%9C%A8%E6%AF%95%E4%B8%9A%E4%B8%80%E5%B9%B4%E5%90%8E%2F</url>
+    <content type="text"><![CDATA[BGM：SNOW—Andreea BalenLet the snow fall down on meLet the stars set us freeThere is love around the worldFor there angles flying… 四年大学时间，这首曲子陪伴我了很多个夜晚：与队友鏖战的通宵、某些个惆怅的夜晚、为解题翻阅资料的不眠夜、赶论文的枯燥时光….很奇怪为什么会喜欢这么一首歌，自从听了第一次之后就爱上了，没没看着MV就能不由闭上了眼睛去感受，总之，很爱。 写在前面： 终（hen）于（lan）抽出时间来整理自己的这份随笔，持续了一周的加班让自己身心俱疲，每天晚上9点多从公司出发，在超市都关门的时间回到家中，煮面果腹。尽管如此还是悲剧的拉了一周肚子了（还有两次早上坐着坐着地铁就跑去拉肚子，不过好在这几次都不至于窘迫到去女厕23333） 今天下班早早（8点多）就回家了，本想做自己喜欢吃的东西，去了超市发现全无胃口，转了一圈又一圈(幸好超市小，没有迷路)，买了菜花和肉还有鸡蛋，花了9.9元，出来之后看着关了门的馒头店，几分失望，以前每天都会去大姐那里买两个馒头，不管多晚，都能买的到，也算是心中的慰藉，现在没了，感觉空荡荡的，也只能回家煮面了……(P.S. 虽然已经吃了一周的面，但今晚烧的菜真的很好吃，终于吃到肉了2333333) 关于时间轴： 去年的这个时候已经毕业一周了，那时候在学校附近租的房子，几个朋（ji）友（you）还对母校恋恋不舍，四个人一起在曲阜逗留了一个半月。 老六和老二是等考试； 翔翔是在等我？忘记了； 我是在尝试第一次科目二； 说好的好好学习一段时间的，结果去了经常一起去网吧开黑，那段时间真心舒服，一起开黑一起出去喝酒很幸福，但晚上也会为自己的未来担忧，有时候夜里醒来去阳台抽几颗烟，困了就在回去睡觉；白天去练车，这样的日子过得很快，没几天，一个月就过去了…. 那天去考科目二，两次机会都死在了倒库，挫败感席卷了整个身体，心里空空的，依稀记得站在路边的大树下，恍惚的看着过往的车子，感觉到自己的无能，给妈妈打了电话，第一次落泪（很多事情，压抑久了就会释放…..）；就这样失败了，接下来的几天收拾行囊….. 说服了翔翔，约好的一起南漂，他不想去了，那晚喝了很多酒，说了很多，痛快的一句话，跟我一起来了深圳…. 插播：就在大学将要结束的时候开始了自己的爱情…. 在深圳： 很晚了，该休息了，明天还要早起，晚安世界，晚安Ethan]]></content>
+      <categories>
+        <category>diary</category>
+      </categories>
+      <tags>
+        <tag>城哥日常</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[小矮人的第一封情书]]></title>
+    <url>%2F1991%2F08%2F07%2F%E5%B0%8F%E7%9F%AE%E4%BA%BA%E7%9A%84%E7%AC%AC%E4%B8%80%E5%B0%81%E6%83%85%E4%B9%A6%2F</url>
+    <content type="text"><![CDATA[写在前面现在已经是一天的凌晨时分，窗外雨滴零零散散…就着小春的独家记忆别有一番风味儿~ 独家记忆陈小春我喜欢你是我独家的记忆谁也不行从我这个身体中拿走你在我感情的封锁区有关于你绝口不提没关系 笨蛋小矮人的混沌逻辑我有女朋友，虽然听小春的独家记忆，但是是一个地地道道的有人爱的家狗 ^_\，就在过去的大概几十分钟之前，以为一个小小的东西你就大发雷霆，说了很多伤人的话，至于是什么话，我想只能我们偷偷的说了，会*羞羞哒啦~~ 老公是不是有受虐请倾向其实我不认为这不好，范儿我觉得这是意见很幸福的事情，我就像是一头狮子，然人很难靠近，却只让你各种放肆，各种的的虐待我，每每你欺负我的时候我都觉得幸福感爆棚，很享受那种感觉，原来被心爱的女孩欺负是很幸福的一件事情^_^ 我很在乎每次很严肃的聊天一般就是指吵架啦，你都能很从容的睡觉，第二天就像什么都没有发生过，抱抱心里佩服你呀，是你心太大了还是你就像小鱼儿一样只有七秒钟的记忆；可是我都要好一段时间才能从阴影中走出来（原谅我这个柔情的男孩子~~）；每次僵僵的时候，不管是谁对谁错都会忍不住的去打一个电话或者发一条消息去问你下有没有不开心，心情有没有好一些，只是，事实证明是我想得太多了，你的恢复能力还是极好的… 今天你跟我说了你的菜单 蒸蛋：要像布丁一样滑滑嫩嫩，有点甜； 蔬菜沙拉：一定要用沙拉酱； 馒头片：要用鸡蛋裹一下，软软的，香香的； 糖醋里脊：这个…… 鱼香肉丝：这个东西呀要有一种神秘的调料，幸好我有~~ 爱吃鱼的小狗当然要吃好吃的炖鱼~~ 没有什么事情是一顿火锅解决不了的，实在不行就两顿火锅~~ 能偷个懒么？还有工作上面的事情需要处理，这几天就像是来大姨夫一样，整个人的效率都很低，再加上你这个小坏蛋不听话所以呀好多事情都要这个时候苦逼的敲键盘*好困啊* 我爱的人，祝你早安~]]></content>
+      <categories>
+        <category>diary</category>
+      </categories>
+      <tags>
+        <tag>城哥日常</tag>
+        <tag>情书</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[写给小公主的第二封情书]]></title>
+    <url>%2F1991%2F08%2F07%2F%E5%86%99%E7%BB%99%E5%B0%8F%E5%85%AC%E4%B8%BB%E7%9A%84%E7%AC%AC%E4%BA%8C%E5%B0%81%E6%83%85%E4%B9%A6%2F</url>
+    <content type="text"><![CDATA[BGM:没有星星的夜里，我把往事留给你…恰巧听到了这首曲子 一、吐槽前几天上班的时候写了很多，结果后来发现没有被保存，这是何等的坑我，我辛辛苦苦感情饱满的用笔耕耘了好几天，说没就没了，不给力ᕕ(ᐛ)ᕗ火车太棒，空调的温度感人，从上车到现在保持了颤抖状态，后悔自己为什么没用小米手机，后悔没带羽绒服… 二、此时此刻此时此刻，我正乘坐Z186次列车从深圳况且况且的往山东蠕动，太慢了虽然这个车是比较快得了…但是还是想能够更快一点，再快一点（这句话有歧义…是我想歪了么）。将近二十个小时的车程不短，来来回回多少次了，但是每次都还不觉得艰辛，回山东的时候好多次都是站着Orz…但是想到马上就能见到某某还是能让心里好受一些…每次回深圳也都是调整些许天才能恢复到正常的工作状态，说不累是假的，但总觉得心里很慰藉，（我承认有受虐倾向，认了…）。 三、不容易虽然买了很多喜欢的笔，但仍然不得不承认笔浊（p.s.有没有这个词？没有就权当我自己造的，形容文笔差…）又要感情饱满，又要文笔好，臣妾做不到啊(」゜ロ゜)」，所以只能将就了…（内心OS：终于四百字了，还差四百字就能综上所述了୧(๑•̀⌄•́๑)૭） 四、不想说我是一个有些极端的极端的人，是宁为玉碎不为瓦全的人，所以当很用心的去经营一件事情的时候，如果朝相反的方向发展，那很有可能就会抛弃，虽然会有不舍，但这些已经不是最初自己想要的模样。 五、关于我们到今天，我们在一起一整年了，虽然你可能不知道。回想这一年的时间，没有什么遗憾的。于我自己，更懂得怎么样对一个人好，怎么去疼一个人（同事都说我是难得的好男人），也没有错过什么，对这份感情多了些淡然，因为懂得了感情不是一个人的事情，未来充斥着不确定，淡然的面对也许是最好的态度。与其让自己经历一次次的失去，不如让自己变得更加坚强和决绝。 你是一个不错的姑娘，但我总希望你能变得更优秀，就算以后不在一起也能以更加优秀的姿态站在另一个人面前。你的世界容不下别人说不，这是很危险，甚至连我的否定你都反感，在我看来这不是一个好的现象。一直跟你说，你渴望有公主的生活，可你却不关注每个公主人后所做的努力，这个世界从来没有什么是莫名其妙的成功或失败的。也许所有的一切不适合在这里说，但还是说了，说出来总比藏在心里等待爆发强。 任何时候都要发现问题解决问题，逃避永远都不是解决问题的方式，只会让问题越来越严重。 六、没做的整理了照片，打算做一个一年的时间轴，前段时间的事情，让我索然无味，那些天身体像是丢失了什么，整个世界沉浸在左耳塞和右耳塞的音乐之间，幸好那段时间工作忙，晚上回家十一点钟做完饭也就累的不行了，例行的抱着手机在凌晨两点睡去… 一个时间轴的视频没有完成。希望有时间和动力做完吧… 七、关于你和未来我一直在想是否要把你写入我的未来，你给我的感觉是随时都会离开的。这一年以来这种感觉一直在加深，一次次的。很多时候想事情都会用你的思维去再想一遍，想想跟你一起会怎么样处理一些大大小小的事情，但是很多时候都觉得自己可笑，你的感情已到中年，而我的却停留在少年，有多少事情是你觉得幼稚而我却欣然而不释手的。 八、综上所述自从和你在一起各种无下限，犯贱都成了一种习惯… 不管怎么样，我都会是你的小矮人，很长一段时间都会围着你这个小公主转，不离不弃。 你已经成为我说不出为什么但就是很爱的女孩，也别问我有多爱，如果非要回答，我想会是一旦吧(^ω^) 小爽，爱你！ 番外今年要做的事： 一次旅行 一次写真 你的考试 许你三个愿望]]></content>
+      <categories>
+        <category>diary</category>
+      </categories>
+      <tags>
+        <tag>城哥日常</tag>
+        <tag>情书</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[写给小公主的第一封情书]]></title>
+    <url>%2F1991%2F08%2F07%2F%E5%86%99%E7%BB%99%E5%B0%8F%E5%85%AC%E4%B8%BB%E7%9A%84%E7%AC%AC%E4%B8%80%E5%B0%81%E6%83%85%E4%B9%A6%2F</url>
+    <content type="text"><![CDATA[写给小公主的第一封情书小爽公主：你好！我是小矮人Ethan，小公主一直让我给你写情书，仔细一想，万分羞涩呢~你在我的小本子（你给我卖的那一个）上面的留言，早早就看完啦，只是没有告诉你而已，你那智商，还傻傻的不知道2333，是不是你现在还在写着？ 字写得太丑啦，自己都不想多看，让你看实在是难为你啦，下面是正文： 你来的这几天虽然每天都会吵吵吵，但是静下来一回忆，满满的都是幸福，你不坏的时候还是挺好的，虽然大多数时候很坏~~原谅你啦，啥都不要讲啦O(∩_∩)O哈！ 仔细想想你来的路，路途遥远，太过艰辛，每每想起来都会是心疼的，很心疼，你晓得不来？ 此一封情书尽然已经有了电子版，为什么会有纸质版？回忆是一首歌…. 今天的感冒很严重，能够感觉的到，整个人都是沉沉的，眼睛很浑浊，四肢没有力气，今天早上爬楼梯的时候浑身是汗…. 昨天的时候，因为回山东的问题而争执，只是想让你多在我身边一会儿，既然来了为什么还要在乎一天？说好的烛光晚餐呢？可能你又你的难言之隐吧….. 我们会因为小小的事情而争执，现在却想不起来因为何事。很想能够和你吃一顿自己做的晚餐，然后早早地睡觉，然而，我们却没有。本想今天晚上能够哪里也不去，能够好好吃一顿饭…. 说真的，回想这几天，欢乐还是多一些的，还是不是的没心没肺。 真的不想没有你的生活，很无聊，也不知道做什么，就算偶尔（经常吧O(∩_∩)O哈哈~）的刷刷存在感，但是闹闹也是挺好的，没多会儿就过去啦，赌气是好的，冷战是不好的。不知道你回去之后，我们会是什么样子，可能，你再也不想来了吧…. 这一次没有给你做过菜，没有给你做早餐，等到你要走的时候还有好多没有做的，你说的东西：鱼香肉丝、糖醋里脊、鸡蛋布丁、麻婆豆腐、火锅和鱼，虽然我们没有自己做但是我们都吃了，对么？ 我用生气来让你重视一件事情，因为我找不到更好的方法啦，只有这样子你才会有所感觉，虽然最后还是无济于事，我们都不要着急，静下来听对方的，会不会好一些？ “那天你说分手之后的种种，我哭了” 今天想起你的离别，我的眼睛湿润了。我也不会相信我会如此深爱一个女子，我所有的让你变得更强更独立更成熟，仅仅是我不在你身边的时候，能够过得好，能够不收到上海。我们在一起的时候，希望你每天都是一个孩子，有时候跟你分享经验可以听一下啦》。。。 昨天的水饺很好吃，因为你住的东西都很好吃，看着喜欢的人吃光你做的东西的感觉是不是很棒？ 有时候吧，咱们逛街，3个小时以内我还是能够接受的（工作日的时候，节假日周末时间很多怎么逛都可以），时间长了真的hold不住啊姑娘….你城哥白天还要上班，晚上还要运动啊~~ 心里说不出的幸福——因为有你。只怪时间匆匆，人总要离别。爱你！ 来自爱你的城哥]]></content>
+      <categories>
+        <category>diary</category>
+      </categories>
+      <tags>
+        <tag>城哥日常</tag>
+        <tag>情书</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[个人简历-尹城-深圳-20161220]]></title>
+    <url>%2F1991%2F08%2F07%2F%E4%B8%AA%E4%BA%BA%E7%AE%80%E5%8E%86%2F</url>
+    <content type="text"><![CDATA[个人简历 基本信息 姓名：尹城（Ethan） 性别：男 专业：数学与应用数学 毕业院校：济宁学院（省属本科） 联系电话：（+86）151-1816-4005 邮箱：yincheng0807@163.com 教育/培训2014年9月 至 2014年12月 惠普（济宁）国际软件人才及产业基地软件测试培训 惠普（中国）直属四个培训基地之一的济宁软件测试培训基地； 完成总共三阶段软件测试基础、软件综合开发案例、功能自动化测试工具（UFT/QTP）、性能测试工具（Loadrunner）以及测试管理工具（ALM/QC）等的学习，了解行业内领先的测试理论方法以及实践经验； 能够分析软件需求、编写并执行测试用例、编写缺陷报告； 能够进行手工测试以及使用UFT进行自动化测试； 能够使用Loadrunner录制测试脚本、设置业务、搭建场景、并运行分析脚本； 能够使用ALM对测试项目进行管理；同时涉猎安全性测试、代码可靠性测试。 2011年9月 至 2015年7月 济宁学院（省属直升本科） 就读于济宁学院数学系数学与应用数学专业； 在校期间参加全国计算机等级考试（二级C语言）获得优秀成绩，参加数学建模培训，参加数学建模竞赛； 2012年：校级优秀团员、校级优秀志愿者、济宁市科技节《数学建模竞赛》二等奖； 2013年：校级优秀学生会干部； 2014年：一等奖学金、三好学生； 2015年：惠普软件测试初级工程师认证证书。 专业素养 熟悉功能、性能自动化测试工具QTP/UFT、LoadRunner及质量管理工具QC/ALM的安装、配置及使用全过程，有一定的自动化测试工具及软件质量管理软件的实践经验。能够通过ALM从需求、发布、测试、缺陷等模块对项目进行管理，并整合LR和QTP自动化测试工具。 了解软件生命周期、测试生命周期概念，可根据软件研发不同阶段制定并执行测试计划方案，可用过ALM等工具对项目进行贯穿全局的发布、周期、需求、测试、缺陷、文档、人员的管理，保证研发顺利进行。 具备优秀的软件质量意识和测试思维，工作细致、思路严谨，可以从代码、设计、业务需求等多个角度分析并执行软件测试，从而全面提升软件质量。 掌握边界值、等价类、因果图、判定表等常用黑盒测试用例设计方法，可根据软件特点、客户需求及业务逻辑，设计出高质量、高覆盖率的测试用例。 能够熟练使用UFT录制脚本，并根据需求添加相应的检查点以及测试脚本，实现功能测试的自动化。 熟练使用Postman进行接口测试，在前后台联调之前发现接口问题，以及定位缺陷位置；通过添加测试脚本、配置环境变量、配置测试集实现基于Postman的单业务场景的接口自动化测试。 熟悉Python脚本语言，能够无障碍解读Python脚本； 熟悉基本的SQL语言以及Linux操作。 能够实现基于LR（或Jmeter）的多场景性能测试，实现性能自动化测试。 熟悉Fiddler、Charles等网络抓包工具。 项目经验2015年8月 至 今 深圳市辉煌十月科技有限公司（一家以基于熟人社交的母婴电商平台起步的互联网公司）项目2简介 2016年9月 至 今 小秋千—-亲子陪伴、亲子教育平台（深圳市辉煌十月科技有限公司） 管理和控制项目的整个测试生命周期，贯穿从需求宣讲、测试计划制定、测试用例设计、用例评审、用例执行、缺陷追踪、测试总结的整个测试流程。 测试管理方面使用Mantis、Redmine等开源缺陷管理工具对产品需求、缺陷进行管理和跟踪。 使用Excel、Xmind、PICT等工具针对不同需求场景设计测试用例。 实现基于Postman的接口自动化测试。 主要工作内容是APP（iOS和Android）、H5以及后台系统的测试工作，测试方式以手工测试为主，辅以接口自动化测试。项目1简介 2015年8月 至 2016年9月  妈妈联盟—-母婴领域的熟人社交购物平台（深圳辉煌十月科技有限公司） 与每个项目的整个测试生命周期，设计测试计划和用例，分配测试任务，管理和监控每个项目测试进度、缺陷追踪以及测试总结。使整个测试团队的测试工作可控和高效。 里程碑： 商城模块：测试工作侧重SKU的信息准确完善以及实时同步，购物车操作、订单操作、优惠券操作等的流程、数据方面的测试；抢购活动的压力模拟（基于Jmeter）； 群组、联盟：通过属性标签或地域社群划分的群组，着重测试社群之间、社群成员之间、成员和社群之间的操作；商品、优惠、广告等针对社群的投放。 Feed流：重心开始由PGC主导转向UGC主导；测试重心以Feed数据信息准确和时效；内容产生者和浏览者之间的互动；主客人态的展示信息；根据群组、关注关系、用户标签等维度为基础进行的筛选逻辑的测试。 IM（图文、语音）：由图文、语音承载的在线小班课堂。测试重心放在后台服务器性能；用户量较大时的App端以及后台的性能情况；IM的消息准确性以及时效性。2015年1月 至 2015年6月 惠普（中国）有限公司—重庆HPI事业部（实习）项目1简介 2015-01 至 2015-06  惠普（重庆）SMO项目–EastWood：HP用于管理产品、客户信息、订单信息等数据的前端系统；工程量：120 Man-Day 被测系统属于惠普SMO项目子项目，该系统涉及SSRS服务以及HP Vertica数据库服务，测试的主要的工作是检查Vertica数据库中数据的完整性以及可用性，验证SSRS服务的可用性、可操作性以及生成报表的正确性。整个测试任务设计539个Cases，执行过程中我提交20个CR（ChangeRequest），占项目CR总量的18.9%。 自我评价 团队协作能力。拥有良好的团队合作观，能够合理的调用团队资源，更合理高效的完成任务。 持续学习能力。对新技术、新事物有很强的探索欲，能够不断的完善自身，涉猎不同的知识，持续的更新个人的知识体系。 良好的抗压能力。能够弹性适应不同程度的工作压力，并能合理释放和转化工作压力为动力，在高压下仍能保持冷静和细致的思考和工作。 会工作，爱生活。 关注/兴趣 基于Hexo框架的个人博客搭建： Git搭建远程仓、关联本地仓、提交等操作； 通过分别部署Coding Pages和Github Pages实现国内外访客分流； 基于Flow.ci（国内）和Travis（国外）的博客自动化构建、部署； 基于Flow.ci的百度sitemap主动提交。 基于Python requests库的接口测试框架： 关注Testerhome、MQC、Testin等测试论坛、平台，开拓测试维度。 工作之外，生活之中： 喜欢徒步，喜欢背着死沉的相机到处溜达； 喜欢游泳，大部分都在池子里，偶尔也去潭子里； 时不时约三五好友打球、练摊； 喜欢关注些小众的东西。 End…… Word版本简历，请点我&gt;&gt; PDF版本简历，请点我&gt;&gt;]]></content>
+      <categories>
+        <category>城哥日常</category>
+      </categories>
+      <tags>
+        <tag>简历</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[这是一个模板文件]]></title>
+    <url>%2F1991%2F08%2F07%2F%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%20-%20%E5%89%AF%E6%9C%AC%20(2)%2F</url>
+    <content type="text"><![CDATA[这是一个模板文件 这是一个模板文件是的大反对反对几斤几两哈]]></content>
+      <categories>
+        <category>模板</category>
+      </categories>
+      <tags>
+        <tag>模板</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[这是一个模板文件]]></title>
+    <url>%2F1991%2F08%2F07%2F%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%3D%20-%20%E5%89%AF%E6%9C%AC%2F</url>
+    <content type="text"><![CDATA[这是一个模板文件 这是一个模板文件是的大反对反对几斤几两哈]]></content>
+      <categories>
+        <category>模板</category>
+      </categories>
+      <tags>
+        <tag>模板</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[写给小公主的第三封情书]]></title>
+    <url>%2F1991%2F08%2F07%2F%E5%86%99%E7%BB%99%E5%B0%8F%E5%85%AC%E4%B8%BB%E7%9A%84%E7%AC%AC%E4%B8%89%E5%B0%81%E6%83%85%E4%B9%A6%2F</url>
+    <content type="text"><![CDATA[写给小公主的第三封情书写在前面也不知道现在还能不能这么写了，本来三天前想写的，无奈公司事情太多，现在是周日的凌晨一点四十分，附上一首很伤感的曲子。 歌曲占位符 今天晚上问道奇怪的味道，结果发现原来是灯管冒烟了，然后灯就烧了，很难闻的味道，眼睛鼻子都不舒服。我窃喜是我意识太牛逼啦23333~]]></content>
+      <categories>
+        <category>diary</category>
+      </categories>
+      <tags>
+        <tag>城哥日常</tag>
+        <tag>情书</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[2016年终总结]]></title>
+    <url>%2F1016%2F12%2F31%2F2016%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93%2F</url>
+    <content type="text"><![CDATA[2016年终总结 总概这一年是毕业后的第一年半，日子过的挺淡的，这是我对这一年的感觉，年轻人酱紫可能并不是一个好的现象。但不管如何都已经成为过去，所以新的一年要有很好的计划，这一年会有很多重要的决策，希望所有的决定都不会后悔。 时间轴（流水账）一月 16年的一月应该过挺好的，跟妹子一起跨年，在海边看了烟花，许了新年愿望。 第一年参加公司的年会，虽然没有准备节目，但是成为了一个兼职的摄影师，尽管拍的照片没有发给大家，总归是一份记忆吧，今年的年会也不会有了。 回家的时候应该是去的菏泽，转道莒县，为了见一面，之后转折至潍坊，依然晚上，在潍坊过夜后第二天奔赴家中。 家里一切都好，只是时间很短暂，一年回家了两次。 二月 回深圳的时候陪妹子过了情人节，跟她的闺蜜一起吃了饭，没有玫瑰花，可能是一个遗憾，也是一个教训，礼物要有，花也要有~~ 这个时候的公司应该还是不错的，人也蛮多的，做的事情也是蛮多的，但是可能还是局限在手工测试。 三月 这个月遇到一个陌生的人，接触到了陌生的东西——期货； 总计投入2w多，那时候没有钱还是透支的信用卡，到最后全部算是学费了，在这之中明白了几点： 在不了解一行的时候不能轻信陌生人； 人格是有弱点的，应该有很是的风控机制，不能被侥幸心理所左右； 投资理财要在自己的风险承受能力之中； 相信自己多一点，少一点盲目，多一点学习； 再生燃料这个期货市场中1000w就能做有很多东西，散户很容易被收割！ 在接下来的很长时间里面都在偿还犯傻所欠下的债~ 这个事情一直没有跟妹子说，直到放下之后才跟她说； 多听一下琳姐的建议是很好的，关键的时刻应该要听自己朋友的而非陌生人的； 最后我把这次经历归结为诈骗，只是很高层次的! 四月 深圳的四月是个不讨人喜欢的季节，回南天的到来，使得到处都是湿漉漉的，很是难受； 这个时候公司应该来了两个新的同事，都是女孩子：艳姐和芳姐，艳姐有些叛逆，很喜欢她的性格，爽快；芳姐也是个很要强的姑娘，很爱学习，我应该向她看齐；这两个姐姐，教会我很多东西了，应该跟她们有更多的交流才对！ 五月 记得这个月没有钱的情况下艰苦的生活：早餐不吃，午餐两个包子一碗粥，晚餐一锅粥，就这样重复了一个月，以致后来闻到包子味道就有些犯怵。后来明白，就算你这样子的吃饭，每个月也省不了多少钱，从此开始正常的吃饭。 五一的假期应该是妹子来深圳了，一起去了珠海，在珠海玩了几天然后回深圳，激动的见面，不舍得分离，异地也许就是酱紫。 六月 妹子这个月生日，这是一个大事情，很早就准备了礼物，想了很久还是买了象印的情侣保温杯，还有Burberry的香水，虽然她不是很喜欢，也是我的一片心意，现在想想大老远跑去给她过生日也是蛮感动自己的，带她吃了中餐和西餐，希望她也能像我对她用心一样的对我。 这个月应该还是负债一万多吧，很多方面都很拮据，但是总的来说还是很美好的。 七月 印象中没有很值得纪念的事情发生，平平淡淡的一个月，工作和生活依然是那样子。 八月 这个月我的生日，本来是想跟几个要好的同事一起吃饭的，后来还是作罢，因为穷~~ 农历生日那天妹子根说分手了，那一天早上妈妈打来祝福的电话，本以为是美好的一天，就这样过上了单身的生活。 生日的凌晨依然收到了超哥的祝福，很感动，当然这天也有几个很要好的朋友的祝福，自己做了自己喜欢吃的才，就这么过去了。 九月 公司裁员，很庆幸自己依然没有被裁，我们测试都没有被裁员，这是我正式工作之后经历的第一次裁员，挺紧张的那时候。现在看来被裁掉到时最好的。 加薪了，也是对自己工作上面的一个肯定，没有被裁掉反而加薪，也是很欣慰。 这个时候我的游泳已经学会了算是比较标准的蛙泳，谢谢荣哥教练还有每周都会一起游泳的东哥。 十月 一个人的国庆节，初识32活动，一起去惠州的荒山野岭去溯溪，去泡坛子，很有意思，只是接下来的一周时间里浑身都在蜕皮… 国庆节没有回家； 教师资格证考试，妹子在济宁考试，也算是陌生的考试，我最终还是没有忍心让她自己去面对这个陌生的城市，将近二十个小时的火车，在她前面到达了菏泽，订好了酒店，准备了一个松枝记满满的蔓越莓草莓和粉色和一大杯热奶茶，我以为她会很感动。 陪考的这几天挺多不愉快的事情的，很难去定义。 十一月 公司搬家了，从南山区搬到了宝安区，从此上班出门都是九点钟，虽然还是经常迟到，这是一个不好的习惯，要改！ 公司的人也少了很多，测试只有我自己了； 公司开始了新的项目——小秋千，一个在线教育平台，前景很好，模式可能还是需要验证。 开始使用postman进行接口测试，所有的接口都已经覆盖，能在后台开发的过程中介入测试，更早的发现接口方面的问题。不过在Python的使用方面还是需要提高，进阶的目标是使用Python实现接口的自动化测试。 放弃了自己的国考，回济宁陪妹子考试。在济宁的时间长一些，见了海亮和蒋丽，把济宁所有的商场全部逛遍了！ 十二月 公司到了很困难的时刻，za哥约谈了，从此面临失业； 在这个月的剩下的时间，感受到人脉的重要定，Faith姐和ZA哥帮忙修改简历，Za哥帮忙内推的分期乐，虽然结果不容乐观；Faith帮忙推了两家公司，饼哥帮忙内推了分期乐，虽然救过都不是很乐观但是他们的帮助是我感到了很温暖，也感觉到了人脉的重要性。 这段时间面试了很多家公司，小的居多，下面简单说说： 三维度：一家被我定义为垃圾公司的公司，测试leader水平在我之下，她的着装以及贪图让我知道这次面试肯定没机会，因为这种人都能成为leader可想而知公司会是怎样的；前台傲慢的态度已经让我在等待的30分钟内对这家公司打了很低的分数。红条购物，呵呵。 平安科技：虽然知乎上面的评价来说挺一般，但是还是去体验了一下大公司的面试马拉松：200道EQ+IQ测试，技术一面，技术领导二面，明天是HR确认面，最后还有一个XX面，总算也是经历过大公司的面试过程，不过工作地点比较远，选择这家公司的可能性不是很大。 泽金金服：工资10000税前，税后9000左右，可能在薪资方面我没有处理好，接下来的事情进行的不是很顺利，效率也是很低的，希望能够拿到offer。 成为智能交通：前台态度一般，技术面试官不错，聊得也很好，果然不露声色，最后也是没有然后了。 萨摩耶：今天去的，前台是我面试过程中最好的，很有礼节，一杯温水说明一切。只是面试官真的是只能搞技术的。另外偏向测试开发，中途结束，面试官的一笑毁了他这个人。 分期乐：所有的都不错，只是自己没有准备好！！！真的好可惜！ 写在后面这一年大概就是酱紫，总的来说经历的东西蛮多的，还是很值得去回味的一年，虽然最后的最后变成了没有工作的人。 2017年flag 征服十座山 去5个新的城市 学一门乐器-还是口琴吧 读20本书 驾照 公务员 健身 HAPPY NEW YEAR!]]></content>
+      <categories>
+        <category>diary</category>
+      </categories>
+      <tags>
+        <tag>城哥日常</tag>
+      </tags>
+  </entry>
+</search>

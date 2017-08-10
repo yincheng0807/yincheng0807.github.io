@@ -1,0 +1,1027 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <link rel="shortcut icon" href="http://www.oneonecity.xyz/uploads/shortcut.ico">
+
+
+
+
+  <meta name="google-site-verification" content="ISr7hlKoRK_0ogSlSpVRXExXQERjkaGTVmWH8smdcbI" />
+
+
+
+
+  <meta name="baidu-site-verification" content="TBEoLrqkGu" />
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="postman,API测试,网络抓包," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="Postman简介使用炫酷的Postman HTTP请求构建器创建和发送任何HTTP请求。编写你自己的测试用例来验证响应数据、响应时间以及其他更多的。  Create and send any HTTP request using the awesome Postman request builder. Write your own test cases to validate response">
+<meta name="keywords" content="postman,API测试,网络抓包">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Postman札记">
+<meta property="og:url" content="http://www.oneonecity.xyz/2016/10/20/Postman札记/index.html">
+<meta property="og:site_name" content="OneOneCity">
+<meta property="og:description" content="Postman简介使用炫酷的Postman HTTP请求构建器创建和发送任何HTTP请求。编写你自己的测试用例来验证响应数据、响应时间以及其他更多的。  Create and send any HTTP request using the awesome Postman request builder. Write your own test cases to validate response">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://7xrv67.com1.z0.glb.clouddn.com/fiddler%E4%B8%BB%E7%95%8C%E9%9D%A2.png">
+<meta property="og:image" content="http://7xrv67.com1.z0.glb.clouddn.com/fiddler-header.png">
+<meta property="og:image" content="http://7xrv67.com1.z0.glb.clouddn.com/fiddler-header2.png">
+<meta property="og:image" content="http://7xrv67.com1.z0.glb.clouddn.com/fiddler-body.png">
+<meta property="og:image" content="http://7xrv67.com1.z0.glb.clouddn.com/fiddler-raw.png">
+<meta property="og:image" content="http://7xrv67.com1.z0.glb.clouddn.com/fiddler-pre.png">
+<meta property="og:image" content="http://7xrv67.com1.z0.glb.clouddn.com/fiddler-test.png">
+<meta property="og:image" content="http://7xrv67.com1.z0.glb.clouddn.com/fiddler-code.png">
+<meta property="og:image" content="http://7xrv67.com1.z0.glb.clouddn.com/response-body.png">
+<meta property="og:image" content="http://7xrv67.com1.z0.glb.clouddn.com/fiddler-pre1.png">
+<meta property="og:image" content="http://7xrv67.com1.z0.glb.clouddn.com/fiddler-pre2.png">
+<meta property="og:image" content="http://7xrv67.com1.z0.glb.clouddn.com/fiddler-test1.png">
+<meta property="og:image" content="http://7xrv67.com1.z0.glb.clouddn.com/huangjing.png">
+<meta property="og:updated_time" content="2017-08-10T16:52:47.365Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Postman札记">
+<meta name="twitter:description" content="Postman简介使用炫酷的Postman HTTP请求构建器创建和发送任何HTTP请求。编写你自己的测试用例来验证响应数据、响应时间以及其他更多的。  Create and send any HTTP request using the awesome Postman request builder. Write your own test cases to validate response">
+<meta name="twitter:image" content="http://7xrv67.com1.z0.glb.clouddn.com/fiddler%E4%B8%BB%E7%95%8C%E9%9D%A2.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://www.oneonecity.xyz/2016/10/20/Postman札记/"/>
+
+  <title> Postman札记 | OneOneCity </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-89109611-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?a35218488ffaeca78003e46633f1cd34";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+  <div style="display: none;">
+    <script src="http://s11.cnzz.com/z_stat.php?id=1261010994&web_id=1261010994" language="JavaScript"></script>
+  </div>
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">OneOneCity</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">一人·一城</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Postman札记
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-10-20T11:54:30+00:00" content="2016-10-20">
+              2016-10-20
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/软件测试/" itemprop="url" rel="index">
+                    <span itemprop="name">软件测试</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/10/20/Postman札记/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/20/Postman札记/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+              &nbsp; | &nbsp;
+              <span class="page-pv"><i class="fa fa-file-o"> 本文阅读量</i>
+              <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
+              </span>
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="Postman简介"><a href="#Postman简介" class="headerlink" title="Postman简介"></a>Postman简介</h2><p>使用炫酷的Postman HTTP请求构建器创建和发送任何HTTP请求。编写你自己的测试用例来验证响应数据、响应时间以及其他更多的。</p>
+<blockquote>
+<p>Create and send any HTTP request using the awesome Postman request builder. Write your own test cases to validate response data, response times, and more!<br><em>–Postman官方介绍</em></p>
+</blockquote>
+<a id="more"></a>
+<h2 id="安装："><a href="#安装：" class="headerlink" title="安装："></a>安装：</h2><ol>
+<li>Postman是基于Chrome浏览器开发的App，可以从<a href="https://chrome.google.com/webstore/detail/postman-rest-client-packa/fhbjgbiflinjbdggehcddcbncdddomop?hl=en" target="_blank" rel="external">Chrome应用商店</a>获取,或者地址栏输入<code>chrome://apps/</code><br><em>旧版本的Postman是作为一个标签页出现，新版本的会新开窗口</em><br>在线安装需要翻墙，最新的离线安装包可邮件Postman开发团队索取，以下是笔者2016-07-01得到的邮件回复：<blockquote>
+<p>The Chrome app is not available offline. We have native Mac and Windows apps, however.<br>The Mac app can be downloaded from <a href="https://www.getpostman.com/apps" target="_blank" rel="external">https://www.getpostman.com/apps</a>.<br>The Windows app is still in beta -<br><a href="https://dl.pstmn.io/download/latest/win?arch=64" target="_blank" rel="external">https://dl.pstmn.io/download/latest/win?arch=64</a> (64 bit)<br><a href="https://dl.pstmn.io/download/latest/win?arch=32" target="_blank" rel="external">https://dl.pstmn.io/download/latest/win?arch=32</a> (32 bit)<br>Hope this helps,<br>Cheers,<br>Abhijit,<br>Founder, Postman</p>
+</blockquote>
+</li>
+</ol>
+<h2 id="界面功能-请求："><a href="#界面功能-请求：" class="headerlink" title="界面功能-请求："></a>界面功能-请求：</h2><p><img src="http://7xrv67.com1.z0.glb.clouddn.com/fiddler%E4%B8%BB%E7%95%8C%E9%9D%A2.png" alt="界面图"></p>
+<h3 id="1-左侧边栏主要是导入、收藏请求，可以整理成目录："><a href="#1-左侧边栏主要是导入、收藏请求，可以整理成目录：" class="headerlink" title="1.左侧边栏主要是导入、收藏请求，可以整理成目录："></a>1.左侧边栏主要是导入、收藏请求，可以整理成目录：</h3><h4 id="a-Import："><a href="#a-Import：" class="headerlink" title="a. Import："></a>a. Import：</h4><p>导入，格式一般为Json；</p>
+<h4 id="b-Runner："><a href="#b-Runner：" class="headerlink" title="b. Runner："></a>b. Runner：</h4><p>能够自动化执行一个或多个收藏文件夹下面的请求；</p>
+<h4 id="c-收藏"><a href="#c-收藏" class="headerlink" title="c. 收藏"></a>c. 收藏</h4><p>收藏的请求（保存之后）有编辑、复制、删除等操作；</p>
+<h3 id="2-右侧请求编辑区"><a href="#2-右侧请求编辑区" class="headerlink" title="2.右侧请求编辑区"></a>2.右侧请求编辑区</h3><h4 id="a-请求方法："><a href="#a-请求方法：" class="headerlink" title="a.请求方法："></a>a.请求方法：</h4><p>常用的有POST和GET，一般API文档中给出，或者Fiddler、花瓶等抓包工具中获取；</p>
+<h4 id="b-URL："><a href="#b-URL：" class="headerlink" title="b.URL："></a>b.URL：</h4><p>请求地址，可以从接口文档或者抓包工具获取；</p>
+<h4 id="c-Params按钮："><a href="#c-Params按钮：" class="headerlink" title="c.Params按钮："></a>c.Params按钮：</h4><p>对于从抓包工具获取的接口，使用该按钮能自动生成form-data样式的请求主体；</p>
+<h4 id="d-Send按钮："><a href="#d-Send按钮：" class="headerlink" title="d.Send按钮："></a>d.Send按钮：</h4><p>发送请求；</p>
+<h4 id="e-Save按钮："><a href="#e-Save按钮：" class="headerlink" title="e.Save按钮："></a>e.Save按钮：</h4><p>能够将当前状态下的接口保存至收藏夹的某一个文件夹下面。</p>
+<h3 id="3-Header："><a href="#3-Header：" class="headerlink" title="3.Header："></a>3.Header：</h3><p>若服务器对接口header有要求，就需要在这里进行配置，比如数据类型等，Postman能够支持绝大多数的header类型，受限于Chrome，一小部分不支持。<br><img src="http://7xrv67.com1.z0.glb.clouddn.com/fiddler-header.png" alt="fiddler-header"><br><img src="http://7xrv67.com1.z0.glb.clouddn.com/fiddler-header2.png" alt="fiddler-header2"></p>
+<h3 id="4-Body-请求主体"><a href="#4-Body-请求主体" class="headerlink" title="4.Body:请求主体"></a>4.Body:请求主体</h3><p>接口中提交的各种数据均在这里配置，支持文本和文件，能够支持从环境变量获取，能够生成不同语言的请求代码：</p>
+<h4 id="a-form-data"><a href="#a-form-data" class="headerlink" title="a.form-data:"></a>a.form-data:</h4><p>键值对样式，左侧是字段名，右侧是字段值，跟x-www-form-urlencoded没有太大区别：<br>  在每一个字段右侧能够选择数据类型（文本或者文件）；可以点击右侧Bulk Edit较为方便的进行复制和粘贴。<br>  <img src="http://7xrv67.com1.z0.glb.clouddn.com/fiddler-body.png" alt="fiddler-body"></p>
+<h4 id="b-raw："><a href="#b-raw：" class="headerlink" title="b.raw："></a>b.raw：</h4><p>未解析的请求主体，支持多种语言：<br>  <img src="http://7xrv67.com1.z0.glb.clouddn.com/fiddler-raw.png" alt="fiddler-raw"></p>
+<h3 id="5-Pre-request-Script："><a href="#5-Pre-request-Script：" class="headerlink" title="5.Pre-request Script："></a>5.Pre-request Script：</h3><p>前置执行脚本，会在请求发出之前执行，一般用于获取时间戳或者随机值，支持JS：<br>  <img src="http://7xrv67.com1.z0.glb.clouddn.com/fiddler-pre.png" alt="Fiddler-pre"></p>
+<h3 id="6-Tests："><a href="#6-Tests：" class="headerlink" title="6.Tests："></a>6.Tests：</h3><p>请求发出之后对返回值进行验证，在此处编写测试代码，给环境变量赋值：<br>  <img src="http://7xrv67.com1.z0.glb.clouddn.com/fiddler-test.png" alt="Fiddler-test"></p>
+<h3 id="7-code按钮："><a href="#7-code按钮：" class="headerlink" title="7.code按钮："></a>7.code按钮：</h3><p>Postman神器之一，编写完成之后的接口数据可以生成任意语言，直接能够执行代码，且支持绝大多数语言：<br>  <img src="http://7xrv67.com1.z0.glb.clouddn.com/fiddler-code.png" alt="Fiddler-code"></p>
+<h2 id="界面功能-Response："><a href="#界面功能-Response：" class="headerlink" title="界面功能-Response："></a>界面功能-Response：</h2><h3 id="1-Body："><a href="#1-Body：" class="headerlink" title="1.Body："></a>1.Body：</h3><p>接口返回主体，根据不同的返回数据可以手动选择解析格式：<br><img src="http://7xrv67.com1.z0.glb.clouddn.com/response-body.png" alt="response-body"></p>
+<h3 id="2-Tests"><a href="#2-Tests" class="headerlink" title="2.Tests:"></a>2.Tests:</h3><p>返回测试脚本验证情况：</p>
+<h2 id="进阶：Pre-request-Scipt、Tests以及环境变量的使用："><a href="#进阶：Pre-request-Scipt、Tests以及环境变量的使用：" class="headerlink" title="进阶：Pre-request Scipt、Tests以及环境变量的使用："></a>进阶：Pre-request Scipt、Tests以及环境变量的使用：</h2><h3 id="1-Pre-request-Script"><a href="#1-Pre-request-Script" class="headerlink" title="1.Pre-request Script:"></a>1.Pre-request Script:</h3><p>Tips：代码编辑区右侧有红色的提示方法，包含了所有Postman内中的方法，使用很方便。<br>栗子1：如果接口需要使用请求发送时的时间戳，就需要在请求发出之前生成时间戳：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">// 获取时间戳 </div><div class="line">var time_stamp = Date.parse(new Date())/1000;</div></pre></td></tr></table></figure></p>
+<p>获取时间戳之后接口中是拿不到数据的，此时应该将生成的时间戳存进环境变量：<br><code>postman.setEnvironmentVariable(&quot;time_stamp&quot;, time_stamp);</code><br>之后在请求Body中的相应字段的value中使用环境变量<code></code><br><img src="http://7xrv67.com1.z0.glb.clouddn.com/fiddler-pre1.png" alt="Fiddler-pre1"><br><img src="http://7xrv67.com1.z0.glb.clouddn.com/fiddler-pre2.png" alt="Fiddler-pre2"></p>
+<h3 id="2-Tests："><a href="#2-Tests：" class="headerlink" title="2.Tests："></a>2.Tests：</h3><p>（Response Body）中的数据作为后续数据使用：<br>很多基于登录数据的接口，需要在登录接口之后获取当前用户的用户信息（user_name、user_id、token等），此时需要在Tests中添加相应的语句存储到环境变量。<br>Tips：代码编辑区右侧有红色的提示方法，包含了所有Postman内中的方法，使用很方便。<br>栗子2：首先解析ResponseBody:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var responseJSON;</div><div class="line">try &#123;</div><div class="line">    responseJSON = JSON.parse(responseBody); </div><div class="line">    tests[&quot;code equals 0&quot;] = parseInt(responseJSON.code) === 0;</div><div class="line">catch (e) &#123; &#125;</div></pre></td></tr></table></figure></p>
+<p>之后将所需的数据存储到环境变量：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">    postman.setEnvironmentVariable(&quot;__access_token&quot;, responseJSON.access_token);</div><div class="line">    postman.setEnvironmentVariable(&quot;__refresh_token&quot;, responseJSON.refresh_token);</div><div class="line">    postman.setEnvironmentVariable(&quot;__token_type&quot;, responseJSON.token_type);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>之后就能在需要鉴权参数的接口中使用<code></code>调用环境变量中的数据。<br><img src="http://7xrv67.com1.z0.glb.clouddn.com/fiddler-test1.png" alt="Fiddler-pre1"></p>
+<h3 id="3-环境变量："><a href="#3-环境变量：" class="headerlink" title="3.环境变量："></a>3.环境变量：</h3><p>作为临时存储数据的仓库，能够将前置脚本以及接口返回的数据暂存，以供调用。<br><img src="http://7xrv67.com1.z0.glb.clouddn.com/huangjing.png" alt="Fiddler-pre1"></p>
+<h3 id="4-简单的测试脚本："><a href="#4-简单的测试脚本：" class="headerlink" title="4.简单的测试脚本："></a>4.简单的测试脚本：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">try&#123;</div><div class="line">    var jsonData = JSON.parse(responseBody);</div><div class="line">    tests[&quot;The code is:  &quot; +jsonData.code] = jsonData.code === 0;</div><div class="line">    tests[&quot;The msg is: &quot; + jsonData.msg] = jsonData.msg === &quot;ok&quot;;</div><div class="line">    tests[&quot;Status code is: &quot; + responseCode.code] = responseCode.code === 200;</div><div class="line">&#125;</div><div class="line"></div><div class="line">catch (e) &#123; &#125;</div></pre></td></tr></table></figure>
+<p>Tips：<br>将解析返回数据主体的语句放在try中防止解析失败造成异常；<br>右侧提示方法中的示例，可以直接在此基础上修改称自己的测试脚本：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var jsonData = JSON.parse(responseBody);</div><div class="line">tests[&quot;Your test name&quot;] = jsonData.value === 100;</div></pre></td></tr></table></figure></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+<div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/uploads/wechat-qcode.jpg" alt="Ethan wechat" style="width: 200px; max-width: 100%;"/>
+    <div>欢迎扫一扫关注~</div>
+</div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="http://7xrv67.com1.z0.glb.clouddn.com/weixin_pay.png" alt="Ethan WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="http://7xrv67.com1.z0.glb.clouddn.com/alipay.png" alt="Ethan Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/postman/" rel="tag">#postman</a>
+          
+            <a href="/tags/API测试/" rel="tag">#API测试</a>
+          
+            <a href="/tags/网络抓包/" rel="tag">#网络抓包</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/10/13/编程命名规则/" rel="next" title="编程命名规则">
+                <i class="fa fa-chevron-left"></i> 编程命名规则
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/10/20/JS小程序/" rel="prev" title="JS代码片段">
+                JS代码片段 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+<div class="page-footer">
+    
+      <div id="eof" class="print-invisible">
+        <hr class="eof">
+      </div>
+
+      <div class="copyright" style="clear:both;">
+         <p><span>本文标题:</span><a href="/2016/10/20/Postman札记/">Postman札记</a></p>
+         <p><span>文章作者:</span><a href="/" title="访问 Ethan 的个人博客">Ethan</a></p>
+         <p><span>发布时间:</span>2016年10月20日 - 11时10分</p>
+         <p><span>更新时间:</span>2017年8月10日 - 16时08分</p>
+         <p><span>永久链接:</span><a href="/2016/10/20/Postman札记/" title="Postman札记">http://www.oneonecity.xyz/2016/10/20/Postman札记/</a></p>
+         <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" title="Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)">Attribution-NonCommercial 4.0</a></p>
+         <p><span>转载请保留以上信息。</span></p>
+      </div>
+    
+
+    
+
+  </div>
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/10/20/Postman札记/"
+           data-title="Postman札记" data-url="http://www.oneonecity.xyz/2016/10/20/Postman札记/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://7xrv67.com1.z0.glb.clouddn.com/avtar.jpg"
+               alt="Ethan" />
+          <p class="site-author-name" itemprop="name">Ethan</p>
+          <p class="site-description motion-element" itemprop="description">小矮人的黑暗料理~</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">61</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">44</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/yincheng0807" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/u/2696370833" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              Links
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.baidu.com/" title="Baidu" target="_blank">Baidu</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.163.com" title="网易" target="_blank">网易</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Postman简介"><span class="nav-number">1.</span> <span class="nav-text">Postman简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装："><span class="nav-number">2.</span> <span class="nav-text">安装：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#界面功能-请求："><span class="nav-number">3.</span> <span class="nav-text">界面功能-请求：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-左侧边栏主要是导入、收藏请求，可以整理成目录："><span class="nav-number">3.1.</span> <span class="nav-text">1.左侧边栏主要是导入、收藏请求，可以整理成目录：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#a-Import："><span class="nav-number">3.1.1.</span> <span class="nav-text">a. Import：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#b-Runner："><span class="nav-number">3.1.2.</span> <span class="nav-text">b. Runner：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#c-收藏"><span class="nav-number">3.1.3.</span> <span class="nav-text">c. 收藏</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-右侧请求编辑区"><span class="nav-number">3.2.</span> <span class="nav-text">2.右侧请求编辑区</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#a-请求方法："><span class="nav-number">3.2.1.</span> <span class="nav-text">a.请求方法：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#b-URL："><span class="nav-number">3.2.2.</span> <span class="nav-text">b.URL：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#c-Params按钮："><span class="nav-number">3.2.3.</span> <span class="nav-text">c.Params按钮：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#d-Send按钮："><span class="nav-number">3.2.4.</span> <span class="nav-text">d.Send按钮：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#e-Save按钮："><span class="nav-number">3.2.5.</span> <span class="nav-text">e.Save按钮：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-Header："><span class="nav-number">3.3.</span> <span class="nav-text">3.Header：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-Body-请求主体"><span class="nav-number">3.4.</span> <span class="nav-text">4.Body:请求主体</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#a-form-data"><span class="nav-number">3.4.1.</span> <span class="nav-text">a.form-data:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#b-raw："><span class="nav-number">3.4.2.</span> <span class="nav-text">b.raw：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-Pre-request-Script："><span class="nav-number">3.5.</span> <span class="nav-text">5.Pre-request Script：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-Tests："><span class="nav-number">3.6.</span> <span class="nav-text">6.Tests：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-code按钮："><span class="nav-number">3.7.</span> <span class="nav-text">7.code按钮：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#界面功能-Response："><span class="nav-number">4.</span> <span class="nav-text">界面功能-Response：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-Body："><span class="nav-number">4.1.</span> <span class="nav-text">1.Body：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-Tests"><span class="nav-number">4.2.</span> <span class="nav-text">2.Tests:</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#进阶：Pre-request-Scipt、Tests以及环境变量的使用："><span class="nav-number">5.</span> <span class="nav-text">进阶：Pre-request Scipt、Tests以及环境变量的使用：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-Pre-request-Script"><span class="nav-number">5.1.</span> <span class="nav-text">1.Pre-request Script:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-Tests："><span class="nav-number">5.2.</span> <span class="nav-text">2.Tests：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-环境变量："><span class="nav-number">5.3.</span> <span class="nav-text">3.环境变量：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-简单的测试脚本："><span class="nav-number">5.4.</span> <span class="nav-text">4.简单的测试脚本：</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2016 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Ethan</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+<div class="busuanzi-count">
+
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv"><i class="fa fa-user"> 本站访客数</i><span class="busuanzi-value" id="busuanzi_value_site_uv"></span>人次</span>
+  
+
+  
+    <span class="site-pv"><i class="fa fa-eye"> 本站总访问量</i><span class="busuanzi-value" id="busuanzi_value_site_pv"></span>次</span>
+  
+  
+</div>
+
+
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"yincheng0807"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+       search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+    'use strict';
+    $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+            // get the contents from search data
+            isfetched = true;
+            $('.popup').detach().appendTo('.header-inner');
+            var datas = $( "entry", xmlResponse ).map(function() {
+                return {
+                    title: $( "title", this ).text(),
+                    content: $("content",this).text(),
+                    url: $( "url" , this).text()
+                };
+            }).get();
+            var $input = document.getElementById(search_id);
+            var $resultContent = document.getElementById(content_id);
+            $input.addEventListener('input', function(){
+                var matchcounts = 0;
+                var str='<ul class=\"search-result-list\">';
+                var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                $resultContent.innerHTML = "";
+                if (this.value.trim().length > 1) {
+                // perform local searching
+                datas.forEach(function(data) {
+                    var isMatch = true;
+                    var content_index = [];
+                    var data_title = data.title.trim().toLowerCase();
+                    var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                    var data_url = data.url;
+                    var index_title = -1;
+                    var index_content = -1;
+                    var first_occur = -1;
+                    // only match artiles with not empty titles and contents
+                    if(data_title != '' && data_content != '') {
+                        keywords.forEach(function(keyword, i) {
+                            index_title = data_title.indexOf(keyword);
+                            index_content = data_content.indexOf(keyword);
+                            if( index_title < 0 && index_content < 0 ){
+                                isMatch = false;
+                            } else {
+                                if (index_content < 0) {
+                                    index_content = 0;
+                                }
+                                if (i == 0) {
+                                    first_occur = index_content;
+                                }
+                            }
+                        });
+                    }
+                    // show search results
+                    if (isMatch) {
+                        matchcounts += 1;
+                        str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                        var content = data.content.trim().replace(/<[^>]+>/g,"");
+                        if (first_occur >= 0) {
+                            // cut out 100 characters
+                            var start = first_occur - 20;
+                            var end = first_occur + 80;
+                            if(start < 0){
+                                start = 0;
+                            }
+                            if(start == 0){
+                                end = 50;
+                            }
+                            if(end > content.length){
+                                end = content.length;
+                            }
+                            var match_content = content.substring(start, end);
+                            // highlight all keywords
+                            keywords.forEach(function(keyword){
+                                var regS = new RegExp(keyword, "gi");
+                                match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                            });
+
+                            str += "<p class=\"search-result\">" + match_content +"...</p>"
+                        }
+                        str += "</li>";
+                    }
+                })};
+                str += "</ul>";
+                if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+                if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+                $resultContent.innerHTML = str;
+            });
+            proceedsearch();
+        }
+    });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".popoverlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+  
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+  </script>
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+      for (i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  </script>
+  <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+</body>
+</html>

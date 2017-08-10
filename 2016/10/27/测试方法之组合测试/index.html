@@ -1,0 +1,997 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <link rel="shortcut icon" href="http://www.oneonecity.xyz/uploads/shortcut.ico">
+
+
+
+
+  <meta name="google-site-verification" content="ISr7hlKoRK_0ogSlSpVRXExXQERjkaGTVmWH8smdcbI" />
+
+
+
+
+  <meta name="baidu-site-verification" content="TBEoLrqkGu" />
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="TEST," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="简介组合测试（Combinatorial Test）是众多测试方法中的一种，适用于有限取值的多因素系统：两因素（Pairwise）组合测试生成的测试用例集能够覆盖任意两因素所引发的缺陷；多因素（N-Way，N&amp;gt;2）组合测试生成的测试用例集理论上能够覆盖所有多因素所引发的缺陷，但是测试集会随着N的增加呈指数增长，测试成本很高；因此两因素组合测试能够达到测试成本和缺陷检测能力之间的平衡。">
+<meta name="keywords" content="TEST">
+<meta property="og:type" content="article">
+<meta property="og:title" content="测试用例设计方法之组合测试法">
+<meta property="og:url" content="http://www.oneonecity.xyz/2016/10/27/测试方法之组合测试/index.html">
+<meta property="og:site_name" content="OneOneCity">
+<meta property="og:description" content="简介组合测试（Combinatorial Test）是众多测试方法中的一种，适用于有限取值的多因素系统：两因素（Pairwise）组合测试生成的测试用例集能够覆盖任意两因素所引发的缺陷；多因素（N-Way，N&amp;gt;2）组合测试生成的测试用例集理论上能够覆盖所有多因素所引发的缺陷，但是测试集会随着N的增加呈指数增长，测试成本很高；因此两因素组合测试能够达到测试成本和缺陷检测能力之间的平衡。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://7xrv67.com1.z0.glb.clouddn.com/pict-geshi.png">
+<meta property="og:image" content="http://7xrv67.com1.z0.glb.clouddn.com/demo1.png">
+<meta property="og:image" content="http://7xrv67.com1.z0.glb.clouddn.com/pict2.png">
+<meta property="og:image" content="http://7xrv67.com1.z0.glb.clouddn.com/pict3.png">
+<meta property="og:image" content="http://7xrv67.com1.z0.glb.clouddn.com/pict-yueshu.png">
+<meta property="og:image" content="http://7xrv67.com1.z0.glb.clouddn.com/pict.png">
+<meta property="og:image" content="http://7xrv67.com1.z0.glb.clouddn.com/pict-3yinsu.png">
+<meta property="og:image" content="http://7xrv67.com1.z0.glb.clouddn.com/pict-sub_model.png">
+<meta property="og:updated_time" content="2017-08-10T16:52:47.365Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="测试用例设计方法之组合测试法">
+<meta name="twitter:description" content="简介组合测试（Combinatorial Test）是众多测试方法中的一种，适用于有限取值的多因素系统：两因素（Pairwise）组合测试生成的测试用例集能够覆盖任意两因素所引发的缺陷；多因素（N-Way，N&amp;gt;2）组合测试生成的测试用例集理论上能够覆盖所有多因素所引发的缺陷，但是测试集会随着N的增加呈指数增长，测试成本很高；因此两因素组合测试能够达到测试成本和缺陷检测能力之间的平衡。">
+<meta name="twitter:image" content="http://7xrv67.com1.z0.glb.clouddn.com/pict-geshi.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://www.oneonecity.xyz/2016/10/27/测试方法之组合测试/"/>
+
+  <title> 测试用例设计方法之组合测试法 | OneOneCity </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-89109611-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?a35218488ffaeca78003e46633f1cd34";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+  <div style="display: none;">
+    <script src="http://s11.cnzz.com/z_stat.php?id=1261010994&web_id=1261010994" language="JavaScript"></script>
+  </div>
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">OneOneCity</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">一人·一城</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                测试用例设计方法之组合测试法
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-10-27T17:35:04+00:00" content="2016-10-27">
+              2016-10-27
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/软件测试/" itemprop="url" rel="index">
+                    <span itemprop="name">软件测试</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/10/27/测试方法之组合测试/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/27/测试方法之组合测试/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+              &nbsp; | &nbsp;
+              <span class="page-pv"><i class="fa fa-file-o"> 本文阅读量</i>
+              <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
+              </span>
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p><strong>组合测试</strong>（Combinatorial Test）是众多测试方法中的一种，适用于有限取值的多因素系统：<br>两因素（Pairwise）组合测试生成的测试用例集能够覆盖任意两因素所引发的缺陷；<br>多因素（N-Way，N&gt;2）组合测试生成的测试用例集理论上能够覆盖所有多因素所引发的缺陷，但是测试集会随着N的增加呈指数增长，测试成本很高；<br>因此两因素组合测试能够达到测试成本和缺陷检测能力之间的平衡。</p>
+<a id="more"></a>
+<h2 id="组合测试可用方法："><a href="#组合测试可用方法：" class="headerlink" title="组合测试可用方法："></a>组合测试可用方法：</h2><h3 id="1-正交表"><a href="#1-正交表" class="headerlink" title="1.正交表"></a>1.<a href="http://baike.baidu.com/view/753410.htm" target="_blank" rel="external">正交表</a></h3><p>（或者笛卡尔乘积）生成测试用例：此方法能够保证每个因素在样本空间均匀分布，能够达到等概率，主要用于进行正交试验中各因素影响检测。<br>用于软件测试会导致测试成本高且缺陷检测能力较一般。</p>
+<h3 id="2-PICT（The-Pairwise-Independent-Combinatorial-Testing-tool）"><a href="#2-PICT（The-Pairwise-Independent-Combinatorial-Testing-tool）" class="headerlink" title="2.PICT（The Pairwise Independent Combinatorial Testing tool）"></a>2.<a href="http://ofmw469zs.bkt.clouddn.com/PICTHelp.htm" target="_blank" rel="external">PICT</a>（The Pairwise Independent Combinatorial Testing tool）</h3><p>微软内部使用的测试集生成工具，能够在保证缺陷覆盖率的情况下减少测试成本，现已开放能够下载：</p>
+<h2 id="PICT的使用："><a href="#PICT的使用：" class="headerlink" title="PICT的使用："></a>PICT的使用：</h2><h3 id="1-下载和安装："><a href="#1-下载和安装：" class="headerlink" title="1.下载和安装："></a>1.下载和安装：</h3><p>a.下载地址：<br><a href="http://download.microsoft.com/download/f/5/5/f55484df-8494-48fa-8dbd-8c6f76cc014b/pict33.msi" target="_blank" rel="external">官方下载地址&gt;&gt;</a><br><a href="http://ofmw469zs.bkt.clouddn.com/pict33.msi" target="_blank" rel="external">备用下载地址&gt;&gt;</a><br>b.双击pict33.msi进行安装，注意安装路径。</p>
+<h3 id="2-Demo："><a href="#2-Demo：" class="headerlink" title="2.Demo："></a>2.Demo：</h3><p>a.Windows命令行定位到安装文件夹；<br>b.在该文件夹下建立Modle.txt文件，格式如下：<br><img src="http://7xrv67.com1.z0.glb.clouddn.com/pict-geshi.png" alt="pict-model-type"><br>c.命令行执行<code>pict model.txt</code>;<br><img src="http://7xrv67.com1.z0.glb.clouddn.com/demo1.png" alt="demo1"><br>d.或者这样输出到文件：<br><code>pict model.txt &gt; testcase.txt</code><br><img src="http://7xrv67.com1.z0.glb.clouddn.com/pict2.png" alt="pict1"><br><code>pict model.txt &gt; testcase.xls</code><br><img src="http://7xrv67.com1.z0.glb.clouddn.com/pict3.png" alt="pict2"></p>
+<h3 id="3-约束条件："><a href="#3-约束条件：" class="headerlink" title="3.约束条件："></a>3.约束条件：</h3><p>对于存在对立关系的两个因素中需要通过在model文件中添加约束条件来防止测试集中产生无效用例：<br><code>IF Compound THEN Compound ELSE Compound;</code><br><img src="http://7xrv67.com1.z0.glb.clouddn.com/pict-yueshu.png" alt="pict-yueshu"></p>
+<h3 id="4-非法值过滤-哨兵（Guard）语句覆盖"><a href="#4-非法值过滤-哨兵（Guard）语句覆盖" class="headerlink" title="4.非法值过滤-哨兵（Guard）语句覆盖"></a>4.非法值过滤-哨兵（Guard）语句覆盖</h3><p>考虑代码健壮性，会存在很多哨兵语句来过滤非法输入，此时若不在model中添加限制，则可能生成的测试集会有很大一部分直接被过滤掉：<br><img src="http://7xrv67.com1.z0.glb.clouddn.com/pict.png" alt="pict"></p>
+<h3 id="5-指定因素组合数-子模型："><a href="#5-指定因素组合数-子模型：" class="headerlink" title="5.指定因素组合数-子模型："></a>5.指定因素组合数-子模型：</h3><p>针对关键业务流程，往往是缺陷多发地需要强化该处的测试，此时有两种方法才实现：<br>a. 在命令行中使用<code>/o:N    (N为组合数)</code>来指定自组合数，例如<code>/o:</code>就是生成三因素的测试集：<br><img src="http://7xrv67.com1.z0.glb.clouddn.com/pict-3yinsu.png" alt="pict-3yinsu"></p>
+<p>b.针对需要着重测试的部分或者某几个因素可以建立子模型（Sub-Models）来加强：<br><code>{&lt;ParamName1&gt;, &lt;ParamName2&gt;, &lt;ParamName3&gt;, ... } @ &lt;Order&gt;</code><br>子模型会针对花括号中所列的元素进行N元素组合（N=Order）。<br><img src="http://7xrv67.com1.z0.glb.clouddn.com/pict-sub_model.png" alt="pict-sub_model"></p>
+<h3 id="6-随机种子："><a href="#6-随机种子：" class="headerlink" title="6.随机种子："></a>6.随机种子：</h3><p>若将组合测试用例集加入回归测试，在软件生命周期中复地执行，不妨每次生成新的组合测试用例集，一方面满足两因素或多因素覆盖的测试标准，另一方面扩大测试对程序状态空间的覆盖。<br>在PICT中，参数”/r[:N]”可以为测试用例生成引入随机种子（N是作为随机种子的整数），以生成不同的测试用例。例如，执行如下命令，就可以当前日期为种子，生成测试用例集。第一条语句从当前日期中获得年、月、日信息（%date的格式随Windows系统设置而变化，该语句只适用于特定Windows系统），放入变量seed中。第二条语句以变量seed为种子，生成测试用例。于是，测试用例集的具体内容随日期变化，在保证两因素覆盖的前提下，扩大了对被测试应用的状态覆盖。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">set seed=%date:~4,2%%date:~7,2%%date:~10,4%</div><div class="line">pict model.txt /r:%seed%</div></pre></td></tr></table></figure></p>
+<h3 id="7-覆盖最重要的的取值组合："><a href="#7-覆盖最重要的的取值组合：" class="headerlink" title="7.覆盖最重要的的取值组合："></a>7.覆盖最重要的的取值组合：</h3><p>为了避免漏测，测试人员应该利用领域知识和测试技能，发掘出一批他认为必须测试的取值组合。然后，基于这些取值组合生成组合测试用例集。<br>a.将默认设置对应的因素取值组合加入核心用例集。<br>b.对于默认设置，每次修改其中一个单选框，获得一批取值组合。将它们加入核心用例集。<br>c.考虑到大多数用户不修改默认设置或只修改1个设置，核心用例集已经“足够好”，可以将其用于测试执行。<br>d.如果还有测试资源，可以将核心用例集作为“种子”，利用PICT生成组合测试用例集。例如，命令<code>pict.exe model.txt /e:seedrows.txt</code>生成的组合测试用例集就包含种子文件（seedrows.txt）所指定的取值组合。<br>关于组合测试可能错过最重要的的组合的文章：<a href="http://ofmw469zs.bkt.clouddn.com/PairwisePNSQC2004.pdf" target="_blank" rel="external">Pairwise Testing: A Best Practice That Isn’t</a></p>
+<h3 id="7-组合测试只是测试工具箱中的一员"><a href="#7-组合测试只是测试工具箱中的一员" class="headerlink" title="7.组合测试只是测试工具箱中的一员"></a>7.组合测试只是测试工具箱中的一员</h3><p>组合测试最适用的场景是配置测试，包括硬件兼容性测试、浏览器兼容性测试等。在配置测试中，待组合的配置项天然就是可枚举的离散值，不存在划分等价类、从等价类中选择可用值等手工操作，避免了测试者引入的错误。在配置测试中，大部分缺陷是由两个配置项不兼容所导致的，所以组合测试的错误检测能力较强。</p>
+<p>对于功能测试，将组合测试作为探索式测试的补充是不错的做法。在一轮测试中，建议按照如下步骤应用组合测试:<br>a.实施探索式测试，迭代地展开测试活动：阅读规格说明，运行被测试程序，应用不同的测试策略反复尝试，标记已经探索过的区域，记录已发现的缺陷。在这一过程中，可以获得一批高质量的测试用例，形成回归测试用例集。通常这批回归用例包括两类测试用例。第一类是正面（Positive）用例，它们检查了程序在主流场景（Scenario）下的行为。只要它们通过，我就有自信认为程序可以满足正常使用的需要。第二类是负面（Negative）用例，它们往往来自暴露了程序缺陷的探索式测试。这些用例检查了程序在极限或罕见场景中的行为，是程序在现实世界中正常工作的保证。<br>b.实施组合测试。基于探索式测试，我已经知晓某些因素的取值组合是很重要的。我可以将其传递给PICT，让它基于已有的测试用例生成组合测试用例集。例如，在命令行上执行<code>pict.exe model.txte:rows.txt</code>，就可以基于文件rows.txt，生成测试用例集，以完成两因素组合覆盖。<br>c.通过阅读代码或运行测试覆盖率工具，以发现测试遗漏。寻找未被发现的卫哨语句，修改测试策略，再次测试。寻找未被测试覆盖的语句或分支，增加新的测试用例，以提高代码覆盖率。</p>
+<h2 id="PICT语法声明："><a href="#PICT语法声明：" class="headerlink" title="PICT语法声明："></a>PICT语法声明：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div></pre></td><td class="code"><pre><div class="line">Constraints   :: =</div><div class="line">  Constraint</div><div class="line">| Constraint Constraints</div><div class="line"> </div><div class="line">Constraint    :: =</div><div class="line">  IF Compound THEN Compound ELSE Compound;</div><div class="line">| Compound;</div><div class="line"> </div><div class="line">Compound      :: =</div><div class="line">  Clause</div><div class="line">| Clause LogicalOperator Compound</div><div class="line"> </div><div class="line">Clause        :: =</div><div class="line">  Term</div><div class="line">| ( Compound )</div><div class="line">| NOT Compound</div><div class="line"> </div><div class="line">Term          :: =</div><div class="line">  ParameterName Relation Value</div><div class="line">| ParameterName LIKE PatternString</div><div class="line">| ParameterName IN &#123; ValueSet &#125;</div><div class="line">| ParameterName Relation ParameterName</div><div class="line"> </div><div class="line">ValueSet       :: =</div><div class="line">  Value</div><div class="line">| Value, ValueSet</div><div class="line"> </div><div class="line">LogicalOperator : :=</div><div class="line">  AND</div><div class="line">| OR</div><div class="line"> </div><div class="line">Relation      :: =</div><div class="line">  =</div><div class="line">| &lt;&gt;</div><div class="line">| &gt;</div><div class="line">| &gt;=</div><div class="line">| &lt;</div><div class="line">| &lt;=</div><div class="line"> </div><div class="line">ParameterName : := [String]</div><div class="line"> </div><div class="line">Value         :: =</div><div class="line">  &quot;String&quot;</div><div class="line">| Number</div><div class="line"> </div><div class="line">String        :: = whatever is typically regarded as a string of characters</div><div class="line"> </div><div class="line">Number        :: = whatever is typically regarded as a number</div><div class="line"> </div><div class="line">PatternString : := string with embedded special characters (wildcards):</div><div class="line">                   * a series of characters of any length (can be zero)</div><div class="line">                   ? any one character</div></pre></td></tr></table></figure>
+<h2 id="参考："><a href="#参考：" class="headerlink" title="参考："></a>参考：</h2><p><a href="http://www.cnblogs.com/liangshi/archive/2010/07/25/1784666.html" target="_blank" rel="external">实施组合测试&gt;&gt;</a></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+<div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/uploads/wechat-qcode.jpg" alt="Ethan wechat" style="width: 200px; max-width: 100%;"/>
+    <div>欢迎扫一扫关注~</div>
+</div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="http://7xrv67.com1.z0.glb.clouddn.com/weixin_pay.png" alt="Ethan WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="http://7xrv67.com1.z0.glb.clouddn.com/alipay.png" alt="Ethan Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/TEST/" rel="tag">#TEST</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/10/27/测试类文章汇集/" rel="next" title="测试类文章汇集">
+                <i class="fa fa-chevron-left"></i> 测试类文章汇集
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/11/16/Hexo博客next主题11月3日问题修复/" rel="prev" title="Hexo博客next主题11月3日问题修复">
+                Hexo博客next主题11月3日问题修复 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+<div class="page-footer">
+    
+      <div id="eof" class="print-invisible">
+        <hr class="eof">
+      </div>
+
+      <div class="copyright" style="clear:both;">
+         <p><span>本文标题:</span><a href="/2016/10/27/测试方法之组合测试/">测试用例设计方法之组合测试法</a></p>
+         <p><span>文章作者:</span><a href="/" title="访问 Ethan 的个人博客">Ethan</a></p>
+         <p><span>发布时间:</span>2016年10月27日 - 17时10分</p>
+         <p><span>更新时间:</span>2017年8月10日 - 16时08分</p>
+         <p><span>永久链接:</span><a href="/2016/10/27/测试方法之组合测试/" title="测试用例设计方法之组合测试法">http://www.oneonecity.xyz/2016/10/27/测试方法之组合测试/</a></p>
+         <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" title="Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)">Attribution-NonCommercial 4.0</a></p>
+         <p><span>转载请保留以上信息。</span></p>
+      </div>
+    
+
+    
+
+  </div>
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/10/27/测试方法之组合测试/"
+           data-title="测试用例设计方法之组合测试法" data-url="http://www.oneonecity.xyz/2016/10/27/测试方法之组合测试/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://7xrv67.com1.z0.glb.clouddn.com/avtar.jpg"
+               alt="Ethan" />
+          <p class="site-author-name" itemprop="name">Ethan</p>
+          <p class="site-description motion-element" itemprop="description">小矮人的黑暗料理~</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">61</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">44</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/yincheng0807" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/u/2696370833" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              Links
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.baidu.com/" title="Baidu" target="_blank">Baidu</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.163.com" title="网易" target="_blank">网易</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#组合测试可用方法："><span class="nav-number">2.</span> <span class="nav-text">组合测试可用方法：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-正交表"><span class="nav-number">2.1.</span> <span class="nav-text">1.正交表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-PICT（The-Pairwise-Independent-Combinatorial-Testing-tool）"><span class="nav-number">2.2.</span> <span class="nav-text">2.PICT（The Pairwise Independent Combinatorial Testing tool）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PICT的使用："><span class="nav-number">3.</span> <span class="nav-text">PICT的使用：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-下载和安装："><span class="nav-number">3.1.</span> <span class="nav-text">1.下载和安装：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-Demo："><span class="nav-number">3.2.</span> <span class="nav-text">2.Demo：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-约束条件："><span class="nav-number">3.3.</span> <span class="nav-text">3.约束条件：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-非法值过滤-哨兵（Guard）语句覆盖"><span class="nav-number">3.4.</span> <span class="nav-text">4.非法值过滤-哨兵（Guard）语句覆盖</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-指定因素组合数-子模型："><span class="nav-number">3.5.</span> <span class="nav-text">5.指定因素组合数-子模型：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-随机种子："><span class="nav-number">3.6.</span> <span class="nav-text">6.随机种子：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-覆盖最重要的的取值组合："><span class="nav-number">3.7.</span> <span class="nav-text">7.覆盖最重要的的取值组合：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-组合测试只是测试工具箱中的一员"><span class="nav-number">3.8.</span> <span class="nav-text">7.组合测试只是测试工具箱中的一员</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PICT语法声明："><span class="nav-number">4.</span> <span class="nav-text">PICT语法声明：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考："><span class="nav-number">5.</span> <span class="nav-text">参考：</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2016 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Ethan</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+<div class="busuanzi-count">
+
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv"><i class="fa fa-user"> 本站访客数</i><span class="busuanzi-value" id="busuanzi_value_site_uv"></span>人次</span>
+  
+
+  
+    <span class="site-pv"><i class="fa fa-eye"> 本站总访问量</i><span class="busuanzi-value" id="busuanzi_value_site_pv"></span>次</span>
+  
+  
+</div>
+
+
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"yincheng0807"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+       search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+    'use strict';
+    $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+            // get the contents from search data
+            isfetched = true;
+            $('.popup').detach().appendTo('.header-inner');
+            var datas = $( "entry", xmlResponse ).map(function() {
+                return {
+                    title: $( "title", this ).text(),
+                    content: $("content",this).text(),
+                    url: $( "url" , this).text()
+                };
+            }).get();
+            var $input = document.getElementById(search_id);
+            var $resultContent = document.getElementById(content_id);
+            $input.addEventListener('input', function(){
+                var matchcounts = 0;
+                var str='<ul class=\"search-result-list\">';
+                var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                $resultContent.innerHTML = "";
+                if (this.value.trim().length > 1) {
+                // perform local searching
+                datas.forEach(function(data) {
+                    var isMatch = true;
+                    var content_index = [];
+                    var data_title = data.title.trim().toLowerCase();
+                    var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                    var data_url = data.url;
+                    var index_title = -1;
+                    var index_content = -1;
+                    var first_occur = -1;
+                    // only match artiles with not empty titles and contents
+                    if(data_title != '' && data_content != '') {
+                        keywords.forEach(function(keyword, i) {
+                            index_title = data_title.indexOf(keyword);
+                            index_content = data_content.indexOf(keyword);
+                            if( index_title < 0 && index_content < 0 ){
+                                isMatch = false;
+                            } else {
+                                if (index_content < 0) {
+                                    index_content = 0;
+                                }
+                                if (i == 0) {
+                                    first_occur = index_content;
+                                }
+                            }
+                        });
+                    }
+                    // show search results
+                    if (isMatch) {
+                        matchcounts += 1;
+                        str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                        var content = data.content.trim().replace(/<[^>]+>/g,"");
+                        if (first_occur >= 0) {
+                            // cut out 100 characters
+                            var start = first_occur - 20;
+                            var end = first_occur + 80;
+                            if(start < 0){
+                                start = 0;
+                            }
+                            if(start == 0){
+                                end = 50;
+                            }
+                            if(end > content.length){
+                                end = content.length;
+                            }
+                            var match_content = content.substring(start, end);
+                            // highlight all keywords
+                            keywords.forEach(function(keyword){
+                                var regS = new RegExp(keyword, "gi");
+                                match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                            });
+
+                            str += "<p class=\"search-result\">" + match_content +"...</p>"
+                        }
+                        str += "</li>";
+                    }
+                })};
+                str += "</ul>";
+                if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+                if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+                $resultContent.innerHTML = str;
+            });
+            proceedsearch();
+        }
+    });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".popoverlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+  
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+  </script>
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+      for (i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  </script>
+  <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+</body>
+</html>

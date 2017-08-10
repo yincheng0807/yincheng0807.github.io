@@ -1,0 +1,1039 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <link rel="shortcut icon" href="http://www.oneonecity.xyz/uploads/shortcut.ico">
+
+
+
+
+  <meta name="google-site-verification" content="ISr7hlKoRK_0ogSlSpVRXExXQERjkaGTVmWH8smdcbI" />
+
+
+
+
+  <meta name="baidu-site-verification" content="TBEoLrqkGu" />
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="SS," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="写在前面 在大陆由于墙（GFW）的存在，很多境外网站的访问会受限，此时搭建属于自己的梯子是最为合适的方法，前提是你是一个喜欢折腾的。本文主要是贴链接，因为网上有很多很完备的教程，然后我踩的坑会单独说一下。  科学上网之EC2搭建shadowsocks原文地址&amp;gt;&amp;gt;,搜集资源时发现竟然是同事写的！很详细的一篇教程，我就是按照教程来的！只不过他是Mac平台，我是windows平台！">
+<meta name="keywords" content="SS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="亚马逊服务器搭建Shadowsocks">
+<meta property="og:url" content="http://www.oneonecity.xyz/2016/12/20/亚马逊服务器搭建Shadowsocks/index.html">
+<meta property="og:site_name" content="OneOneCity">
+<meta property="og:description" content="写在前面 在大陆由于墙（GFW）的存在，很多境外网站的访问会受限，此时搭建属于自己的梯子是最为合适的方法，前提是你是一个喜欢折腾的。本文主要是贴链接，因为网上有很多很完备的教程，然后我踩的坑会单独说一下。  科学上网之EC2搭建shadowsocks原文地址&amp;gt;&amp;gt;,搜集资源时发现竟然是同事写的！很详细的一篇教程，我就是按照教程来的！只不过他是Mac平台，我是windows平台！">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://7xrv67.com1.z0.glb.clouddn.com/aws1.png">
+<meta property="og:image" content="http://7xrv67.com1.z0.glb.clouddn.com/aws2.png">
+<meta property="og:image" content="http://7xrv67.com1.z0.glb.clouddn.com/aws3.png">
+<meta property="og:image" content="http://7xrv67.com1.z0.glb.clouddn.com/aws4.png">
+<meta property="og:image" content="http://7xrv67.com1.z0.glb.clouddn.com/aws5.png">
+<meta property="og:image" content="http://7xrv67.com1.z0.glb.clouddn.com/aws6.png">
+<meta property="og:image" content="http://7xrv67.com1.z0.glb.clouddn.com/aws7.png">
+<meta property="og:image" content="http://7xrv67.com1.z0.glb.clouddn.com/aws8.png">
+<meta property="og:image" content="http://7xrv67.com1.z0.glb.clouddn.com/aws9.png">
+<meta property="og:image" content="http://7xrv67.com1.z0.glb.clouddn.com/aws10.png">
+<meta property="og:image" content="http://7xrv67.com1.z0.glb.clouddn.com/aws11.png">
+<meta property="og:image" content="http://7xrv67.com1.z0.glb.clouddn.com/aws12.png">
+<meta property="og:image" content="http://7xrv67.com1.z0.glb.clouddn.com/aws13.png">
+<meta property="og:image" content="http://7xrv67.com1.z0.glb.clouddn.com/puttygen1.png">
+<meta property="og:image" content="http://7xrv67.com1.z0.glb.clouddn.com/puttygen2.png">
+<meta property="og:image" content="http://7xrv67.com1.z0.glb.clouddn.com/putty1.png">
+<meta property="og:image" content="http://7xrv67.com1.z0.glb.clouddn.com/putty2.png">
+<meta property="og:image" content="http://7xrv67.com1.z0.glb.clouddn.com/putty3.png">
+<meta property="og:image" content="http://7xrv67.com1.z0.glb.clouddn.com/putty4.png">
+<meta property="og:updated_time" content="2017-08-10T16:52:47.365Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="亚马逊服务器搭建Shadowsocks">
+<meta name="twitter:description" content="写在前面 在大陆由于墙（GFW）的存在，很多境外网站的访问会受限，此时搭建属于自己的梯子是最为合适的方法，前提是你是一个喜欢折腾的。本文主要是贴链接，因为网上有很多很完备的教程，然后我踩的坑会单独说一下。  科学上网之EC2搭建shadowsocks原文地址&amp;gt;&amp;gt;,搜集资源时发现竟然是同事写的！很详细的一篇教程，我就是按照教程来的！只不过他是Mac平台，我是windows平台！">
+<meta name="twitter:image" content="http://7xrv67.com1.z0.glb.clouddn.com/aws1.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://www.oneonecity.xyz/2016/12/20/亚马逊服务器搭建Shadowsocks/"/>
+
+  <title> 亚马逊服务器搭建Shadowsocks | OneOneCity </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-89109611-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?a35218488ffaeca78003e46633f1cd34";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+  <div style="display: none;">
+    <script src="http://s11.cnzz.com/z_stat.php?id=1261010994&web_id=1261010994" language="JavaScript"></script>
+  </div>
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">OneOneCity</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">一人·一城</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                亚马逊服务器搭建Shadowsocks
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-12-20T17:27:45+00:00" content="2016-12-20">
+              2016-12-20
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/DEV/" itemprop="url" rel="index">
+                    <span itemprop="name">DEV</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/12/20/亚马逊服务器搭建Shadowsocks/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/12/20/亚马逊服务器搭建Shadowsocks/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+              &nbsp; | &nbsp;
+              <span class="page-pv"><i class="fa fa-file-o"> 本文阅读量</i>
+              <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
+              </span>
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h2><blockquote>
+<p>在大陆由于墙（GFW）的存在，很多境外网站的访问会受限，此时搭建属于自己的梯子是最为合适的方法，前提是你是一个喜欢折腾的。<br>本文主要是贴链接，因为网上有很多很完备的教程，然后我踩的坑会单独说一下。</p>
+</blockquote>
+<h2 id="科学上网之EC2搭建shadowsocks"><a href="#科学上网之EC2搭建shadowsocks" class="headerlink" title="科学上网之EC2搭建shadowsocks"></a>科学上网之EC2搭建shadowsocks</h2><p><a href="https://segmentfault.com/a/1190000003101075" target="_blank" rel="external">原文地址&gt;&gt;</a>,搜集资源时发现竟然是同事写的！很详细的一篇教程，我就是按照教程来的！只不过他是Mac平台，我是windows平台！</p>
+<a id="more"></a>
+<h2 id="部分过程图片罗列："><a href="#部分过程图片罗列：" class="headerlink" title="部分过程图片罗列："></a>部分过程图片罗列：</h2><p><img src="http://7xrv67.com1.z0.glb.clouddn.com/aws1.png" alt="aws"><br><img src="http://7xrv67.com1.z0.glb.clouddn.com/aws2.png" alt="aws"><br><img src="http://7xrv67.com1.z0.glb.clouddn.com/aws3.png" alt="aws"><br><img src="http://7xrv67.com1.z0.glb.clouddn.com/aws4.png" alt="aws"><br><img src="http://7xrv67.com1.z0.glb.clouddn.com/aws5.png" alt="aws"><br><img src="http://7xrv67.com1.z0.glb.clouddn.com/aws6.png" alt="aws"><br>下面这两步注意，需要选择带有<strong>符合条件的免费套餐</strong><br><img src="http://7xrv67.com1.z0.glb.clouddn.com/aws7.png" alt="aws"><br><img src="http://7xrv67.com1.z0.glb.clouddn.com/aws8.png" alt="aws"><br><img src="http://7xrv67.com1.z0.glb.clouddn.com/aws9.png" alt="aws"><br><img src="http://7xrv67.com1.z0.glb.clouddn.com/aws10.png" alt="aws"><br><img src="http://7xrv67.com1.z0.glb.clouddn.com/aws11.png" alt="aws"><br>下面这一张是创建预算邮箱通知：<br><img src="http://7xrv67.com1.z0.glb.clouddn.com/aws12.png" alt="aws"></p>
+<p><strong>实例启动之后的安装操作</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">sudo -s //获取超级管理员权限</div><div class="line">apt-get update //更新apt-get包管理工具</div><div class="line">apt-get install python-pip //安装Python包管理工具</div><div class="line">pip intall shadowsocks //安装shadowsocks，这里可能会提示python pip不是最新版本，可忽略</div><div class="line">ssserver -c /etc/shadowsocks.json -d start //启动shadowsocks</div></pre></td></tr></table></figure></p>
+<p>注意：<br>多端口配置信息：<br><img src="http://7xrv67.com1.z0.glb.clouddn.com/aws13.png" alt="aws"><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">&#123;  </div><div class="line"> &quot;server&quot;:&quot;0.0.0.0&quot;，  </div><div class="line"> &quot;local_address&quot;: &quot;127.0.0.1&quot;,  </div><div class="line"> &quot;local_port&quot;:1080,  </div><div class="line">  &quot;port_password&quot;: &#123;  </div><div class="line">     &quot;8381&quot;: &quot;foobar1&quot;,  </div><div class="line">     &quot;8382&quot;: &quot;foobar2&quot;,  </div><div class="line">     &quot;8383&quot;: &quot;foobar3&quot;,  </div><div class="line">     &quot;8384&quot;: &quot;foobar4&quot;  </div><div class="line"> &#125;,  </div><div class="line"> &quot;timeout&quot;:300,  </div><div class="line"> &quot;method&quot;:&quot;aes-256-cfb&quot;,  </div><div class="line"> &quot;fast_open&quot;: false  </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>这里有教程说<code>server</code>改成你的实例外部IP，但是我这边没成功，配置成上面的成功了。</p>
+<p>配置完记得重启一下服务：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">ssserver -c /etc/shadowsocks.json -d start</div><div class="line">ssserver -c /etc/shadowsocks.json -d stop</div><div class="line">ssserver -c /etc/shadowsocks.json -d restart</div><div class="line">ssserver -c /etc/shadowsocks.json -d status</div></pre></td></tr></table></figure></p>
+<p>注意看一下关闭服务时的info是<code>stoped</code>为正常，如果是<code>not running</code>说明有问题，查看配置！</p>
+<p>添加开机启动：<br>我这里配置了CPU过载自动重启，所以需要将ss服务设置成自动启动：<br>运行<code>vi /etc/rc.local</code>编辑re.local文件，在<code>exit 0</code>前面添加：<br><code>ssserver -c /etc/shadowsocks.json -d start</code></p>
+<p>其他的流程，上面教程中都很详细！请认真按照教程走！</p>
+<h2 id="如果你是windows用户："><a href="#如果你是windows用户：" class="headerlink" title="如果你是windows用户："></a>如果你是windows用户：</h2><p>你可能需要看一下下面的内容：</p>
+<h3 id="下载SSH链接工具"><a href="#下载SSH链接工具" class="headerlink" title="下载SSH链接工具"></a>下载SSH链接工具</h3><p>1.我使用的是Putty;<br>2.不过Putty不能直接使用AWS生成的密钥，需要使用puttygen将.pem密钥转换成.ppk类型；<br>a.打开puttygen，点击<strong>Load</strong>加载.pem密钥（亚马逊服务器生成），选择密钥文件（需要选择所有文件类型）之后点确定；<br><img src="http://7xrv67.com1.z0.glb.clouddn.com/puttygen1.png" alt="puttygen1"><br>b.点击<strong>Save private key</strong>,其他的默认（密钥类型<strong>SSH-2 RSA，位数2048和1024均可</strong>），生成.ppk密钥；<br><img src="http://7xrv67.com1.z0.glb.clouddn.com/puttygen2.png" alt="puttygen2"><br>c.配置putty：首先将上一步生成的密钥配置在putty客户端<strong>SSH–&gt;Auth–&gt;Private key file for authentication</strong>;<br><img src="http://7xrv67.com1.z0.glb.clouddn.com/putty1.png" alt="putty1"><br>d.然后在<strong>Session–&gt;Host Name</strong>中配置你实例的外部IP即可，端口默认22！<br><img src="http://7xrv67.com1.z0.glb.clouddn.com/putty2.png" alt="putty2"><br>e.登录：<br>3.登录名为：</p>
+<table>
+<thead>
+<tr>
+<th>实例类型</th>
+<th>用户名</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Amazon Linux AMI</td>
+<td>ec2-user</td>
+</tr>
+<tr>
+<td>RHEL5 AMI</td>
+<td>ec2-user或root</td>
+</tr>
+<tr>
+<td>Ubuntu AMI</td>
+<td>ubuntu</td>
+</tr>
+<tr>
+<td>Fedora AMI</td>
+<td>ec2-user或fedora</td>
+</tr>
+<tr>
+<td>SUSE Linux</td>
+<td>ec2-user或root</td>
+</tr>
+</tbody>
+</table>
+<p><img src="http://7xrv67.com1.z0.glb.clouddn.com/putty3.png" alt="putty3"><br><img src="http://7xrv67.com1.z0.glb.clouddn.com/putty4.png" alt="putty4"></p>
+<h3 id="资源和教程："><a href="#资源和教程：" class="headerlink" title="资源和教程："></a>资源和教程：</h3><p><a href="http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html" target="_blank" rel="external">putty和puttygen官方下载&gt;&gt;</a><br>下载最新的即可！<br><a href="http://ofmw469zs.bkt.clouddn.com/putty.exe" target="_blank" rel="external">putty备用下载&gt;&gt;</a><br><a href="http://ofmw469zs.bkt.clouddn.com/puttygen.exe" target="_blank" rel="external">puttygen备用下载&gt;&gt;</a><br><a href="http://docs.aws.amazon.com/zh_cn/AWSEC2/latest/UserGuide/putty.html" target="_blank" rel="external">Putty连接实例官方帮助文档&gt;&gt;</a><br><a href="http://ofmw469zs.bkt.clouddn.com/putty%E9%93%BE%E6%8E%A5AMI.pdf" target="_blank" rel="external">Putty连接实例官方帮助文档备用地址&gt;&gt;</a><br>上面的官方帮助文档十分全面和细致，建议仔细查看！<br><a href="http://www.360doc.com/content/12/0217/13/59865_187325197.shtml" target="_blank" rel="external">密钥转换和登陆配置&gt;&gt;</a><br><a href="https://github.com/shadowsocks/shadowsocks-windows/releases" target="_blank" rel="external">SS&gt;&gt;</a><br><a href="http://ofmw469zs.bkt.clouddn.com/Shadowsocks-3.4.2.zip" target="_blank" rel="external">SS-3.4.2备用下载&gt;</a></p>
+<h2 id="最后说一下，FinalSpeed现在升级之后收费了！不过旧版的还是可以用的，请参照以下链接，点我-gt-gt"><a href="#最后说一下，FinalSpeed现在升级之后收费了！不过旧版的还是可以用的，请参照以下链接，点我-gt-gt" class="headerlink" title="最后说一下，FinalSpeed现在升级之后收费了！不过旧版的还是可以用的，请参照以下链接，点我&gt;&gt;"></a>最后说一下，FinalSpeed现在升级之后收费了！不过旧版的还是可以用的，请参照以下链接，<a href="https://github.com/yincheng0807/FinalSpeed" target="_blank" rel="external">点我&gt;&gt;</a></h2><h2 id="KCP资源占用少，稳定性还不错"><a href="#KCP资源占用少，稳定性还不错" class="headerlink" title="KCP资源占用少，稳定性还不错"></a>KCP资源占用少，稳定性还不错</h2>
+      
+    </div>
+
+    <div>
+      
+        
+<div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/uploads/wechat-qcode.jpg" alt="Ethan wechat" style="width: 200px; max-width: 100%;"/>
+    <div>欢迎扫一扫关注~</div>
+</div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="http://7xrv67.com1.z0.glb.clouddn.com/weixin_pay.png" alt="Ethan WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="http://7xrv67.com1.z0.glb.clouddn.com/alipay.png" alt="Ethan Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/SS/" rel="tag">#SS</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/12/19/Hexo站点主动推送百度/" rel="next" title="Hexo站点主动推送百度-基于Flow.ci">
+                <i class="fa fa-chevron-left"></i> Hexo站点主动推送百度-基于Flow.ci
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/03/02/================= - 副本 (3)/" rel="prev" title="H5专项测试简要总结（一）基本点">
+                H5专项测试简要总结（一）基本点 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+<div class="page-footer">
+    
+      <div id="eof" class="print-invisible">
+        <hr class="eof">
+      </div>
+
+      <div class="copyright" style="clear:both;">
+         <p><span>本文标题:</span><a href="/2016/12/20/亚马逊服务器搭建Shadowsocks/">亚马逊服务器搭建Shadowsocks</a></p>
+         <p><span>文章作者:</span><a href="/" title="访问 Ethan 的个人博客">Ethan</a></p>
+         <p><span>发布时间:</span>2016年12月20日 - 17时12分</p>
+         <p><span>更新时间:</span>2017年8月10日 - 16时08分</p>
+         <p><span>永久链接:</span><a href="/2016/12/20/亚马逊服务器搭建Shadowsocks/" title="亚马逊服务器搭建Shadowsocks">http://www.oneonecity.xyz/2016/12/20/亚马逊服务器搭建Shadowsocks/</a></p>
+         <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" title="Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)">Attribution-NonCommercial 4.0</a></p>
+         <p><span>转载请保留以上信息。</span></p>
+      </div>
+    
+
+    
+
+  </div>
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/12/20/亚马逊服务器搭建Shadowsocks/"
+           data-title="亚马逊服务器搭建Shadowsocks" data-url="http://www.oneonecity.xyz/2016/12/20/亚马逊服务器搭建Shadowsocks/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://7xrv67.com1.z0.glb.clouddn.com/avtar.jpg"
+               alt="Ethan" />
+          <p class="site-author-name" itemprop="name">Ethan</p>
+          <p class="site-description motion-element" itemprop="description">小矮人的黑暗料理~</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">61</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">44</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/yincheng0807" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/u/2696370833" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              Links
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.baidu.com/" title="Baidu" target="_blank">Baidu</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.163.com" title="网易" target="_blank">网易</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#写在前面"><span class="nav-number">1.</span> <span class="nav-text">写在前面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#科学上网之EC2搭建shadowsocks"><span class="nav-number">2.</span> <span class="nav-text">科学上网之EC2搭建shadowsocks</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#部分过程图片罗列："><span class="nav-number">3.</span> <span class="nav-text">部分过程图片罗列：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如果你是windows用户："><span class="nav-number">4.</span> <span class="nav-text">如果你是windows用户：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#下载SSH链接工具"><span class="nav-number">4.1.</span> <span class="nav-text">下载SSH链接工具</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#资源和教程："><span class="nav-number">4.2.</span> <span class="nav-text">资源和教程：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#最后说一下，FinalSpeed现在升级之后收费了！不过旧版的还是可以用的，请参照以下链接，点我-gt-gt"><span class="nav-number">5.</span> <span class="nav-text">最后说一下，FinalSpeed现在升级之后收费了！不过旧版的还是可以用的，请参照以下链接，点我>></span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#KCP资源占用少，稳定性还不错"><span class="nav-number">6.</span> <span class="nav-text">KCP资源占用少，稳定性还不错</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2016 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Ethan</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+<div class="busuanzi-count">
+
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv"><i class="fa fa-user"> 本站访客数</i><span class="busuanzi-value" id="busuanzi_value_site_uv"></span>人次</span>
+  
+
+  
+    <span class="site-pv"><i class="fa fa-eye"> 本站总访问量</i><span class="busuanzi-value" id="busuanzi_value_site_pv"></span>次</span>
+  
+  
+</div>
+
+
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"yincheng0807"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+       search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+    'use strict';
+    $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+            // get the contents from search data
+            isfetched = true;
+            $('.popup').detach().appendTo('.header-inner');
+            var datas = $( "entry", xmlResponse ).map(function() {
+                return {
+                    title: $( "title", this ).text(),
+                    content: $("content",this).text(),
+                    url: $( "url" , this).text()
+                };
+            }).get();
+            var $input = document.getElementById(search_id);
+            var $resultContent = document.getElementById(content_id);
+            $input.addEventListener('input', function(){
+                var matchcounts = 0;
+                var str='<ul class=\"search-result-list\">';
+                var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                $resultContent.innerHTML = "";
+                if (this.value.trim().length > 1) {
+                // perform local searching
+                datas.forEach(function(data) {
+                    var isMatch = true;
+                    var content_index = [];
+                    var data_title = data.title.trim().toLowerCase();
+                    var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                    var data_url = data.url;
+                    var index_title = -1;
+                    var index_content = -1;
+                    var first_occur = -1;
+                    // only match artiles with not empty titles and contents
+                    if(data_title != '' && data_content != '') {
+                        keywords.forEach(function(keyword, i) {
+                            index_title = data_title.indexOf(keyword);
+                            index_content = data_content.indexOf(keyword);
+                            if( index_title < 0 && index_content < 0 ){
+                                isMatch = false;
+                            } else {
+                                if (index_content < 0) {
+                                    index_content = 0;
+                                }
+                                if (i == 0) {
+                                    first_occur = index_content;
+                                }
+                            }
+                        });
+                    }
+                    // show search results
+                    if (isMatch) {
+                        matchcounts += 1;
+                        str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                        var content = data.content.trim().replace(/<[^>]+>/g,"");
+                        if (first_occur >= 0) {
+                            // cut out 100 characters
+                            var start = first_occur - 20;
+                            var end = first_occur + 80;
+                            if(start < 0){
+                                start = 0;
+                            }
+                            if(start == 0){
+                                end = 50;
+                            }
+                            if(end > content.length){
+                                end = content.length;
+                            }
+                            var match_content = content.substring(start, end);
+                            // highlight all keywords
+                            keywords.forEach(function(keyword){
+                                var regS = new RegExp(keyword, "gi");
+                                match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                            });
+
+                            str += "<p class=\"search-result\">" + match_content +"...</p>"
+                        }
+                        str += "</li>";
+                    }
+                })};
+                str += "</ul>";
+                if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+                if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+                $resultContent.innerHTML = str;
+            });
+            proceedsearch();
+        }
+    });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".popoverlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+  
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+  </script>
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+      for (i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  </script>
+  <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+</body>
+</html>

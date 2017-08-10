@@ -1,0 +1,999 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <link rel="shortcut icon" href="http://www.oneonecity.xyz/uploads/shortcut.ico">
+
+
+
+
+  <meta name="google-site-verification" content="ISr7hlKoRK_0ogSlSpVRXExXQERjkaGTVmWH8smdcbI" />
+
+
+
+
+  <meta name="baidu-site-verification" content="TBEoLrqkGu" />
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="基于Github和TravisCI都是墙外工具，可能速度偏慢；在部署过程会有不同的方法：使用hexo d进行部署和在public文件夹下直接push到GithubPage仓库；Coding的请参考这篇&amp;gt;&amp;gt; Github建立个人博客下面步骤也是最简单的在Github上面搭建博客的流程：1.注册Github账号，创建与用户名同名的仓库名；2.生成Git密钥对，并保证能够连通git@gith">
+<meta name="keywords" content="Hexo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo自动构建-基于Github和TravisCI">
+<meta property="og:url" content="http://www.oneonecity.xyz/2016/12/15/Hexo自动构建-基于Github和TravisCI/index.html">
+<meta property="og:site_name" content="OneOneCity">
+<meta property="og:description" content="基于Github和TravisCI都是墙外工具，可能速度偏慢；在部署过程会有不同的方法：使用hexo d进行部署和在public文件夹下直接push到GithubPage仓库；Coding的请参考这篇&amp;gt;&amp;gt; Github建立个人博客下面步骤也是最简单的在Github上面搭建博客的流程：1.注册Github账号，创建与用户名同名的仓库名；2.生成Git密钥对，并保证能够连通git@gith">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://7xrv67.com1.z0.glb.clouddn.com/githubCI1.png">
+<meta property="og:image" content="http://7xrv67.com1.z0.glb.clouddn.com/githubCI2.png">
+<meta property="og:image" content="http://7xrv67.com1.z0.glb.clouddn.com/githubCI3.png">
+<meta property="og:image" content="http://7xrv67.com1.z0.glb.clouddn.com/githubCI4.png">
+<meta property="og:image" content="http://7xrv67.com1.z0.glb.clouddn.com/githubCI5.png">
+<meta property="og:updated_time" content="2017-08-10T16:52:47.361Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo自动构建-基于Github和TravisCI">
+<meta name="twitter:description" content="基于Github和TravisCI都是墙外工具，可能速度偏慢；在部署过程会有不同的方法：使用hexo d进行部署和在public文件夹下直接push到GithubPage仓库；Coding的请参考这篇&amp;gt;&amp;gt; Github建立个人博客下面步骤也是最简单的在Github上面搭建博客的流程：1.注册Github账号，创建与用户名同名的仓库名；2.生成Git密钥对，并保证能够连通git@gith">
+<meta name="twitter:image" content="http://7xrv67.com1.z0.glb.clouddn.com/githubCI1.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://www.oneonecity.xyz/2016/12/15/Hexo自动构建-基于Github和TravisCI/"/>
+
+  <title> Hexo自动构建-基于Github和TravisCI | OneOneCity </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-89109611-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?a35218488ffaeca78003e46633f1cd34";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+  <div style="display: none;">
+    <script src="http://s11.cnzz.com/z_stat.php?id=1261010994&web_id=1261010994" language="JavaScript"></script>
+  </div>
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">OneOneCity</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">一人·一城</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Hexo自动构建-基于Github和TravisCI
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-12-15T20:26:56+00:00" content="2016-12-15">
+              2016-12-15
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Hexo/" itemprop="url" rel="index">
+                    <span itemprop="name">Hexo</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/12/15/Hexo自动构建-基于Github和TravisCI/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/12/15/Hexo自动构建-基于Github和TravisCI/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+              &nbsp; | &nbsp;
+              <span class="page-pv"><i class="fa fa-file-o"> 本文阅读量</i>
+              <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
+              </span>
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="基于Github和TravisCI"><a href="#基于Github和TravisCI" class="headerlink" title="基于Github和TravisCI"></a>基于Github和TravisCI</h2><p>都是墙外工具，可能速度偏慢；<br>在部署过程会有不同的方法：使用<code>hexo d</code>进行部署和在<code>public</code>文件夹下直接push到GithubPage仓库；<br>Coding的请参考<a href="http://www.oneonecity.xyz/2016/12/16/Hexo%E8%87%AA%E5%8A%A8%E6%9E%84%E5%BB%BA-%E5%9F%BA%E4%BA%8EFlow.ci%E5%92%8CCoding/">这篇&gt;&gt;</a></p>
+<h3 id="Github建立个人博客"><a href="#Github建立个人博客" class="headerlink" title="Github建立个人博客"></a>Github建立个人博客</h3><p>下面步骤也是最简单的在Github上面搭建博客的流程：<br>1.注册Github账号，创建与用户名同名的仓库名；<br>2.生成Git密钥对，并保证能够连通git@github.com；<a href="http://www.oneonecity.xyz/%2F2016%2F10%2F09%2Fhexo%E8%B8%A9%E5%9D%91%E8%AE%B0%2F">参考链接</a><br>3.PC端打开命令行工具（定位到博客根目录）分别运行以下命令：</p>
+<a id="more"></a>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">npm install -g hexo --save	#hexo基于node.js，需提前安装，此步骤是安装hexo；</div><div class="line"></div><div class="line">npm install -g hexo-cli --save	#可选择安装，非必须；</div><div class="line"></div><div class="line">hexo init	#初始化；</div><div class="line"></div><div class="line">hexo new	#创建一篇新文章，改文章会存放在`source--&gt;_posts`文件夹之下；</div><div class="line"></div><div class="line">hexo generate	#构建博客，同hexo g</div><div class="line"></div><div class="line">npm install -g hexo-depoyer	#安装hexo部署器</div><div class="line"></div><div class="line"># 修改hexo配置文件`_config.yml`，添加如下代码：</div><div class="line">deploy:</div><div class="line">  type: git</div><div class="line">  repo:</div><div class="line">    coding: git@github.com:username/username.git</div><div class="line"></div><div class="line">hexo deploy	#部署博客,同hexo d</div><div class="line"></div><div class="line">hexo server	#开启本地服务</div></pre></td></tr></table></figure>
+<p>进入username.github.io查看博客情况；</p>
+<blockquote>
+<p><a href="http://www.tuicool.com/articles/ueI7naV" target="_blank" rel="external">参考资料&gt;&gt;</a></p>
+</blockquote>
+<h3 id="配置TravisCI"><a href="#配置TravisCI" class="headerlink" title="配置TravisCI"></a>配置TravisCI</h3><p>1.使用Github账号授权登录；<br>2.找到并开启username的仓库<br><img src="http://7xrv67.com1.z0.glb.clouddn.com/githubCI1.png" alt="找到并开启username的仓库"><br>3.授权：<br>a.Github设置中创建Personal access tokens：<br><img src="http://7xrv67.com1.z0.glb.clouddn.com/githubCI2.png" alt="Github设置中创建Personal access tokens：1"><br><img src="http://7xrv67.com1.z0.glb.clouddn.com/githubCI3.png" alt="Github设置中创建Personal access tokens：1"><br><img src="http://7xrv67.com1.z0.glb.clouddn.com/githubCI4.png" alt="Github设置中创建Personal access tokens：1"><br>b.将token添加到TravisCI的对应项目中：<br><img src="http://7xrv67.com1.z0.glb.clouddn.com/githubCI5.png" alt="将token添加到TravisCI的对应项目中："><br>4.配置TravisCI配置文件<code>.travis.yml</code>，添加如下代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line">language: node_js</div><div class="line">node_js: stable</div><div class="line"></div><div class="line"># S: Build Lifecycle</div><div class="line">install:</div><div class="line">#  - npm install -g hexo</div><div class="line">#  - npm install -g hexo-deploy-git</div><div class="line">  - npm install</div><div class="line"></div><div class="line"></div><div class="line">before_script:</div><div class="line"> # - npm install -g gulp</div><div class="line">#   - npm install -g hexo</div><div class="line">   - hexo -v</div><div class="line"></div><div class="line">script:</div><div class="line">  - hexo g</div><div class="line"></div><div class="line">after_script:</div><div class="line">  - cd ./public</div><div class="line">  - git init</div><div class="line">  - git config user.name &quot;yincheng0807&quot;</div><div class="line">  - git config user.email &quot;yincheng0807@163.com&quot;</div><div class="line">  - git add .</div><div class="line">  - git commit -m &quot;Update blog!&quot;</div><div class="line">  - git push --force --quiet &quot;https://$&#123;GITHUB_TOKEN&#125;@$&#123;GH_REF&#125;&quot; master:master	#GITHUB_TOKEN为在TravisCI中添加的来自Github的授权Token，见上一步</div><div class="line"></div><div class="line">branches:</div><div class="line">  only:</div><div class="line">    - hexo</div><div class="line"></div><div class="line"># 创建全局变量，与GithubPage仓库ssh地址一致</div><div class="line">env:</div><div class="line"> global:</div><div class="line">   - GH_REF: git@github.com:yincheng0807/yincheng0807.github.io.git</div></pre></td></tr></table></figure></p>
+<h3 id="关联githubPage仓库："><a href="#关联githubPage仓库：" class="headerlink" title="关联githubPage仓库："></a>关联githubPage仓库：</h3><p>1.删除博客源文件根目录下的<code>.git</code>文件夹，这个文件夹是hexo的<code>.git</code>；<br>2.打开<code>Git Bash</code>，执行：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">git init;</div><div class="line">git remote add origin </div><div class="line">git@github.com:username/username.git</div></pre></td></tr></table></figure></p>
+<p>此时位于master分支</p>
+<h3 id="在pages仓库创建博客源文件分支hexo："><a href="#在pages仓库创建博客源文件分支hexo：" class="headerlink" title="在pages仓库创建博客源文件分支hexo："></a>在pages仓库创建博客源文件分支hexo：</h3><p>1.创建hexo分支：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">git checkout -b hexo;</div><div class="line"></div><div class="line">git pull origin hexo;</div><div class="line"></div><div class="line">git add .;</div><div class="line"></div><div class="line">git commit -am &quot;test&quot;;</div><div class="line"></div><div class="line">git push origin hexo;</div></pre></td></tr></table></figure></p>
+<p>至此push到远成仓库之后就能自动触发TravisCI；</p>
+<blockquote>
+<p><a href="http://blog.acwong.org/2016/03/20/auto-deploy-hexo-with-travis-CI/" target="_blank" rel="external">参考资料1&gt;&gt;</a><br><a href="https://segmentfault.com/a/1190000004714256" target="_blank" rel="external">参考资料2&gt;&gt;</a><br><a href="http://blog.csdn.net/woblog/article/details/51319364" target="_blank" rel="external">参考资料3&gt;&gt;</a></p>
+</blockquote>
+<p>p.s.另一种方式的构建，替换配置TravisCI第四步中代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">language: node_js</div><div class="line">branches:</div><div class="line">  only:</div><div class="line">  - hexo #源码分支名称</div><div class="line">before_install:</div><div class="line">- npm install -g hexo</div><div class="line">- npm install -g hexo-cli</div><div class="line">before_script:</div><div class="line">- git config --global user.name &apos;yourname&apos;</div><div class="line">- git config --global user.email &apos;youremail&apos;</div><div class="line">- sed -i&apos;&apos; &quot;s~git@github.com:&lt;yourname&gt;/&lt;projectname&gt;.git~https://$&#123;REPO_TOKEN&#125;:x-oauth-basic@github.com/&lt;yourname&gt;/&lt;projectname&gt;.git~&quot; _config.yml</div><div class="line">install:</div><div class="line">- npm install</div><div class="line">script:</div><div class="line">- hexo clean</div><div class="line">- hexo generate</div><div class="line">after_success:</div><div class="line">- hexo deploy</div></pre></td></tr></table></figure>
+<blockquote>
+<p><a href="http://www.oneonecity.xyz/2016/12/15/Hexo%E8%87%AA%E5%8A%A8%E6%9E%84%E5%BB%BA-%E5%9F%BA%E4%BA%8EGithub%E5%92%8CTravisCI/">原文地址&gt;&gt;</a></p>
+</blockquote>
+
+      
+    </div>
+
+    <div>
+      
+        
+<div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/uploads/wechat-qcode.jpg" alt="Ethan wechat" style="width: 200px; max-width: 100%;"/>
+    <div>欢迎扫一扫关注~</div>
+</div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="http://7xrv67.com1.z0.glb.clouddn.com/weixin_pay.png" alt="Ethan WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="http://7xrv67.com1.z0.glb.clouddn.com/alipay.png" alt="Ethan Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Hexo/" rel="tag">#Hexo</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/12/14/Hexo博客绑定域名/" rel="next" title="Hexo绑定域名">
+                <i class="fa fa-chevron-left"></i> Hexo绑定域名
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/12/16/Hexo自动构建-基于Flow.ci和Coding/" rel="prev" title="Hexo自动构建-基于Flow.ci和Coding">
+                Hexo自动构建-基于Flow.ci和Coding <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+<div class="page-footer">
+    
+      <div id="eof" class="print-invisible">
+        <hr class="eof">
+      </div>
+
+      <div class="copyright" style="clear:both;">
+         <p><span>本文标题:</span><a href="/2016/12/15/Hexo自动构建-基于Github和TravisCI/">Hexo自动构建-基于Github和TravisCI</a></p>
+         <p><span>文章作者:</span><a href="/" title="访问 Ethan 的个人博客">Ethan</a></p>
+         <p><span>发布时间:</span>2016年12月15日 - 20时12分</p>
+         <p><span>更新时间:</span>2017年8月10日 - 16时08分</p>
+         <p><span>永久链接:</span><a href="/2016/12/15/Hexo自动构建-基于Github和TravisCI/" title="Hexo自动构建-基于Github和TravisCI">http://www.oneonecity.xyz/2016/12/15/Hexo自动构建-基于Github和TravisCI/</a></p>
+         <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" title="Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)">Attribution-NonCommercial 4.0</a></p>
+         <p><span>转载请保留以上信息。</span></p>
+      </div>
+    
+
+    
+
+  </div>
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/12/15/Hexo自动构建-基于Github和TravisCI/"
+           data-title="Hexo自动构建-基于Github和TravisCI" data-url="http://www.oneonecity.xyz/2016/12/15/Hexo自动构建-基于Github和TravisCI/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://7xrv67.com1.z0.glb.clouddn.com/avtar.jpg"
+               alt="Ethan" />
+          <p class="site-author-name" itemprop="name">Ethan</p>
+          <p class="site-description motion-element" itemprop="description">小矮人的黑暗料理~</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">61</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">44</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/yincheng0807" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/u/2696370833" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              Links
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.baidu.com/" title="Baidu" target="_blank">Baidu</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.163.com" title="网易" target="_blank">网易</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#基于Github和TravisCI"><span class="nav-number">1.</span> <span class="nav-text">基于Github和TravisCI</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Github建立个人博客"><span class="nav-number">1.1.</span> <span class="nav-text">Github建立个人博客</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置TravisCI"><span class="nav-number">1.2.</span> <span class="nav-text">配置TravisCI</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关联githubPage仓库："><span class="nav-number">1.3.</span> <span class="nav-text">关联githubPage仓库：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#在pages仓库创建博客源文件分支hexo："><span class="nav-number">1.4.</span> <span class="nav-text">在pages仓库创建博客源文件分支hexo：</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2016 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Ethan</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+<div class="busuanzi-count">
+
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv"><i class="fa fa-user"> 本站访客数</i><span class="busuanzi-value" id="busuanzi_value_site_uv"></span>人次</span>
+  
+
+  
+    <span class="site-pv"><i class="fa fa-eye"> 本站总访问量</i><span class="busuanzi-value" id="busuanzi_value_site_pv"></span>次</span>
+  
+  
+</div>
+
+
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"yincheng0807"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+    <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+       search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+    'use strict';
+    $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+            // get the contents from search data
+            isfetched = true;
+            $('.popup').detach().appendTo('.header-inner');
+            var datas = $( "entry", xmlResponse ).map(function() {
+                return {
+                    title: $( "title", this ).text(),
+                    content: $("content",this).text(),
+                    url: $( "url" , this).text()
+                };
+            }).get();
+            var $input = document.getElementById(search_id);
+            var $resultContent = document.getElementById(content_id);
+            $input.addEventListener('input', function(){
+                var matchcounts = 0;
+                var str='<ul class=\"search-result-list\">';
+                var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                $resultContent.innerHTML = "";
+                if (this.value.trim().length > 1) {
+                // perform local searching
+                datas.forEach(function(data) {
+                    var isMatch = true;
+                    var content_index = [];
+                    var data_title = data.title.trim().toLowerCase();
+                    var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                    var data_url = data.url;
+                    var index_title = -1;
+                    var index_content = -1;
+                    var first_occur = -1;
+                    // only match artiles with not empty titles and contents
+                    if(data_title != '' && data_content != '') {
+                        keywords.forEach(function(keyword, i) {
+                            index_title = data_title.indexOf(keyword);
+                            index_content = data_content.indexOf(keyword);
+                            if( index_title < 0 && index_content < 0 ){
+                                isMatch = false;
+                            } else {
+                                if (index_content < 0) {
+                                    index_content = 0;
+                                }
+                                if (i == 0) {
+                                    first_occur = index_content;
+                                }
+                            }
+                        });
+                    }
+                    // show search results
+                    if (isMatch) {
+                        matchcounts += 1;
+                        str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                        var content = data.content.trim().replace(/<[^>]+>/g,"");
+                        if (first_occur >= 0) {
+                            // cut out 100 characters
+                            var start = first_occur - 20;
+                            var end = first_occur + 80;
+                            if(start < 0){
+                                start = 0;
+                            }
+                            if(start == 0){
+                                end = 50;
+                            }
+                            if(end > content.length){
+                                end = content.length;
+                            }
+                            var match_content = content.substring(start, end);
+                            // highlight all keywords
+                            keywords.forEach(function(keyword){
+                                var regS = new RegExp(keyword, "gi");
+                                match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                            });
+
+                            str += "<p class=\"search-result\">" + match_content +"...</p>"
+                        }
+                        str += "</li>";
+                    }
+                })};
+                str += "</ul>";
+                if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+                if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+                $resultContent.innerHTML = str;
+            });
+            proceedsearch();
+        }
+    });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".popoverlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+  
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+  </script>
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+      for (i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  </script>
+  <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+</body>
+</html>
